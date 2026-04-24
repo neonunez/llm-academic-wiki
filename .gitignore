@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Obsidian session state (personal, not shared)
+.obsidian/workspace.json
