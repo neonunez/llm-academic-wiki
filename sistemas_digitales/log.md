@@ -1,5 +1,16 @@
 # Log — Sistemas Digitales
 
+
+## 2026-08-18 mantenimiento | index desactualizado
+
+- `index.md` marcaba 6 guias como "Fase 1 completa — PENDIENTE resolucion" cuando ya estaban resueltas (13/10/13/8/9/11 resoluciones respectivamente, 0 marcadores pendientes). Etiquetas corregidas a "resuelta".
+
+## 2026-08-18 mantenimiento | hygiene
+
+- Creado `wiki/sintesis/` (el log de init lo daba por creado pero no existia).
+- CLAUDE.md: tabla de comandos completa (15).
+- Verificacion de links: 0 rotos.
+
 ## 2026-04-19 resolver | programacion_risc_v_guia_pt2.md
 
 - Ejercicios resueltos: 11 (Ej 1–11, todos los pendientes)

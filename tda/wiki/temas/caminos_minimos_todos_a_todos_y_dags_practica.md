@@ -10,7 +10,7 @@ paginas_relacionadas:
 ---
 
 ## Patrones de este tema en parciales
-> [[tipos_ejercicio/cm_floyd_dantzig]] · [[tipos_ejercicio/cm_dag_modelado]]
+> [[tipos_ejercicio/cm_estado_expandido]] · [[tipos_ejercicio/cm_estado_expandido]]
 (se completa despues de analizar parciales)
 
 ---
@@ -88,7 +88,7 @@ Como hay dos costos (tiempo y peaje) y el tiempo esta acotado, se puede expandir
 **Chuleta**
 > 1. Expandir por tiempo: estado = (ciudad, $t'$) → DAG → 2. Nodo final para Kazan en cualquier $t' \leq t$ → 3. PD/CM en DAG: $O(nt + mt)$
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_dag_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 
@@ -143,7 +143,7 @@ Grafo completo de $k$ nodos (acordes), aristas $S_{ij}$. Precalcular distancias 
 **Chuleta**
 > 1. Floyd $O(k^3)$ → 2. Sumar distancias consecutivas $O(n)$ · Variacion: desigualdad triangular → basta probar repetir acorde vecino
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_floyd_dantzig]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 
@@ -167,7 +167,7 @@ Conviene E1 si pocas consultas, E2 si muchas consultas.
 **Chuleta**
 > Pocas consultas: Dijkstra on-demand $O(m \log n)$ por query · Muchas consultas: Dantzig incremental $O(n^2)$ por nodo agregado, $O(1)$ por query
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_floyd_dantzig]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 

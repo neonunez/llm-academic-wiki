@@ -8,7 +8,7 @@ Una carpeta por materia. Cada materia tiene su propio `CLAUDE.md`, `index.md`, `
 
 ```
 llm-academic-wiki/
-├── .agents/workflows/              ← slash commands (compartidos entre materias)
+├── .claude/commands/               ← slash commands (compartidos entre materias)
 ├── tda/                                ← materia piloto (Tecnicas de Diseno de Algoritmos)
 │   ├── CLAUDE.md
 │   ├── index.md
@@ -20,7 +20,7 @@ llm-academic-wiki/
 
 ## Instruccion de uso
 
-Siempre inicializar Antigravity desde la carpeta de la materia a estudiar, nunca desde la raiz:
+Siempre inicializar Claude Code desde la carpeta de la materia a estudiar, nunca desde la raiz:
 
 ```bash
 cd llm-academic-wiki/tda/
@@ -36,7 +36,7 @@ claude
 
 ## Slash commands disponibles
 
-Los comandos viven en `.agents/workflows/` y son agnósticos a la materia — operan sobre el working directory:
+Los comandos viven en `.claude/commands/` y son agnósticos a la materia — operan sobre el working directory:
 
 | Comando | Descripcion |
 |---------|-------------|
@@ -57,7 +57,7 @@ Los comandos viven en `.agents/workflows/` y son agnósticos a la materia — op
 
 1. Crear carpeta con estructura estandar de `raw/` y `wiki/` (adaptar subcarpetas de `raw/` al material disponible)
 2. Soltar los PDFs en las subcarpetas de `raw/`
-3. Inicializar Antigravity desde la carpeta de la materia: `cd llm-academic-wiki/[Nombre_Materia]/ && agy`
+3. Inicializar Claude Code desde la carpeta de la materia: `cd llm-academic-wiki/[Nombre_Materia]/ && claude`
 4. Proveer contexto especifico: nombre oficial, sistema de evaluacion, organizacion tematica, tipo de material, particularidades, estrategia de estudio
 5. El LLM genera `CLAUDE.md`, `index.md` y `log.md` de la materia adaptados al contexto
 6. Correr el pipeline de ingest: `/ingestar_batch` respetando el orden del `CLAUDE.md`
@@ -66,6 +66,6 @@ Los comandos viven en `.agents/workflows/` y son agnósticos a la materia — op
 ## Herramientas
 
 - `pdftotext` (poppler) en `/opt/homebrew/bin/` — extraer texto de PDFs LaTeX
-- Antigravity — LLM agent + vision para PDFs imagen
+- Claude Code — LLM agent + vision para PDFs imagen
 - Obsidian — navegacion del wiki
 - Git — control de versiones

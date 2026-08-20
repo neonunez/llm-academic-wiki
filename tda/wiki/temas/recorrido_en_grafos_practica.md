@@ -63,7 +63,7 @@ return true;
 **Chuleta**
 > 1. DFS/BFS desde cualquier nodo → 2. Recorrer vector visitados → 3. Todos `true` ↔ conexo
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_aplicacion]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 
@@ -127,7 +127,7 @@ donde $w^* = \{w \in N(v) : \delta(w) + 1 = \delta(v)\}$ (vecinos que estan un n
 **Chuleta**
 > 1. BFS desde destino → vector distancias → 2. PD: `#caminos(v)` = suma de `#caminos(w)` para vecinos $w$ con $\delta(w) + 1 = \delta(v)$ → 3. Memoizar → $O(n + m)$
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 
@@ -187,7 +187,7 @@ bool isBipartite(graph, n) {
 **Chuleta**
 > 1. Modelar conflictos como grafo → 2. BFS por componente, asignar distancias → 3. Si arista conecta nodos con misma paridad de distancia → ciclo impar → no bipartito → 4. Si todo OK → bipartito
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_aplicacion]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 
@@ -236,7 +236,7 @@ Si $\text{cubren}(v) = 0$, la arista de $v$ a su padre es **puente**.
 **Chuleta**
 > 1. DFS 3 estados → contar backedges inferior/superior por nodo → 2. PD bottom-up: $\text{cubren}(v) = \text{inferior}(v) - \text{superior}(v) + \sum \text{cubren(hijos)}$ → 3. Puente $\iff$ cubren = 0 (descontar raices)
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_aplicacion]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 
@@ -262,7 +262,7 @@ Modelado como **grafo implicito** donde cada nodo es un estado = (habitacion act
 **Chuleta**
 > 1. Estado = (habitacion, bitmask luces) → 2. Grafo implicito: $h \cdot 2^h$ nodos → 3. BFS desde estado inicial → 4. Distancia al estado final = respuesta
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 
@@ -301,7 +301,7 @@ DFS_topologico(v, finish):
 **Chuleta**
 > 1. Verificar DAG (sin ciclos) con DFS 3 estados → 2. DFS: al terminar nodo, push a stack → 3. Stack de tope a fondo = orden topologico
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_aplicacion]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/bfs_dfs_propiedades]]
 
 ---
 

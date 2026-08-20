@@ -42,10 +42,53 @@ II. Indicar cuáles de las funciones anteriores *no* están currificadas. Para c
 El ejercicio busca que el estudiante identifique tipos de orden superior y entienda la diferencia entre funciones que reciben tuplas (no currificadas) y funciones que reciben argumentos de a uno (currificadas).
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. Tipo de cada función** (asumiendo que todos los números son `Float`)
+
+```haskell
+max2           :: (Float, Float) -> Float
+normaVectorial :: (Float, Float) -> Float
+subtract       :: Float -> Float -> Float
+predecesor     :: Float -> Float
+evaluarEnCero  :: (Float -> a) -> a
+dosVeces       :: (a -> a) -> a -> a
+flipAll        :: [a -> b -> c] -> [b -> a -> c]
+flipRaro       :: b -> (a -> b -> c) -> a -> c
+```
+
+*Cómo se derivan los casos no triviales:*
+
+- `subtract = flip (-)`: como `(-) :: Float -> Float -> Float` y `flip :: (a -> b -> c) -> b -> a -> c`, instanciando $a = b = c = $ `Float` queda `Float -> Float -> Float`.
+- `predecesor = subtract 1`: evaluación parcial de `subtract`, se consume un `Float` y queda `Float -> Float`. Notar que `predecesor 5 = 5 - 1 = 4` (por el `flip`, el argumento fijo queda a la derecha del `-`).
+- `evaluarEnCero = \f -> f 0`: `f` se aplica a `0 :: Float`, así que `f :: Float -> a` y el resultado es `a`.
+- `dosVeces = \f -> f . f`: para poder componer `f` consigo misma, dominio y codominio deben coincidir: `f :: a -> a`. El resultado `f . f :: a -> a`.
+- `flipAll = map flip`: `map :: (x -> y) -> [x] -> [y]` con `x = (a -> b -> c)` e `y = (b -> a -> c)`.
+- `flipRaro = flip flip`: el `flip` externo espera como primer argumento algo de tipo $(x \to y \to z)$. Le pasamos el `flip` interno, cuyo tipo es $(a \to b \to c) \to b \to (a \to c)$. Unificando: $x = (a \to b \to c)$, $y = b$, $z = (a \to c)$. Como `flip f :: y -> x -> z`, resulta
+
+$$\texttt{flipRaro} :: b \to (a \to b \to c) \to a \to c$$
+
+  Es decir, `flipRaro` recibe **primero** el segundo argumento y **después** la función.
+
+**II. Funciones no currificadas**
+
+Las que reciben una **tupla** como único argumento: `max2` y `normaVectorial`. Sus versiones currificadas:
+
+```haskell
+max2' :: Float -> Float -> Float
+max2' x y | x >= y    = x
+          | otherwise = y
+
+normaVectorial' :: Float -> Float -> Float
+normaVectorial' x y = sqrt (x^2 + y^2)
+```
+
+Equivalentemente, usando el `curry` del ejercicio 2: `max2' = curry max2` y `normaVectorial' = curry normaVectorial`.
+
+Las demás **ya están currificadas**: reciben sus argumentos de a uno y devuelven funciones intermedias, lo que habilita la evaluación parcial (`predecesor = subtract 1` es exactamente eso).
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Tipos: `->` asocia a derecha, la aplicación a izquierda → leer `a -> b -> c` como `a -> (b -> c)`.
+> 2. `flip :: (a->b->c) -> b -> a -> c`; `flip flip :: b -> (a->b->c) -> a -> c` (unificar el argumento del flip externo con el tipo del interno).
+> 3. No currificadas = las que reciben tupla: `max2` y `normaVectorial` → currificar con `curry` o reescribiendo `f x y = ...`.
 
 ---
 
@@ -61,10 +104,38 @@ III. ¿Se podría definir una función `curryN`, que tome una función de un nú
 Implementación de las funciones de alto nivel para transformar el modo en que se reciben los argumentos.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `curry`**
+
+```haskell
+curry :: ((a, b) -> c) -> a -> b -> c
+curry f x y = f (x, y)
+```
+
+Toma una función que espera un par y devuelve una que recibe los dos componentes de a uno.
+
+**II. `uncurry`**
+
+```haskell
+uncurry :: (a -> b -> c) -> (a, b) -> c
+uncurry f (x, y) = f x y
+```
+
+Son inversas entre sí: `curry (uncurry f) = f` y `uncurry (curry g) = g`.
+
+**III. ¿Se puede definir `curryN`?**
+
+**No**, no en Haskell (con su sistema de tipos Hindley-Milner). El motivo es de **tipado**, no de programación:
+
+- El tipo de `curryN` dependería de $n$, la cantidad de argumentos: para $n = 2$ sería `((a,b) -> c) -> a -> b -> c`, para $n = 3$ sería `((a,b,c) -> d) -> a -> b -> c -> d`, etc. Cada aridad da un tipo **distinto y no unificable** con los otros.
+- Las tuplas de distinta aridad son tipos completamente distintos (`(,)`, `(,,)`, `(,,,)` son constructores de tipo diferentes), no una familia indexada por un número.
+- Escribir un único tipo que abarque todas las aridades requeriría **tipos dependientes** (que el tipo dependa de un valor $n$), algo que Haskell estándar no tiene.
+
+Por eso en la librería estándar existen `curry`/`curry3`/... a mano, pero no un `curryN` genérico.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `curry f x y = f (x,y)` :: `((a,b) -> c) -> a -> b -> c`.
+> 2. `uncurry f (x,y) = f x y` :: `(a -> b -> c) -> (a,b) -> c`. Son inversas.
+> 3. `curryN` no existe: su tipo dependería de la aridad $n$ → haría falta tipos dependientes; las tuplas de distinta aridad son tipos distintos.
 
 ---
 
@@ -83,10 +154,85 @@ V. Hacer lo mismo que en el punto anterior, pero en sentido inverso (el último 
 Uso intensivo de `foldr` y `foldr1` para encapsular la recursión estructural sobre listas.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. Redefiniciones con `foldr`**
+
+```haskell
+sum' :: Num a => [a] -> a
+sum' = foldr (+) 0
+
+elem' :: Eq a => a -> [a] -> Bool
+elem' e = foldr (\x rec -> x == e || rec) False
+
+(+++) :: [a] -> [a] -> [a]
+xs +++ ys = foldr (:) ys xs
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' p = foldr (\x rec -> if p x then x : rec else rec) []
+
+map' :: (a -> b) -> [a] -> [b]
+map' f = foldr (\x rec -> f x : rec) []
+```
+
+*Idea:* en `(++)` el caso base **no** es `[]` sino `ys`, porque `foldr` reemplaza el `[]` del final de `xs` por el valor `z`, y `(:)` queda intacto. Notar además que `elem'` funciona sobre listas infinitas gracias a que `(||)` es no estricto en su segundo argumento.
+
+**II. `mejorSegun`**
+
+```haskell
+mejorSegun :: (a -> a -> Bool) -> [a] -> a
+mejorSegun f = foldr1 (\x rec -> if f x rec then x else rec)
+```
+
+Se usa `foldr1` (y no `foldr`) porque no hay un elemento neutro genérico para "el mejor": el caso base debe ser el último elemento de la lista. Con esto, `maximum = mejorSegun (>)` y `minimum = mejorSegun (<)`.
+
+**III. `sumasParciales`**
+
+```haskell
+sumasParciales :: Num a => [a] -> [a]
+sumasParciales = foldr (\x rec -> x : map (+x) rec) []
+```
+
+*Justificación del esquema:* es recursión estructural. La suma parcial de la posición $i$ es $x_0 + \dots + x_i$; si ya tengo las sumas parciales de la cola, alcanza con sumarle `x` a todas y anteponer `x`.
+
+Traza con `[1,4,-1,0,5]` (de derecha a izquierda):
+
+```
+[5]          ~> [5]
+[0,5]        ~> 0 : map (+0) [5]        = [0,5]
+[-1,0,5]     ~> -1 : map (-1+) [0,5]    = [-1,-1,4]
+[4,-1,0,5]   ~> 4 : map (+4) [-1,-1,4]  = [4,3,3,8]
+[1,4,-1,0,5] ~> 1 : map (+1) [4,3,3,8]  = [1,5,4,4,9]   ✓
+```
+
+(Es $O(n^2)$; una versión $O(n)$ usa `foldl` con acumulador: `sumasParciales = tail . scanl (+) 0`.)
+
+**IV. `sumaAlt` con `foldr`**
+
+```haskell
+sumaAlt :: Num a => [a] -> a
+sumaAlt = foldr (-) 0
+```
+
+Porque `foldr (-) 0 [a,b,c] = a - (b - (c - 0)) = a - b + c`, exactamente la suma alternada empezando por el primero. `foldr` es el esquema natural: el signo alterna "desde la cabeza".
+
+**V. Suma alternada en sentido inverso**
+
+Conviene **`foldl`** (recursión a la cola): recorre desde la izquierda acumulando, de modo que el último elemento queda aplicado "más afuera".
+
+```haskell
+sumaAltInv :: Num a => [a] -> a
+sumaAltInv = foldl (flip (-)) 0
+```
+
+Traza: `foldl (flip (-)) 0 [a,b,c]` $= c - (b - (a - 0)) = c - b + a$ ✓ (último menos anteúltimo más el anterior…).
+
+Equivalentemente `sumaAltInv = sumaAlt . reverse`, pero la versión con `foldl` no necesita invertir la lista.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `sum = foldr (+) 0` · `elem e = foldr (\x r -> x == e || r) False` · `xs ++ ys = foldr (:) ys xs` · `filter p = foldr (\x r -> if p x then x:r else r) []` · `map f = foldr ((:) . f) []`.
+> 2. `mejorSegun f = foldr1 (\x r -> if f x r then x else r)` (foldr1 porque no hay neutro).
+> 3. `sumasParciales = foldr (\x r -> x : map (+x) r) []`.
+> 4. `sumaAlt = foldr (-) 0` → `a - (b - (c - 0))`.
+> 5. Inversa: `foldl (flip (-)) 0` → `c - (b - (a - 0))`. Regla: alternar desde la cabeza = `foldr`; desde el final = `foldl`.
 
 ---
 
@@ -111,10 +257,61 @@ sublistas [5, 1, 2] -> [[], [5], [1], [2], [5, 1], [1, 2], [5, 1, 2]]
 Problemas clásicos de combinatoria sobre listas resueltos mediante esquemas de recursión.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `permutaciones`**
+
+```haskell
+permutaciones :: [a] -> [[a]]
+permutaciones = foldr (\x rec -> concatMap (intercalar x) rec) [[]]
+
+intercalar :: a -> [a] -> [[a]]
+intercalar x xs = map (\i -> take i xs ++ [x] ++ drop i xs) [0 .. length xs]
+```
+
+*Justificación:* recursión estructural sobre la lista. Si ya tengo todas las permutaciones de la cola, las permutaciones de `x:xs` se obtienen insertando `x` en **todas las posiciones posibles** de cada una de ellas (de ahí `take`/`drop` y `concatMap`).
+
+Ejemplo: `permutaciones [1,2]` $\Rightarrow$ `[[1,2],[2,1]]`.
+
+**II. `partes`** (subsecuencias, preservando el orden)
+
+```haskell
+partes :: [a] -> [[a]]
+partes = foldr (\x rec -> rec ++ map (x:) rec) [[]]
+```
+
+*Idea:* cada subconjunto de `x:xs` o bien no contiene a `x` (son las partes de `xs`) o bien lo contiene (partes de `xs` con `x` adelante). La cantidad de resultados es $2^n$.
+
+`partes [5,1,2]` $\Rightarrow$ `[[],[2],[1],[1,2],[5],[5,2],[5,1],[5,1,2]]` (mismo conjunto que el enunciado, en otro orden).
+
+**III. `prefijos`**
+
+```haskell
+prefijos :: [a] -> [[a]]
+prefijos = foldr (\x rec -> [] : map (x:) rec) [[]]
+```
+
+*Idea:* los prefijos de `x:xs` son el prefijo vacío más cada prefijo de `xs` con `x` adelante.
+
+Traza `[5,1,2]`: `[2] ~> [[],[2]]`, `[1,2] ~> [[],[1],[1,2]]`, `[5,1,2] ~> [[],[5],[5,1],[5,1,2]]` ✓
+
+**IV. `sublistas`** (segmentos contiguos)
+
+Una sublista contigua no vacía es un **prefijo no vacío de algún sufijo**:
+
+```haskell
+sufijos :: [a] -> [[a]]
+sufijos = foldr (\x rec -> (x : head rec) : rec) [[]]
+
+sublistas :: [a] -> [[a]]
+sublistas xs = [] : filter (not . null) (concatMap prefijos (sufijos xs))
+```
+
+Traza `[5,1,2]`: `sufijos = [[5,1,2],[1,2],[2],[]]`; sus prefijos no vacíos son `[5],[5,1],[5,1,2],[1],[1,2],[2]`; agregando `[]` quedan las 7 sublistas del enunciado ✓
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `permutaciones = foldr (\x r -> concatMap (intercalar x) r) [[]]` con `intercalar x xs = map (\i -> take i xs ++ [x] ++ drop i xs) [0..length xs]`.
+> 2. `partes = foldr (\x r -> r ++ map (x:) r) [[]]` (con/sin `x`, $2^n$ resultados).
+> 3. `prefijos = foldr (\x r -> [] : map (x:) r) [[]]`.
+> 4. `sublistas`: prefijos no vacíos de cada sufijo, más `[]`. `sufijos = foldr (\x r -> (x : head r) : r) [[]]`.
 
 ---
 
@@ -143,10 +340,38 @@ Indicar si la recursión utilizada en cada una de ellas es o no estructural. Si 
 Análisis de la forma de recursión. La recursión estructural debe procesar exactamente un elemento de la estructura a la vez (en listas, `x:xs` -> `xs`).
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**`elementosEnPosicionesPares`: NO es recursión estructural.**
+
+Motivo: el llamado recursivo es sobre `tail xs`, **no** sobre `xs`. La recursión estructural sobre listas exige que, dado el patrón `(x:xs)`, el único llamado recursivo permitido sea sobre `xs` (y que no se use `xs` de otra manera). Acá se consumen **dos** elementos por paso y además se inspecciona la cola (`null xs`, `tail xs`), lo cual queda fuera del esquema de `foldr`.
+
+Tampoco es recursión primitiva "directa" con `recr`: aunque `recr` da acceso a `xs`, el llamado recursivo que `recr` provee es sobre `xs` y acá se necesita el resultado sobre `tail xs`. Sí se puede escribir con `foldr` **cambiando el tipo del resultado** a una función que lleve un estado de paridad (truco estándar):
+
+```haskell
+elementosEnPosicionesPares :: [a] -> [a]
+elementosEnPosicionesPares xs =
+  foldr (\x rec par -> if par then x : rec False else rec True) (const []) xs True
+```
+
+pero eso ya no es la misma definición: es otra función que sí es estructural.
+
+**`entrelazar`: SÍ es recursión estructural.**
+
+El llamado recursivo es exactamente sobre `xs`, el caso base (`id`) es fijo, y la lista `ys` se maneja como parte del **resultado**, que es una función. El tipo del `foldr` es `b = [a] -> [a]` (evaluación parcial / *fold* que devuelve función):
+
+```haskell
+entrelazar :: [a] -> [a] -> [a]
+entrelazar = foldr (\x rec ys -> if null ys
+                                 then x : rec []
+                                 else x : head ys : rec (tail ys))
+                   id
+```
+
+Chequeo de tipos: `foldr :: (a -> b -> b) -> b -> [a] -> b` con `b = [a] -> [a]`; el caso base `id :: [a] -> [a]` ✓ y la función combinadora `a -> ([a] -> [a]) -> ([a] -> [a])` ✓.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Estructural = el único llamado recursivo es sobre `xs` y no se usa `xs` de otra forma.
+> 2. `elementosEnPosicionesPares`: **NO** (recurre sobre `tail xs`, consume 2 elementos por paso).
+> 3. `entrelazar`: **SÍ** → `foldr (\x rec ys -> if null ys then x : rec [] else x : head ys : rec (tail ys)) id`, con `b = [a] -> [a]`.
 
 ---
 
@@ -169,10 +394,44 @@ c. Definir la función `insertarOrdenado :: Ord a => a -> [a] -> [a]` que insert
 Introducción a la recursión primitiva (`recr`), que a diferencia de `foldr`, permite acceder a la cola (`xs`) además del resultado recursivo.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**a. `sacarUna`**
+
+```haskell
+sacarUna :: Eq a => a -> [a] -> [a]
+sacarUna e = recr (\x xs rec -> if x == e then xs else x : rec) []
+```
+
+Traza con `sacarUna 2 [1,2,3,2]`: en `x=1` no coincide → `1 : rec`; en `x=2` coincide → devuelve la **cola original** `[3,2]` sin seguir recursión. Resultado `[1,3,2]` ✓
+
+**b. ¿Por qué `foldr` no alcanza?**
+
+Porque al encontrar la primera aparición hay que devolver **la cola original intacta**, y `foldr` sólo ofrece el *resultado del llamado recursivo* sobre la cola (`rec`), nunca la cola misma (`xs`). Si se escribiera
+
+```haskell
+sacarUna e = foldr (\x rec -> if x == e then rec else x : rec) []   -- ✗ MAL
+```
+
+se eliminarían **todas** las apariciones, porque `rec` ya tiene la ocurrencia sacada de la cola. La recursión primitiva (`recr`) es exactamente el esquema que agrega ese acceso a `xs`, y por eso es el adecuado.
+
+(Con `foldr` se puede simular llevando información extra en el tipo del resultado — p. ej. devolviendo el par `([a], Bool)` o una función —, pero la definición natural es la primitiva.)
+
+**c. `insertarOrdenado`**
+
+```haskell
+insertarOrdenado :: Ord a => a -> [a] -> [a]
+insertarOrdenado e = recr (\x xs rec -> if e <= x then e : x : xs else x : rec) [e]
+```
+
+También necesita `recr`: al encontrar la posición de inserción hay que **pegar el resto de la lista tal cual** (`x : xs`), sin seguir recorriéndola. El caso base `[e]` cubre el caso en que `e` es mayor que todos los elementos.
+
+Traza `insertarOrdenado 3 [1,2,5,7]` → `1 : (2 : (3 : 5 : [7]))` = `[1,2,3,5,7]` ✓
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `recr f z (x:xs) = f x xs (recr f z xs)` → da acceso a **la cola original** `xs`, no sólo al `rec`.
+> 2. `sacarUna e = recr (\x xs rec -> if x == e then xs else x : rec) []`.
+> 3. Con `foldr` saldría "sacar **todas**" porque `rec` ya viene modificado y no se puede recuperar `xs`.
+> 4. `insertarOrdenado e = recr (\x xs rec -> if e <= x then e : x : xs else x : rec) [e]`.
+> 5. Regla: si al cortar necesito devolver el resto original → `recr`.
 
 ---
 
@@ -189,10 +448,53 @@ III. `mapDoble`, una variante de `mapPares`, que toma una función currificada d
 Uso de orden superior y evaluación parcial para implementar funciones de la librería estándar.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `mapPares`**
+
+```haskell
+mapPares :: (a -> b -> c) -> [(a, b)] -> [c]
+mapPares f = map (uncurry f)
+```
+
+`uncurry f :: (a,b) -> c` es justo lo que `map` necesita para una lista de pares. Funciona sobre listas infinitas porque `map` (definido con `foldr`) es perezoso: produce la cabeza sin evaluar la cola.
+
+**II. `armarPares` (`zip`)**
+
+```haskell
+armarPares :: [a] -> [b] -> [(a, b)]
+armarPares = foldr (\x rec ys -> if null ys
+                                 then []
+                                 else (x, head ys) : rec (tail ys))
+                   (const [])
+```
+
+*Justificación:* recursión estructural sobre la **primera** lista, con `b = [b] -> [(a,b)]` (el *fold* devuelve una función; esto es la "evaluación parcial" que pide la pista). La segunda lista se consume como estado del resultado.
+
+Los dos casos de corte están cubiertos: si se acaba la primera lista, el caso base `const []` ignora lo que quede de `ys`; si se acaba la segunda, `null ys` corta. Sirve para listas infinitas en cualquiera de los dos argumentos (mientras la otra sea finita, o para tomar prefijos con `take`).
+
+**III. `mapDoble` (`zipWith`)**
+
+```haskell
+mapDoble :: (a -> b -> c) -> [a] -> [b] -> [c]
+mapDoble f xs ys = mapPares f (armarPares xs ys)
+```
+
+o, directamente y sin construir la lista intermedia:
+
+```haskell
+mapDoble :: (a -> b -> c) -> [a] -> [b] -> [c]
+mapDoble f = foldr (\x rec ys -> if null ys
+                                 then []
+                                 else f x (head ys) : rec (tail ys))
+                   (const [])
+```
+
+Ambas versiones son perezosas y aptas para listas infinitas.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `mapPares f = map (uncurry f)`.
+> 2. `armarPares = foldr (\x rec ys -> if null ys then [] else (x, head ys) : rec (tail ys)) (const [])` → **fold que devuelve una función** (`b = [b] -> [(a,b)]`).
+> 3. `mapDoble f xs ys = mapPares f (armarPares xs ys)`.
+> 4. Truco general: para recorrer **dos** estructuras a la vez con un solo `foldr`, hacer que el resultado sea una función que reciba la segunda.
 
 ---
 
@@ -208,10 +510,37 @@ II. Escribir la función `trasponer`, que, dada una matriz como las del ítem I,
 Manipulación de listas de listas usando esquemas de recursión.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `sumaMat`**
+
+```haskell
+sumaMat :: [[Int]] -> [[Int]] -> [[Int]]
+sumaMat = zipWith (zipWith (+))
+```
+
+El `zipWith` externo aparea filas; el interno suma celda a celda dentro de cada fila. Se aprovecha la currificación: `zipWith (+) :: [Int] -> [Int] -> [Int]` es exactamente la función combinadora que espera el `zipWith` externo.
+
+**II. `trasponer`**
+
+```haskell
+trasponer :: [[Int]] -> [[Int]]
+trasponer = foldr (\fila rec -> zipWith (:) fila rec) (repeat [])
+```
+
+*Justificación:* recursión estructural sobre la lista de filas. Si `rec` es la traspuesta de las filas restantes (una lista de $M$ columnas), agregar la fila actual consiste en anteponer su $j$-ésimo elemento a la $j$-ésima columna: eso es exactamente `zipWith (:) fila rec`. El caso base `repeat []` da "infinitas columnas vacías", pero `zipWith` **trunca** a la longitud de `fila`, así que el resultado final tiene exactamente $M$ columnas.
+
+Traza con `[[1,2],[3,4]]`:
+
+```
+[[3,4]]       ~> zipWith (:) [3,4] (repeat []) = [[3],[4]]
+[[1,2],[3,4]] ~> zipWith (:) [1,2] [[3],[4]]   = [[1,3],[2,4]]   ✓
+```
+
+⚠️ Verificar — con la matriz vacía (`trasponer []`) esta definición devuelve `repeat []`, una lista infinita. Si se exige el caso `trasponer [] = []`, agregar el pattern matching explícito antes del `foldr`, o usar como caso base `replicate m []` calculando `m = length (head m)`.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `sumaMat = zipWith (zipWith (+))` → externo aparea filas, interno suma celdas.
+> 2. `trasponer = foldr (\fila rec -> zipWith (:) fila rec) (repeat [])` → cada elemento de la fila encabeza su columna; `repeat []` se trunca solo.
+> 3. Cuidado: `trasponer []` con esa base da lista infinita → agregar caso `trasponer [] = []` si hace falta.
 
 ---
 
@@ -227,10 +556,37 @@ II. Utilizando `foldNat`, definir la función `potencia`.
 Isomorfismo entre naturales y listas (donde `0` es `[]` y `n+1` es `x:xs`).
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `foldNat`**
+
+Los naturales son un tipo inductivo isomorfo a `data Nat = Zero | Succ Nat` (el `0` cumple el rol de `[]` y `Succ n` el de `x:xs`). Su esquema de recursión estructural es:
+
+```haskell
+foldNat :: (Integer -> b -> b) -> b -> Integer -> b
+foldNat _ z 0 = z
+foldNat f z n
+  | n > 0     = f n (foldNat f z (n - 1))
+  | otherwise = error "foldNat: no definido para negativos"
+```
+
+Se le pasa `n` a la función combinadora porque, a diferencia de las listas, el "elemento" que aporta cada `Succ` es el propio número (esto permite definir, por ejemplo, `factorial = foldNat (*) 1`).
+
+⚠️ Verificar — hay dos convenciones habituales. La otra es `foldNat :: b -> (b -> b) -> Integer -> b` con `foldNat z f n = f (f (... (f z)))`, que **no** le pasa `n` al combinador (es el iterador puro de Church). Ambas son aceptadas; con la segunda, `potencia` queda `potencia b = foldNat 1 (*b)`.
+
+**II. `potencia`**
+
+```haskell
+potencia :: Num a => a -> Integer -> a
+potencia b = foldNat (\_ rec -> b * rec) 1
+```
+
+`potencia b n` multiplica `b` por sí mismo `n` veces sobre el caso base `1`. El primer parámetro del combinador se ignora porque el valor del exponente no interviene en el cálculo, sólo su magnitud.
+
+Traza: `potencia 2 3 = 2 * (2 * (2 * 1)) = 8` ✓ (y `potencia b 0 = 1` ✓).
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `foldNat :: (Integer -> b -> b) -> b -> Integer -> b`; `foldNat _ z 0 = z`; `foldNat f z n = f n (foldNat f z (n-1))`.
+> 2. Nat ≅ lista sin contenido: `0` ↔ `[]`, `n` ↔ `x:xs`.
+> 3. `potencia b = foldNat (\_ rec -> b * rec) 1`. Bonus: `factorial = foldNat (*) 1`.
 
 ---
 
@@ -244,10 +600,42 @@ II. Usando `genLista`, definir la función `desdeHasta`, que dado un par de núm
 Generación de listas (análogo a un `unfold` finito).
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `genLista`**
+
+Recursión estructural sobre el `Integer` (con `foldNat` del ejercicio 9), donde el resultado del *fold* es una **función** que recibe el elemento actual:
+
+```haskell
+genLista :: a -> (a -> a) -> Integer -> [a]
+genLista x f n = foldNat (\_ rec -> \y -> y : rec (f y)) (const []) n x
+```
+
+Tipos: el `foldNat` se usa con `b = a -> [a]`; el caso base `const [] :: a -> [a]` corta cuando ya se generaron los `n` elementos, y cada paso emite el elemento actual `y` y le pasa `f y` al resto.
+
+Traza `genLista 0 (+1) 3`:
+
+```
+g0 = const []
+g1 = \y -> y : g0 (y+1)
+g2 = \y -> y : g1 (y+1)
+g3 = \y -> y : g2 (y+1)
+g3 0 = 0 : g2 1 = 0 : 1 : g1 2 = 0 : 1 : 2 : g0 3 = [0,1,2]   ✓
+```
+
+(Versión equivalente con recursión explícita, si se permite: `genLista x f n = take (fromIntegral n) (iterate f x)`.)
+
+**II. `desdeHasta`**
+
+```haskell
+desdeHasta :: Integer -> Integer -> [Integer]
+desdeHasta x y = genLista x (+1) (y - x + 1)
+```
+
+Se generan $y - x + 1$ elementos empezando en `x` con incremento `(+1)`. Por ejemplo `desdeHasta 2 5 = [2,3,4,5]` ✓ (con la precondición `x <= y` del enunciado).
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `genLista x f n = foldNat (\_ rec -> \y -> y : rec (f y)) (const []) n x` → *fold* sobre `n` que devuelve una función `a -> [a]`.
+> 2. `desdeHasta x y = genLista x (+1) (y - x + 1)`.
+> 3. Equivalente informal: `take n (iterate f x)`.
 
 ---
 
@@ -269,10 +657,40 @@ Luego usar el esquema definido para escribir la función `evaluar :: Num a => a 
 Recursión sobre un tipo algebraico de datos (ADT) recursivo.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**Esquema de recursión estructural**
+
+Regla general: un argumento por constructor; los campos recursivos se reemplazan por el resultado de la recursión, los no recursivos se dejan como están.
+
+```haskell
+foldPoli :: b                     -- caso X
+         -> (a -> b)              -- caso Cte
+         -> (b -> b -> b)         -- caso Suma
+         -> (b -> b -> b)         -- caso Prod
+         -> Polinomio a
+         -> b
+foldPoli cX cCte cSuma cProd poli = case poli of
+  X        -> cX
+  Cte c    -> cCte c
+  Suma p q -> cSuma (rec p) (rec q)
+  Prod p q -> cProd (rec p) (rec q)
+  where rec = foldPoli cX cCte cSuma cProd
+```
+
+**`evaluar`**
+
+```haskell
+evaluar :: Num a => a -> Polinomio a -> a
+evaluar x = foldPoli x id (+) (*)
+```
+
+Lectura: la incógnita `X` se reemplaza por el número `x`; una constante se evalúa en sí misma (`id`); la suma de polinomios se evalúa como la suma de las evaluaciones y el producto análogamente. Es recursión estructural pura: para evaluar un nodo alcanza con los resultados de sus hijos, no hace falta el subárbol original.
+
+Ejemplo: sea `p = Suma (Prod X X) (Cte 3)`, es decir $p(x) = x^2 + 3$. Entonces `evaluar 2 p = (2*2) + 3 = 7` ✓
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Un parámetro por constructor: `foldPoli :: b -> (a -> b) -> (b->b->b) -> (b->b->b) -> Polinomio a -> b`.
+> 2. Campos recursivos → resultado de la recursión; campos no recursivos → tal cual.
+> 3. `evaluar x = foldPoli x id (+) (*)`.
 
 ---
 
@@ -292,10 +710,92 @@ V. Justificar la elección de los esquemas de recursión utilizados para los tre
 Recursión sobre árboles binarios. Diferencia entre fold (catamorfismo) y rec (paramorfismo).
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. Esquemas**
+
+```haskell
+data AB a = Nil | Bin (AB a) a (AB a)
+
+foldAB :: b -> (b -> a -> b -> b) -> AB a -> b
+foldAB cNil cBin Nil           = cNil
+foldAB cNil cBin (Bin i r d)   = cBin (foldAB cNil cBin i) r (foldAB cNil cBin d)
+
+recAB :: b -> (AB a -> b -> a -> AB a -> b -> b) -> AB a -> b
+recAB cNil cBin Nil            = cNil
+recAB cNil cBin (Bin i r d)    = cBin i (recAB cNil cBin i) r d (recAB cNil cBin d)
+```
+
+Diferencia: `recAB` le entrega al combinador, además de los resultados recursivos, **los subárboles originales** `i` y `d`.
+
+**II. `esNil`, `altura`, `cantNodos`**
+
+```haskell
+esNil :: AB a -> Bool
+esNil t = case t of
+            Nil -> True
+            _   -> False
+
+altura :: AB a -> Int
+altura = foldAB 0 (\ri _ rd -> 1 + max ri rd)
+
+cantNodos :: AB a -> Int
+cantNodos = foldAB 0 (\ri _ rd -> 1 + ri + rd)
+```
+
+**III. `mejorSegun` para árboles**
+
+El problema es el caso `Nil`: no hay un valor de tipo `a` para devolver. La solución limpia es plegar hacia `Maybe a` y desenvolver al final (la "función auxiliar para comparar la raíz con un posible resultado de la recursión" que sugiere el enunciado):
+
+```haskell
+mejorM :: (a -> a -> Bool) -> Maybe a -> Maybe a -> Maybe a
+mejorM _ Nothing  my       = my
+mejorM _ mx       Nothing  = mx
+mejorM f (Just x) (Just y) = Just (if f x y then x else y)
+
+mejorSegun :: (a -> a -> Bool) -> AB a -> a
+mejorSegun f = fromJust . foldAB Nothing (\ri r rd -> mejorM f (Just r) (mejorM f ri rd))
+```
+
+(`fromJust` es de `Data.Maybe`; sobre `Nil` la función se indefine, igual que `maximum []`.)
+
+**IV. `esABB`**
+
+```haskell
+esABB :: Ord a => AB a -> Bool
+esABB = recAB True (\i ri r d rd -> ri && rd && todos (<= r) i && todos (> r) d)
+  where todos p = foldAB True (\li x ld -> p x && li && ld)
+```
+
+Se usa `recAB` porque hay que volver a mirar **los subárboles originales** `i` y `d` para comparar todos sus valores contra la raíz `r`; los booleanos `ri`/`rd` no alcanzan. Según el enunciado: los del izquierdo deben ser $\leq r$ y los del derecho estrictamente $> r$.
+
+Versión $O(n)$ (alternativa, plegando hacia una terna):
+
+```haskell
+esABB' :: Ord a => AB a -> Bool
+esABB' = fst3 . foldAB (True, Nothing, Nothing)
+                       (\(bi, mini, maxi) r (bd, mind, maxd) ->
+                          ( bi && bd
+                            && maybe True (<= r) maxi
+                            && maybe True (>  r) mind
+                          , Just (minimum (r : catMaybes [mini, mind]))
+                          , Just (maximum (r : catMaybes [maxi, maxd])) ))
+  where fst3 (b, _, _) = b
+```
+
+**V. Justificación de los esquemas elegidos**
+
+| Función | Esquema | Por qué |
+|---|---|---|
+| `esNil` | `case` | No hay recursión: alcanza con distinguir el constructor de la raíz. |
+| `altura`, `cantNodos` | `foldAB` | El valor del nodo depende sólo de los **resultados** sobre los hijos → recursión estructural pura. |
+| `mejorSegun` | `foldAB` (a `Maybe a`) | Ídem: sólo se combinan resultados; el `Maybe` resuelve la falta de neutro en `Nil`. |
+| `esABB` | `recAB` | Se necesitan **los subárboles originales** para comparar todos sus valores con la raíz. Con `foldAB` sólo se tendría "¿es ABB el hijo?", que no basta. (Salvo que se enriquezca el tipo del resultado con mín/máx, como en `esABB'`.) |
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `foldAB :: b -> (b -> a -> b -> b) -> AB a -> b`; `recAB :: b -> (AB a -> b -> a -> AB a -> b -> b) -> AB a -> b` (agrega los subárboles originales).
+> 2. `altura = foldAB 0 (\ri _ rd -> 1 + max ri rd)` · `cantNodos = foldAB 0 (\ri _ rd -> 1 + ri + rd)` · `esNil` con `case`.
+> 3. `mejorSegun f = fromJust . foldAB Nothing (\ri r rd -> mejorM f (Just r) (mejorM f ri rd))` — el `Maybe` cubre el `Nil`.
+> 4. `esABB = recAB True (\i ri r d rd -> ri && rd && todos (<=r) i && todos (>r) d)` → **recAB** porque hay que revisitar los subárboles.
+> 5. Regla de oro: ¿me alcanza con el resultado de los hijos? → `fold`. ¿Necesito los hijos en sí? → `rec`.
 
 ---
 
@@ -310,10 +810,48 @@ II. Definir la función `mismaEstructura :: AB a -> AB b -> Bool` que, dados dos
 Operaciones comunes sobre árboles. `mismaEstructura` requiere un manejo cuidadoso de la recursión sobre dos estructuras simultáneamente.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. `ramas`, `cantHojas`, `espejo`**
+
+```haskell
+ramas :: AB a -> [[a]]
+ramas = foldAB [] (\ri r rd -> if null ri && null rd
+                               then [[r]]                 -- hoja: una sola rama
+                               else map (r:) (ri ++ rd))
+
+cantHojas :: AB a -> Int
+cantHojas = foldAB 0 (\ri _ rd -> if ri + rd == 0 then 1 else ri + rd)
+
+espejo :: AB a -> AB a
+espejo = foldAB Nil (\ri r rd -> Bin rd r ri)
+```
+
+*Justificación:* las tres son recursión estructural pura (`foldAB`): el resultado de un nodo se arma combinando los resultados de sus hijos, sin necesitar los subárboles originales.
+
+- `ramas`: si ambos hijos dieron listas vacías, el nodo es una hoja y su única rama es `[r]`; si no, se antepone `r` a cada rama de los hijos. Notar que un nodo con un solo hijo **no** cuenta como hoja, y eso queda bien resuelto porque el hijo `Nil` aporta `[]` al `++`.
+- `cantHojas`: hoja ⟺ ambos hijos aportan 0.
+- `espejo`: intercambia los resultados de los hijos en cada nivel.
+
+**II. `mismaEstructura`**
+
+Mismo truco que en el ejercicio 7: el `foldAB` devuelve una **función** que consume el segundo árbol (evaluación parcial), con `b = AB b -> Bool`.
+
+```haskell
+mismaEstructura :: AB a -> AB b -> Bool
+mismaEstructura = foldAB esNil
+                        (\ri _ rd t -> case t of
+                            Nil       -> False
+                            Bin i _ d -> ri i && rd d)
+```
+
+Chequeo de tipos: caso base `esNil :: AB b -> Bool` ✓; combinador `(AB b -> Bool) -> a -> (AB b -> Bool) -> (AB b -> Bool)` ✓.
+
+Lectura: si el primer árbol es `Nil`, el segundo debe ser `Nil` (`esNil`); si el primero es un `Bin`, el segundo también debe serlo y, además, sus hijos deben coincidir estructuralmente con los del primero. Los valores (`_`) nunca se miran, por eso los tipos `a` y `b` pueden ser distintos.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `ramas = foldAB [] (\ri r rd -> if null ri && null rd then [[r]] else map (r:) (ri ++ rd))`.
+> 2. `cantHojas = foldAB 0 (\ri _ rd -> if ri + rd == 0 then 1 else ri + rd)`.
+> 3. `espejo = foldAB Nil (\ri r rd -> Bin rd r ri)`.
+> 4. `mismaEstructura = foldAB esNil (\ri _ rd t -> case t of Nil -> False; Bin i _ d -> ri i && rd d)` → *fold* que devuelve función `AB b -> Bool`.
 
 ---
 
@@ -330,10 +868,37 @@ b) Escribir las funciones `altura :: AIH a -> Integer` y `tamaño :: AIH a -> In
 Variante de árboles donde la información reside únicamente en los nodos terminales.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**a. `foldAIH`**
+
+```haskell
+data AIH a = Hoja a | Bin (AIH a) (AIH a)
+
+foldAIH :: (a -> b) -> (b -> b -> b) -> AIH a -> b
+foldAIH cHoja _    (Hoja x)  = cHoja x
+foldAIH cHoja cBin (Bin i d) = cBin (foldAIH cHoja cBin i) (foldAIH cHoja cBin d)
+```
+
+Un parámetro por constructor: `Hoja` lleva información pero no recursión (`a -> b`), `Bin` lleva dos campos recursivos y ninguna información (`b -> b -> b`). Notar que, a diferencia de `AB`, **no hay caso base sin recursión que no cargue datos**: el caso base es la hoja.
+
+**b. `altura` y `tamaño`**
+
+```haskell
+altura :: AIH a -> Integer
+altura = foldAIH (const 1) (\ri rd -> 1 + max ri rd)
+
+tamaño :: AIH a -> Integer
+tamaño = foldAIH (const 1) (+)
+```
+
+- `altura`: una hoja mide 1 (como pide el enunciado) y un `Bin` suma 1 al máximo de sus hijos.
+- `tamaño` = cantidad de hojas: cada hoja aporta 1 y cada `Bin` suma las de sus hijos.
+
+Se usa `const 1` porque el contenido de la hoja es irrelevante para ambas medidas — de hecho ambas funciones son polimórficas en `a`. Como corolario, en un `AIH` con $h$ hojas siempre hay $h - 1$ nodos `Bin`.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `foldAIH :: (a -> b) -> (b -> b -> b) -> AIH a -> b`; `foldAIH f g (Hoja x) = f x`; `foldAIH f g (Bin i d) = g (rec i) (rec d)`.
+> 2. `altura = foldAIH (const 1) (\ri rd -> 1 + max ri rd)`.
+> 3. `tamaño = foldAIH (const 1) (+)` (= cantidad de hojas).
 
 ---
 
@@ -351,10 +916,55 @@ III. Usando el esquema definido, escribir las siguientes funciones:
 Los RoseTrees son árboles donde cada nodo tiene una lista de hijos. La recursión es mutua o utiliza `map` sobre la lista de hijos.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**I. Tipo `RoseTree`**
+
+```haskell
+data RoseTree a = Rose a [RoseTree a]
+```
+
+Un único constructor: un valor en la raíz y una **lista** (posiblemente vacía) de hijos. Es no vacío por construcción; una hoja es `Rose x []`.
+
+**II. Esquema de recursión estructural**
+
+Primero el tipo. Como la recursión está "adentro de una lista", el combinador recibe la lista de resultados de los hijos:
+
+```haskell
+foldRose :: (a -> [b] -> b) -> RoseTree a -> b
+foldRose f (Rose x hijos) = f x (map (foldRose f) hijos)
+```
+
+El `map` es la clave: aplica la recursión a cada hijo y produce el `[b]`. (Formalmente es recursión mutua entre el fold del árbol y el `map` sobre la lista de hijos, pero `map` la encapsula.)
+
+**III. Funciones**
+
+```haskell
+-- a) hojas de izquierda a derecha
+hojas :: RoseTree a -> [a]
+hojas = foldRose (\x rec -> if null rec then [x] else concat rec)
+
+-- b) distancias de la raíz a cada hoja
+distancias :: RoseTree a -> [Int]
+distancias = foldRose (\_ rec -> if null rec then [0] else map (+1) (concat rec))
+
+-- c) altura (cantidad de nodos de la rama más larga)
+altura :: RoseTree a -> Int
+altura = foldRose (\_ rec -> 1 + maximum (0 : rec))
+```
+
+*Justificación:*
+
+- `hojas`: si no hay hijos el nodo **es** una hoja y aporta `[x]`; si los hay, se concatenan las hojas de los hijos en orden (`concat` preserva el orden izquierda-derecha de la lista de hijos).
+- `distancias`: una hoja está a distancia 0 de sí misma; en un nodo interno, cada distancia de los hijos aumenta en 1.
+- `altura`: `maximum (0 : rec)` evita que `maximum []` se indefina en las hojas, dando altura 1 para `Rose x []` ✓
+
+Ejemplo: para `Rose 1 [Rose 2 [], Rose 3 [Rose 4 []]]` → `hojas = [2,4]`, `distancias = [1,2]`, `altura = 3`.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `data RoseTree a = Rose a [RoseTree a]`.
+> 2. `foldRose :: (a -> [b] -> b) -> RoseTree a -> b`; `foldRose f (Rose x hs) = f x (map (foldRose f) hs)` ← el `map` hace la recursión sobre los hijos.
+> 3. `hojas = foldRose (\x r -> if null r then [x] else concat r)`.
+> 4. `distancias = foldRose (\_ r -> if null r then [0] else map (+1) (concat r))`.
+> 5. `altura = foldRose (\_ r -> 1 + maximum (0 : r))` (el `0 :` cubre las hojas).
 
 ---
 
@@ -381,10 +991,62 @@ Se recomienda usar la función `error :: String -> a` para el caso de la lista v
 Uso de funciones como representación de datos (conjuntos funcionales). El ejercicio desafía la noción de ADT tradicional.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+Recordar la representación: `data HashSet a = Hash (a -> Integer) (Integer -> [a])`, es decir, el conjunto **es** un par de funciones. El invariante es que la tabla devuelve `[]` para los enteros sin elementos asociados, y que en el balde `n` sólo hay elementos cuyo hash es `n`.
+
+**I. `vacío`**
+
+```haskell
+vacío :: (a -> Integer) -> HashSet a
+vacío f = Hash f (const [])
+```
+
+La tabla constante `[]` respeta el invariante trivialmente.
+
+**II. `pertenece`**
+
+```haskell
+pertenece :: Eq a => a -> HashSet a -> Bool
+pertenece e (Hash f t) = elem e (t (f e))
+```
+
+Sólo hace falta mirar **un** balde: el de `f e`. Es el invariante lo que garantiza que si `e` estuviera, estaría ahí.
+
+**III. `agregar`**
+
+```haskell
+agregar :: Eq a => a -> HashSet a -> HashSet a
+agregar e h@(Hash f t)
+  | pertenece e h = h
+  | otherwise     = Hash f (\n -> if n == f e then e : t n else t n)
+```
+
+No se "modifica" ninguna estructura: se devuelve una **nueva función tabla** que difiere de la anterior únicamente en el balde `f e`. Se preserva el invariante porque `e` se agrega exactamente al balde `f e`.
+
+**IV. `intersección`**
+
+```haskell
+intersección :: Eq a => HashSet a -> HashSet a -> HashSet a
+intersección (Hash f t) h2 = Hash f (\n -> filter (\e -> pertenece e h2) (t n))
+```
+
+Se conserva la función de hash `f` del primer conjunto (como pide el enunciado) y cada balde se filtra dejando sólo los elementos que también están en `h2`. Como los elementos que quedan salieron del balde `n` de `t`, siguen cumpliendo `f e == n`: el invariante se preserva. Los baldes vacíos siguen vacíos (`filter p [] = []`).
+
+**V. `foldr1`**
+
+```haskell
+foldr1 :: (a -> a -> a) -> [a] -> a
+foldr1 f = recr (\x xs rec -> if null xs then x else f x rec)
+                (error "foldr1: lista vacía")
+```
+
+Se usa **recursión primitiva** (`recr`) y no `foldr` porque hay que preguntar si la **cola original** está vacía para saber si el elemento actual es el último (y devolverlo tal cual, sin combinarlo con el caso base). Con `foldr` no se tiene acceso a `xs`, sólo a `rec`.
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. `vacío f = Hash f (const [])`.
+> 2. `pertenece e (Hash f t) = elem e (t (f e))` — un solo balde, por invariante.
+> 3. `agregar e h@(Hash f t) = if pertenece e h then h else Hash f (\n -> if n == f e then e : t n else t n)` — se devuelve una **nueva función**, no se muta nada.
+> 4. `intersección (Hash f t) h2 = Hash f (\n -> filter (\e -> pertenece e h2) (t n))`.
+> 5. `foldr1 f = recr (\x xs rec -> if null xs then x else f x rec) (error "lista vacía")` → `recr` porque hay que ver si la cola original es vacía.
 
 ---
 
@@ -400,10 +1062,26 @@ Uso de funciones como representación de datos (conjuntos funcionales). El ejerc
 Comprensión de listas con generadores dependientes y filtros.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+La comprensión recorre los pares $(x, y)$ con $1 \leq x \leq 3$ y $x \leq y \leq 3$ (el segundo generador **depende** del primero), y se queda con los $x$ tales que $(x+y) \bmod 3 = 0$.
+
+| $x$ | $y$ candidatos | $x + y$ | ¿$\equiv 0 \pmod 3$? | aporta |
+|---|---|---|---|---|
+| 1 | 1, 2, 3 | 2, 3, 4 | sólo con $y=2$ | `1` |
+| 2 | 2, 3 | 4, 5 | ninguno | — |
+| 3 | 3 | 6 | sí | `3` |
+
+Resultado:
+
+```haskell
+[ x | x <- [1..3], y <- [x..3], (x + y) `mod` 3 == 0 ]  ~>  [1,3]
+```
+
+Dos observaciones: (i) el valor devuelto es `x`, no el par, así que si un mismo `x` tuviera dos `y` válidos aparecería repetido; (ii) el orden es lexicográfico, con el generador de la derecha variando más rápido (como bucles anidados, el interno es el último).
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Los generadores se leen como bucles anidados: el **último** varía más rápido; `y <- [x..3]` depende de `x`.
+> 2. Filtrar $(x+y) \bmod 3 = 0$: sirven $(1,2)$ y $(3,3)$.
+> 3. Se devuelve `x` → resultado `[1,3]`.
 
 ---
 
@@ -416,10 +1094,36 @@ Definir la lista infinita `paresDeNat :: [(Int, Int)]`, que contenga todos los p
 Enumeración de un conjunto infinito numerable ($N \times N$). El orden es crucial para que cualquier par sea alcanzado eventualmente.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+La idea es enumerar $\mathbb{N} \times \mathbb{N}$ **por diagonales**: agrupar los pares según la suma de sus componentes. Para cada $n$ hay finitos pares con $x + y = n$ (exactamente $n+1$), así que recorriendo $n = 0, 1, 2, \dots$ todo par $(a,b)$ aparece en un tiempo finito, en la diagonal $n = a + b$.
+
+```haskell
+paresDeNat :: [(Int, Int)]
+paresDeNat = [ (x, n - x) | n <- [0..], x <- [0..n] ]
+```
+
+Primeros elementos:
+
+```
+n = 0: (0,0)
+n = 1: (0,1) (1,0)
+n = 2: (0,2) (1,1) (2,0)
+n = 3: (0,3) (1,2) (2,1) (3,0)
+...
+~> [(0,0),(0,1),(1,0),(0,2),(1,1),(2,0),(0,3),...]
+```
+
+**Por qué el orden importa.** La definición "ingenua"
+
+```haskell
+paresMal = [ (x, y) | x <- [0..], y <- [0..] ]   -- ✗
+```
+
+nunca produce ningún par con $x > 0$: el generador interno `y <- [0..]` es infinito, así que `x` se queda clavado en `0` para siempre. La clave es que **sólo el generador más externo puede ser infinito**; los internos deben ser finitos y depender de él. Esto es exactamente el argumento de que $\mathbb{N} \times \mathbb{N}$ es numerable (el zigzag de Cantor).
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Enumerar por diagonales: `paresDeNat = [(x, n-x) | n <- [0..], x <- [0..n]]`.
+> 2. Regla de oro: **sólo el generador más externo puede ser infinito**; los internos, finitos y dependientes de él.
+> 3. `[(x,y) | x <- [0..], y <- [0..]]` está mal: `x` nunca avanza de 0.
 
 ---
 
@@ -436,10 +1140,40 @@ Explicar por qué esta definición no es útil. Dar una definición mejor.
 Problema de "estrella de la muerte" en generadores infinitos. El tercer generador nunca termina si los dos primeros no avanzan.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**Por qué la definición no sirve**
+
+```haskell
+pitagóricas = [(a, b, c) | a <- [1..], b <- [1..], c <- [1..], a^2 + b^2 == c^2]  -- ✗
+```
+
+Las comprensiones se evalúan como bucles anidados donde el generador más a la derecha varía más rápido. Con `a = 1` y `b = 1` fijos, el generador `c <- [1..]` recorre **infinitos** valores buscando $1 + 1 = c^2$, que no tiene solución: nunca termina y nunca vuelve atrás para incrementar `b`. Por lo tanto la lista se indefine: ni siquiera produce su primer elemento (`take 1 pitagóricas` cuelga). El problema es el mismo del ejercicio 18: hay más de un generador infinito, y los internos impiden que los externos avancen.
+
+**Definición mejor**
+
+Acotar los generadores internos en función del externo. Como en una tripla pitagórica $a, b < c$, alcanza con dejar infinito sólo a `c`:
+
+```haskell
+pitagóricas :: [(Integer, Integer, Integer)]
+pitagóricas = [ (a, b, c) | c <- [1..], a <- [1..c], b <- [1..c], a^2 + b^2 == c^2 ]
+```
+
+Ahora, para cada `c` fijo hay finitos pares $(a,b)$, la búsqueda de cada diagonal termina y la lista produce elementos indefinidamente:
+
+```
+~> [(3,4,5),(4,3,5),(6,8,10),(8,6,10),(5,12,13),(12,5,13),...]
+```
+
+Si se quieren sin repetir el orden de $a$ y $b$, usar `b <- [a..c]`. Otra variante equivalente, indexando por la suma `n = a + b + c`:
+
+```haskell
+pitagóricas' = [ (a,b,c) | n <- [1..], a <- [1..n], b <- [1..n], let c = n - a - b,
+                           c > 0, a^2 + b^2 == c^2 ]
+```
 
 **Chuleta:**
-[PENDIENTE — sesión de resolución]
+> 1. Falla porque `c <- [1..]` es infinito y está **adentro**: con `a=1, b=1` busca `c` para siempre → la lista no produce nada.
+> 2. Arreglo: dejar infinito sólo el generador externo y acotar los internos. Como $a,b < c$: `[(a,b,c) | c <- [1..], a <- [1..c], b <- [1..c], a^2+b^2 == c^2]`.
+> 3. Patrón general: infinito afuera, finito adentro.
 
 ---
 
@@ -452,7 +1186,30 @@ Escribir la función `listasQueSuman :: Int -> [[Int]]` que, dado un número nat
 Particiones de un entero. La recursión no es estructural sobre el argumento $n$ de la misma forma que en listas.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+```haskell
+listasQueSuman :: Int -> [[Int]]
+listasQueSuman 0 = [[]]
+listasQueSuman n = [ x : xs | x <- [1..n], xs <- listasQueSuman (n - x) ]
+```
+
+*Idea:* toda lista de enteros positivos que suma $n$ tiene una cabeza `x` con $1 \leq x \leq n$; el resto es una lista de positivos que suma $n - x$. El caso base es $n = 0$, cuya única solución es la lista vacía. (Para $n < 0$ la función no está definida, pero el generador `x <- [1..n]` garantiza que nunca se llegue ahí.)
+
+Ejemplo:
+
+```
+listasQueSuman 3 ~> [[1,1,1],[1,2],[2,1],[3]]
+```
+
+Nótese que hay $2^{n-1}$ resultados para $n \geq 1$ (son las composiciones de $n$).
+
+**Por qué la recursión no es estructural**
+
+Sobre los naturales (vistos como el tipo inductivo `Zero | Succ n`), la recursión estructural sólo permite un llamado recursivo sobre el **predecesor inmediato**, `n - 1` — eso es justamente lo que captura `foldNat` del ejercicio 9. Acá, en cambio:
+
+- el llamado recursivo es sobre `n - x`, con `x` **variable** entre 1 y `n`, o sea sobre un natural arbitrario menor que `n`, no sobre su predecesor;
+- hay una cantidad **no acotada a priori** de llamados recursivos por invocación (uno por cada `x`).
+
+Es entonces **recursión bien fundada** (well-founded / *strong recursion*): termina porque `n - x < n` en toda llamada y `<` está bien fundado sobre $\mathbb{N}$, pero no encaja en `foldNat`. Por eso el enunciado habilita la recursión explícita.
 
 ---
 
@@ -465,7 +1222,27 @@ Definir en Haskell una lista que contenga todas las listas finitas de enteros po
 Enumeración de $\bigcup_{n=0}^{\infty} N^n$.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+Toda lista **finita** de enteros positivos tiene una suma finita $n \geq 0$, y para cada $n$ el conjunto de listas que suman $n$ es **finito** (ejercicio 20). Entonces alcanza con recorrer las sumas en orden creciente:
+
+```haskell
+listasFinitasDePositivos :: [[Int]]
+listasFinitasDePositivos = concatMap listasQueSuman [0..]
+```
+
+Primeros elementos:
+
+```
+n=0: []
+n=1: [1]
+n=2: [1,1], [2]
+n=3: [1,1,1], [1,2], [2,1], [3]
+n=4: [1,1,1,1], [1,1,2], [1,2,1], [1,3], [2,1,1], [2,2], [3,1], [4]
+...
+```
+
+**Por qué está bien definida:** es el mismo principio del ejercicio 18. La lista es infinita pero cada elemento se alcanza en tiempo finito: una lista `l` cualquiera aparece en el bloque $n = \texttt{sum l}$, y antes de ese bloque sólo hay $\sum_{k<n} |\texttt{listasQueSuman } k|$ elementos, una cantidad finita. Además ninguna lista se repite, porque los bloques son disjuntos (cada lista tiene una única suma).
+
+*Contraejemplo de lo que no funciona:* `[l | k <- [0..], l <- listasDeLongitud k]` estaría bien por la misma razón (agrupar por longitud), pero algo como `[l | x <- [1..], l <- ...]` con un generador interno infinito no produciría nada.
 
 ---
 
@@ -482,7 +1259,41 @@ $^1$ El tipo `()`, usualmente conocido como *unit*, tiene un único valor, denot
 Generación de todas las posibles estructuras de árboles binarios con información en las hojas.
 
 **Resolución:**
-[PENDIENTE — sesión de resolución]
+**a. Lista infinita de todos los `AIH ()`**
+
+Se agrupa por **tamaño** (cantidad de hojas): para cada $n \geq 1$ hay finitos `AIH` con $n$ hojas, así que concatenando por tamaño creciente se enumeran todos.
+
+```haskell
+todosLosAIH :: [AIH ()]
+todosLosAIH = concatMap aihDeTamaño [1..]
+
+aihDeTamaño :: Integer -> [AIH ()]
+aihDeTamaño 1 = [Hoja ()]
+aihDeTamaño n = [ Bin i d | k <- [1 .. n - 1]
+                          , i <- aihDeTamaño k
+                          , d <- aihDeTamaño (n - k) ]
+```
+
+*Idea:* un `AIH` de tamaño $n > 1$ es un `Bin` cuyo hijo izquierdo tiene $k$ hojas y el derecho $n - k$, con $1 \leq k \leq n-1$. La cantidad de árboles de tamaño $n$ es el $(n-1)$-ésimo número de Catalan: 1, 1, 2, 5, 14, …
+
+```
+n=1: Hoja ()
+n=2: Bin (Hoja ()) (Hoja ())
+n=3: Bin (Hoja ()) (Bin (Hoja ()) (Hoja ())),
+     Bin (Bin (Hoja ()) (Hoja ())) (Hoja ())
+...
+```
+
+Como el generador externo `[1..]` es el único infinito y los internos son finitos, la lista produce elementos indefinidamente y **todo** `AIH ()` aparece eventualmente (en la posición correspondiente a su cantidad de hojas).
+
+**b. Por qué la recursión no es estructural**
+
+Por dos motivos, ambos importantes:
+
+1. **La recursión no va sobre un `AIH`, va sobre el número `n`.** Acá no se *consume* un árbol sino que se *genera*: no hay un argumento de tipo `AIH` sobre el cual hacer recursión estructural, así que `foldAIH` no es aplicable.
+2. **Aun viendo a `n :: Integer` como el natural inductivo**, los llamados recursivos son sobre `k` y `n - k` con `k` variable en $[1, n-1]$, no sobre el predecesor `n - 1`. La recursión estructural sobre naturales (`foldNat`) sólo admite el llamado sobre `n - 1` y una cantidad fija de llamados; acá hay $2(n-1)$ llamados con argumentos arbitrariamente menores.
+
+Es, igual que en el ejercicio 20, **recursión bien fundada**: termina porque $k < n$ y $n - k < n$, pero no es estructural. De ahí que el enunciado permita recursión explícita.
 
 ---
 

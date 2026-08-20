@@ -4,7 +4,7 @@ parcial: 2P
 tipo: Clase teórica
 tema: Resolución
 fuente: plp/raw/clases/teo/10.teo_2P_resolucion_logica.pdf
-paginas_relacionadas: [[logica_de_primer_orden_teoria]], [[clausulas_de_horn_teoria]]
+paginas_relacionadas: [[logica_de_primer_orden_teoria]], [[resolucion_sld_y_prolog_teoria]]
 ---
 
 # Teoría de Resolución

@@ -52,7 +52,7 @@ Tecnica **BFS multi-source**: en vez de correr BFS desde cada nodo ($O(n(n+m))$)
 **Chuleta**
 > 1. Nodo fantasma $\star$ conectado a estaciones → 2. BFS desde $\star$ → 3. Distancia real = distancia a $\star$ menos 1 → 4. Si $> 5$: desprotegida
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 
@@ -89,7 +89,7 @@ $\Rightarrow$ Solucion = Algoritmo. $\square$
 **Chuleta**
 > 1. Sacar aristas tortuga → 2. Dijkstra desde $A$ → 3. Dijkstra desde $B$ en traspuesto → 4. Para cada arista tortuga $(u,v)$: $w(A,u) \cdot (1-t) + w(v,B)$ → 5. Min entre sin tortuga y con tortuga
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_dijkstra_doble]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 
@@ -138,7 +138,7 @@ BFS en el DAG da la minima distancia en aristas de $m_1$ a $m_n$, que es el mini
 **Chuleta**
 > (a) Negar pesos → podar nodos sin camino a $m_n$ → Bellman-Ford (detectar ciclos) · (b) Construir DAG de CM: $\text{dist}_{m_1}[u] + w(u,v) + \text{dist}_{m_n}[v] = \text{dist}_{m_1}[m_n]$ → BFS en DAG = min portales
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_bellman_ford]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/cm_estado_expandido]]
 
 ---
 

@@ -66,7 +66,7 @@ Se necesita un subarbol de $k$ aristas del AGM que contenga a la localidad de Ci
 **Chuleta**
 > 1. Grafo completo con costos → 2. Prim desde Cifu, parar en $k$ aristas → 3. Invariante de Prim: subgrafo del AGM
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_propiedades]]
 
 ---
 
@@ -106,7 +106,7 @@ Definir $\alpha = \min\{c(e) : e \text{ cruza } (D, V \setminus D)\}$ y $\beta =
 **Chuleta**
 > (a) $\beta < \alpha$ → Kruskal completa internas antes que salientes → $D$ es componente en algun $B_j$ · (b) Kruskal + DSU, en cada union: chequear deseabilidad recorriendo aristas $O(m)$ → total $O(nm)$
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_propiedades]]
 
 ---
 
@@ -135,7 +135,7 @@ Buscar camino **MiniMax** = encontrar AGM y tomar el camino en el AGM (por el le
 **Chuleta**
 > 1. AGM (Prim/Kruskal) → 2. Camino en el AGM de origen a destino → 3. Arista de max peso = tolerancia minima (por lema MiniMax↔AGM)
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_minimax]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_propiedades]]
 
 ---
 
@@ -161,7 +161,7 @@ Modelar con **nodo fantasma "Tubo"** conectado a todas las cuevas con peso $T$. 
 **Chuleta**
 > 1. Nodo fantasma "Tubo" con aristas de costo $T$ a cada cueva → 2. AGM decide optimalidad entre tubos y tuneles → 3. Traducir aristas del AGM a la solucion del problema
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_propiedades]]
 
 ---
 
@@ -187,7 +187,7 @@ A diferencia de hormigas, aqui **no basta** un solo nodo fantasma sin mas: un AG
 **Chuleta**
 > 1. AGM sin aeropuertos (solo rutas) → 2. Agregar nodo Aeropuerto → AGM con aeropuertos → 3. Retornar min de ambos pesos
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_modelado]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/agm_propiedades]]
 
 ---
 

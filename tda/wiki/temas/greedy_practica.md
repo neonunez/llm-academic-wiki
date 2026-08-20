@@ -63,7 +63,7 @@ Por lo tanto, podemos asumir WLOG que cualquier solucion optima $O$ esta ordenad
 **Chuleta**
 > 1. Ordenar por deadline creciente → 2. Ejecutar greedy: tomar tarea si cabe antes de su deadline → 3. Correctitud: Lema de Intercambio (WLOG solucion ordenada) + GSA por induccion + teorema de optimalidad por contradiccion
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_stays_ahead]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_demo_intercambio]]
 
 ---
 
@@ -117,7 +117,7 @@ $O'$ es factible: $g_1$ es alcanzable desde el origen por definicion. Para cada 
 **Chuleta**
 > 1. Estrategia: elegir siempre la estacion mas lejana dentro del alcance $C$ → 2. Lema de Eleccion Greedy: reemplazar primera estacion de cualquier optima por $g_1$ no aumenta paradas → 3. Subestructura optima: eliminar el prefijo de la optima da optima del subproblema → 4. Induccion: combinar ambos lemas
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_correctitud]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_demo_intercambio]]
 
 ---
 
@@ -174,7 +174,7 @@ El greedy es mejor o igual. $\square$
 **Chuleta**
 > 1. Ordenar $v$ creciente y $w$ decreciente → 2. Correctitud: argumento de intercambio — cualquier desviacion del orden opuesto puede mejorarse intercambiando → la solucion optima es el orden opuesto
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_intercambio]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/greedy_demo_intercambio]]
 
 ---
 

@@ -1,5 +1,9 @@
 # Log — Algoritmos y Estructuras de Datos III
 
+## [2026-08-18] mantenimiento | reparacion de links
+
+15 links rotos a `tipos_ejercicio/` corregidos en banderas "¿Aparece en parciales?" — apuntaban a nombres planificados que nunca se crearon. Remapeo: agm_modelado/agm_minimax → agm_propiedades; cm_modelado/cm_dijkstra_doble/cm_bellman_ford/cm_dag_modelado/cm_floyd_dantzig → cm_estado_expandido; flujo_min_cut/flujo_matching/flujo_demostracion → flujo_modelado; greedy_intercambio/greedy_correctitud/greedy_stays_ahead → greedy_demo_intercambio; bfs_dfs_aplicacion/bfs_dfs_modelado → bfs_dfs_propiedades. Agregadas al index 3 paginas faltantes (dc_diseno, backtracking_tsp, pd_definir_estado). CLAUDE.md: tabla de comandos completa (15).
+
 ## [2026-04-12] resolver | flujo_en_redes_guia.md
 27 ejercicios resueltos: propiedades flujo (par/impar/racional), FF adversarial F iteraciones, EK variantes, corte lineal, caminos disjuntos aristas, Popular A/B (vertex split), matching bipartito, solteros mesas, matriz sumas fijas, realizacion digrafica, grafo mixto euleriano, hospital K periodos, enchufes transitivos, figuritas, satelite ventanas, Titanic split nodo, maquinas-proyectos min-cut, nodos valiosos, subgrafo max peso, edificios normativas, MCMF, matching min costo, TSP matching, red demandas, Rumestania, Furbo torneos.
 

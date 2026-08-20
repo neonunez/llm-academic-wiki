@@ -7,17 +7,17 @@ Ultima actualizacion: 2026-04-19 (iter 21 — tipos_ejercicio generados)
 ### Representacion de la Informacion
 
 - [[temas/representacion_de_informacion_teoria]] — Sistemas de representacion, bases, cambio de base, tipos numericos (sin signo, signo+magnitud, exceso m, C2), operaciones logico-aritmeticas, carry y overflow
-- [[temas/representacion_de_informacion_guia]] — Guia de ejercicios (13 ejercicios): conversion de bases, sumas precision fija, C2 vs S+M, overflow, extension de signo, inverso aditivo, biyectividad. Fase 1 completa — PENDIENTE resolucion
+- [[temas/representacion_de_informacion_guia]] — Guia de ejercicios (13 ejercicios): conversion de bases, sumas precision fija, C2 vs S+M, overflow, extension de signo, inverso aditivo, biyectividad. resuelta
 
 ### Logica Combinatoria
 
 - [[temas/logica_combinatoria_teoria]] — Algebra de Boole (axiomas, propiedades, De Morgan), compuertas basicas (NOT/AND/OR/XOR), SDP mecanismo de traduccion, circuitos estandar (half adder, full adder, shift LR, MUX/DEMUX, codificador/decodificador), timing y latencia
-- [[temas/logica_combinatoria_guia]] — Guia de ejercicios (Ej 1–10, Practica 2 Partes 1+2): equivalencias booleanas, universalidad NAND/NOR, circuitos con NOR/NAND, SDP+simplificacion, inversor k-bits, inverso aditivo C2, DEMUX/codificador/decodificador. Fase 1 completa (diagramas Ej 4/5/6/8/9/10 incorporados) — PENDIENTE resolucion
+- [[temas/logica_combinatoria_guia]] — Guia de ejercicios (Ej 1–10, Practica 2 Partes 1+2): equivalencias booleanas, universalidad NAND/NOR, circuitos con NOR/NAND, SDP+simplificacion, inversor k-bits, inverso aditivo C2, DEMUX/codificador/decodificador. resuelta (diagramas Ej 4/5/6/8/9/10 incorporados)
 
 ### Logica Secuencial
 
 - [[temas/logica_secuencial_teoria]] — Latches (RS/JK/D), FF-D y FF-JK (edge-triggered), registros N-bit con WriteEnable, componentes tristate, bus de registros, memorias (intro), FSM Moore/Mealy (logica de proximo estado y de salida)
-- [[temas/logica_secuencial_guia]] — Guia de ejercicios (Ej 11–19, Practica 2 Partes 1+2): diagrama temporal con oscilacion, tablas caracteristicas JK, registro simple/bidireccional/tristate, extensor de signo 2→4, desplazador izquierda, auto-incrementador, operacion R0:=R0+R1 con bus. Fase 1 completa (diagrama Ej 14 incorporado) — PENDIENTE resolucion
+- [[temas/logica_secuencial_guia]] — Guia de ejercicios (Ej 11–19, Practica 2 Partes 1+2): diagrama temporal con oscilacion, tablas caracteristicas JK, registro simple/bidireccional/tristate, extensor de signo 2→4, desplazador izquierda, auto-incrementador, operacion R0:=R0+R1 con bus. resuelta (diagrama Ej 14 incorporado)
 - [[temas/hdl_system_verilog]] — HDL/SystemVerilog: modulos, modelado comportamental (assign/always_ff/always_comb), MUX/ternario, operadores de reduccion, manipulacion de bits, reset async/sync, case, modelado estructural (instancias), full adder ejemplo
 
 ## Temas — 2P
@@ -33,9 +33,9 @@ Ultima actualizacion: 2026-04-19 (iter 21 — tipos_ejercicio generados)
 
 ### Programacion RISC-V
 
-- [[temas/arquitectura_cpu_guia]] — Guia de ejercicios Practica 3 (Ej 1–7 ensamblado/seguimiento + Ej 16–21 otras arquitecturas/opcode extensible): byte addressing, loads, arreglos 16-bit, etiquetas/offsets, C→RISC-V, tipos R/I/S/B/U/J, ensamblado/desensamblado, ciclo instruccion con seguimiento. Fase 1 completa — PENDIENTE resolucion
-- [[temas/programacion_risc_v_guia]] — Guia de ejercicios Practica 3 (Ej 8–15): .text/.data, extraer bytes de registro, implementar sll sin sll, maximo de arreglo, copiar vector, copiar elementos pares, sumar64, sumaVector64. Fase 1 completa — PENDIENTE resolucion
-- [[temas/programacion_risc_v_guia_pt2]] — Guia de ejercicios Practica 4 (Ej 1–11): convencion de llamada (debugging+programacion), uso del stack con auxiliares, recursion (factorial/Collatz/Fibonacci3/FibonacciN/biseccion), manejo de estructuras (InformacionAlumno/lista enlazada/busqueda binaria). Fase 1 completa — PENDIENTE resolucion
+- [[temas/arquitectura_cpu_guia]] — Guia de ejercicios Practica 3 (Ej 1–7 ensamblado/seguimiento + Ej 16–21 otras arquitecturas/opcode extensible): byte addressing, loads, arreglos 16-bit, etiquetas/offsets, C→RISC-V, tipos R/I/S/B/U/J, ensamblado/desensamblado, ciclo instruccion con seguimiento. resuelta
+- [[temas/programacion_risc_v_guia]] — Guia de ejercicios Practica 3 (Ej 8–15): .text/.data, extraer bytes de registro, implementar sll sin sll, maximo de arreglo, copiar vector, copiar elementos pares, sumar64, sumaVector64. resuelta
+- [[temas/programacion_risc_v_guia_pt2]] — Guia de ejercicios Practica 4 (Ej 1–11): convencion de llamada (debugging+programacion), uso del stack con auxiliares, recursion (factorial/Collatz/Fibonacci3/FibonacciN/biseccion), manejo de estructuras (InformacionAlumno/lista enlazada/busqueda binaria). resuelta
 
 ## Tipos de ejercicio
 

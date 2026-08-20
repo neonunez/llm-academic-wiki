@@ -1,3 +1,9 @@
+---
+nombre: Patrones detectados
+tipo: sintesis
+tema: cross-tema
+fuente: "wiki/parciales_analizados/"
+---
 # Patrones detectados — Paradigmas de Programación (PLP)
 
 Generado por /tipos_ejercicio_scan. Usar como input de /tipos_ejercicio_run.

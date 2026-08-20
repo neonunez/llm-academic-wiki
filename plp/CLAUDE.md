@@ -352,7 +352,7 @@ Este workflow usa los parciales_analizados/ como fuente de verdad.
 
 ## 9. Comandos disponibles
 
-Implementados como slash commands en `.agents/workflows/`. Cada archivo contiene el workflow completo.
+Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cada archivo contiene el workflow completo.
 
 | Comando | Descripcion |
 |---------|-------------|
@@ -367,6 +367,10 @@ Implementados como slash commands en `.agents/workflows/`. Cada archivo contiene
 | `/simular [tema]` | Generar ejercicio de practica |
 | `/sintesis <nombre>` | Guardar sintesis en wiki |
 | `/fuente_original [ruta]` | Acceder al PDF original |
+| `/resumen <tema>` | Resumen pedagogico de un tema para arrancar a resolver ejercicios |
+| `/tipos_ejercicio_scan` | Detectar patrones recurrentes cruzando parciales analizados |
+| `/tipos_ejercicio_run` | Crear paginas `tipos_ejercicio/` y actualizar banderas |
+| `/tipos_ejercicio` | Paso 9 del pipeline: scan + run en una pasada |
 
 ---
 

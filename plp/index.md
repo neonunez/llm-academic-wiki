@@ -1,58 +1,58 @@
 # Índice — Paradigmas de Programación
 
-Última actualización: 2026-04-22
+Última actualización: 2026-08-20
 
 ## Temas — 1P
-- [[Programación Funcional]]
+- **Programación Funcional**
   - [[programacion_funcional_teoria]] - Teoría de Programación Funcional
   - [[programacion_funcional_practica]] - Práctica de Programación Funcional (Haskell)
   - [[programacion_funcional_guia]] - Guía de Ejercicios N° 1
 
-- [[Lógica Proposicional]]
+- **Lógica Proposicional**
   - [[sistemas_deductivos_y_deduccion_natural_teoria]] — cubierto como base de deduccion natural
-- [[Demostración de Propiedades]]
+- **Demostración de Propiedades**
   - [[demostracion_de_propiedades_teoria]] - Razonamiento Ecuacional e Inducción Estructural
   - [[demostracion_de_propiedades_practica]] - Práctica de Razonamiento e Inducción
   - [[demostracion_de_propiedades_guia]] - Guía de Ejercicios N° 2
 
-- [[Deducción Natural]]
+- **Deducción Natural**
   - [[sistemas_deductivos_y_deduccion_natural_teoria]] - Teoría de Sistemas Deductivos y Deducción Natural
   - [[sistemas_deductivos_y_deduccion_natural_practica]] - Práctica de Deducción Natural (LJ y LK)
   - [[sistemas_deductivos_y_deduccion_natural_guia]] - Guía de Ejercicios N° 3
 
-- [[Algoritmo W]]
+- **Algoritmo W**
   - [[unificacion_e_inferencia_de_tipos_teoria]] — Algoritmo W/I para inferencia de tipos
   - [[tipos_ejercicio/inferencia_algoritmo_w]] — ejercicios paso a paso
-- [[Cálculo Lambda Tipado]]
+- **Cálculo Lambda Tipado**
   - [[calculo_lambda_tipado_teoria]] - Teoría de Cálculo Lambda Tipado
   - [[calculo_lambda_practica]] - Práctica de Cálculo Lambda Tipado
-  - [[calculo_lambda_guia]] - Guía de Ejercicios N° 4
+  - [[calculo_lambda_guia]] - Guía de Ejercicios N° 4 (27 ejercicios, todos resueltos)
 
 ## Temas — 2P
-- [[Lógica de Primer Orden]]
+- **Lógica de Primer Orden**
   - [[logica_de_primer_orden_teoria]] - Teoría de Lógica de Primer Orden
-  - [[logica_de_primer_orden_guia]] - Guía de Ejercicios N° 6
-- [[Programación Lógica (Prolog)]]
+  - [[logica_de_primer_orden_guia]] - Guía de Ejercicios N° 6 (16 ejercicios, todos resueltos)
+- **Programación Lógica (Prolog)**
   - [[resolucion_sld_y_prolog_teoria]] - Resolución SLD y Semántica de Prolog
   - [[programacion_logica_practica]] - Práctica de Programación Lógica (Parte 1)
   - [[programacion_logica_guia]] - Guía de Ejercicios N° 8
-- [[Programación Orientada a Objetos (Smalltalk)]]
+- **Programación Orientada a Objetos (Smalltalk)**
   - [[programacion_orientada_objetos_teoria]] - Teoría de Programación Orientada a Objetos (Smalltalk)
   - [[programacion_orientada_objetos_guia]] - Guía de Ejercicios N° 9
-- [[Resolución]]
+- **Resolución**
   - [[resolucion_teoria]] - Teoría de Resolución
   - [[resolucion_sld_y_prolog_teoria]] - Resolución SLD y Semántica de Prolog
   - [[resolucion_practica]] - Práctica de Resolución en LPO
   - [[resolucion_guia]] - Guía de Ejercicios N° 7
-- [[Cláusulas de Horn]]
+- **Cláusulas de Horn**
   - [[resolucion_sld_y_prolog_teoria]] — cubierto como fundamento de resolucion SLD
-- [[Correspondencia Curry-Howard]]
+- **Correspondencia Curry-Howard**
   - [[correspondencia_curry_howard_y_recursion_teoria]] - Correspondencia Curry-Howard y Recursión
-- [[Unificación e Inferencia de Tipos]]
+- **Unificación e Inferencia de Tipos**
   - [[unificacion_e_inferencia_de_tipos_teoria]] - Teoría de Unificación e Inferencia de Tipos
   - [[unificacion_e_inferencia_practica]] - Práctica de Inferencia de Tipos
-  - [[unificacion_e_inferencia_guia]] - Guía de Ejercicios N° 5
-- [[Interpretación]]
+  - [[unificacion_e_inferencia_guia]] - Guía de Ejercicios N° 5 (10 ejercicios, todos resueltos)
+- **Interpretación**
   - [[interpretacion_teoria]] - Teoría de Interpretación
 
 
@@ -80,6 +80,10 @@
 - [[tipos_ejercicio/smalltalk_method_lookup]] — Tabla de ejecución con self/super (Smalltalk)
 - [[tipos_ejercicio/inferencia_algoritmo_w]] — Inferencia de tipos con Algoritmo W/I paso a paso
 - [[tipos_ejercicio/deduccion_natural_lpo]] — Deducción natural con cuantificadores LPO (∃E, ∀I, ∃I)
+- [[tipos_ejercicio/lambda_habitantes]] — Cálculo Lambda: tipos habitados y construcción del habitante
+- [[tipos_ejercicio/lambda_sintaxis_arbol]] — Cálculo Lambda: parentización y árbol sintáctico
+- [[tipos_ejercicio/lpo_unificacion]] — LPO: unificación de términos y tabla de MGU
+- [[tipos_ejercicio/lpo_semantica_modelos]] — LPO: semántica, interpretaciones y contramodelos
 
 ## Parciales analizados
 - [[1.parcial_1C_2024_resolucion(1)]] - Primer Parcial 1C 2024

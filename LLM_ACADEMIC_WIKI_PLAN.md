@@ -8,7 +8,6 @@ El objetivo es construir una herramienta basada en el patrón "LLM Wiki" de Andr
 
 **Materia piloto:** `Algoritmos_Estructuras_Datos_(III)` (nombre oficial: Técnicas de Diseño de Algoritmos)  
 **Nombre del proyecto:** `llm-academic-wiki`
-**Working directory:** `/Users/neonunez/Desktop/llm-academic-wiki/`
 **Estructura:** un único repositorio git con una carpeta por materia. Cada materia tiene su propio `CLAUDE.md`, `index.md`, `log.md`, `raw/` y `wiki/` — completamente independientes entre sí.
 **Alcance actual:** piloto con una sola materia (`Algoritmos_Estructuras_Datos_(III)`). La estructura multi-materia está diseñada desde el inicio para que la expansión a otras materias sea simplemente agregar una nueva carpeta con la misma estructura.  
 **Herramientas:** Antigravity + Obsidian + git + pdftotext (poppler instalado en `/opt/homebrew/bin/`)

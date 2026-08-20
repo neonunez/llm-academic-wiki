@@ -3,3 +3,6 @@
 
 # Obsidian session state (personal, not shared)
 .obsidian/workspace.json
+
+# Binarios de plugins de Obsidian (se reinstalan solos desde community-plugins.json)
+.obsidian/plugins/

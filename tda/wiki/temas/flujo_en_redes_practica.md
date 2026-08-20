@@ -178,7 +178,7 @@ Minimizar el costo de aristas a "cortar" para desconectar el grafo entre origen 
 **Chuleta**
 > Hotel lleno: min corte ponderado = max flow. Capacidad de arista = precio del cartel. Corte minimo da el conjunto de tramos a bloquear.
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/flujo_min_cut]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/flujo_modelado]]
 
 ---
 
@@ -204,7 +204,7 @@ Hay una lista de personas $P$ y tareas $T$. Cada persona puede hacer una tarea y
 **Chuleta**
 > Matching bipartito: red $s \to T \to P \to t$, capacidades 1. Max flow = matching maximo. Complejidad $O(|P||T| \cdot \min(|P|,|T|))$.
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/flujo_matching]]
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/flujo_modelado]]
 
 ---
 

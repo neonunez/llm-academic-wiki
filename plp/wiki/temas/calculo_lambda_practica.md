@@ -11,7 +11,7 @@ paginas_relacionadas:
 ---
 
 ## Patrones de este tema en parciales
-> [[tipos_ejercicio/lambda_tipado_extension_adt]] · [[tipos_ejercicio/lambda_tipado_semantica_adt]] · [[tipos_ejercicio/lambda_tipado_reduccion_pasos]] · [[tipos_ejercicio/lambda_derivacion_tipado]] · [[tipos_ejercicio/lambda_valores]] · [[tipos_ejercicio/lambda_cambio_reglas]]
+> [[tipos_ejercicio/lambda_tipado_extension_adt]] · [[tipos_ejercicio/lambda_tipado_semantica_adt]] · [[tipos_ejercicio/lambda_tipado_reduccion_pasos]] · [[tipos_ejercicio/lambda_tipado_extension_adt]] · [[tipos_ejercicio/lambda_tipado_semantica_adt]] · [[tipos_ejercicio/lambda_tipado_extension_adt]]
 
 ## Ejercicios de clase
 

@@ -66,8 +66,11 @@ Ultima actualizacion: 2026-04-11 (sesion 11 — banderas y tipos_ejercicio COMPL
 ## Tipos de ejercicio
 
 ### 1P
+- [[tipos_ejercicio/dc_diseno]] — D&C: diseño de algoritmos Divide & Conquer · 1P_1C_2024, 1P_1C_2025
 - [[tipos_ejercicio/dc_teorema_maestro]] — D&C: aplicar/verificar Teorema Maestro · 1P_1C_2024, 1P_2C_2025, 2P_1C_2025
 - [[tipos_ejercicio/bt_complejidad_backtracking]] — BT: analizar complejidad de backtracking · 1P_1C_2024, 1P_2C_2025
+- [[tipos_ejercicio/backtracking_tsp]] — BT: TSP y problemas de permutacion con poda · 1P_1C_2025
+- [[tipos_ejercicio/pd_definir_estado]] — PD: definir el estado (elegir dimensiones) · 1P_1C_2024, 1P_1C_2025
 - [[tipos_ejercicio/pd_definir_recursion]] — PD: definir recursion y analizar complejidad · 1P_1C_2024, 1P_2C_2025, 1P_1C_2025
 - [[tipos_ejercicio/pd_superposicion_subproblemas]] — PD: demostrar superposicion de subproblemas · 1P_2C_2025
 - [[tipos_ejercicio/greedy_demo_intercambio]] — Greedy: demostrar correctitud por argumento de intercambio · 1P_2C_2025, 2P_1C_2025

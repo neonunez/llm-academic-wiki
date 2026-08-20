@@ -14,7 +14,7 @@ paginas_relacionadas:
 ---
 
 ## Patrones de este tema en parciales
-> [[tipos_ejercicio/flujo_modelado]] · [[tipos_ejercicio/flujo_demostracion]]
+> [[tipos_ejercicio/flujo_modelado]] · [[tipos_ejercicio/flujo_modelado]]
 (se completa despues de analizar parciales)
 
 ---

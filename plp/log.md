@@ -1,5 +1,59 @@
 # Log — Paradigmas de Programación
 
+
+
+
+## 2026-08-20 ingest | 19 ejercicios faltantes (deuda de Fase 1 saldada)
+
+Ingestados y resueltos los 19 ejercicios que figuraban en el indice de su guia con link de anclaje pero no tenian seccion en el archivo:
+- `logica_de_primer_orden_guia`: Ej. 3, 4, 6, 7, 10, 11, 12, 13, 15, 16 → la guia pasa de 6 a **16 ejercicios** (2032 lineas)
+- `calculo_lambda_guia`: Ej. 17, 18, 19, 23, 24, 25, 26 → de 20 a **27 ejercicios** (2224 lineas)
+- `unificacion_e_inferencia_guia`: Ej. 6, 7 → de 8 a **10 ejercicios**
+
+Cada uno con enunciado fiel al PDF, explicacion, resolucion completa, chuleta y bandera. Las 3 guias quedan en 0 marcadores `[PENDIENTE]` y 0 links rotos.
+
+**Anclajes del indice**: corregidos 8 que estaban rotos desde antes por tildes y titulos truncados (`calculo_lambda_guia` Ej. 2, 3, 20, 21, 27; `unificacion_e_inferencia_guia` Ej. 8, 9, 10). plp queda con 0 anclajes rotos.
+
+**Nota de metodo**: los PDFs se extrajeron una sola vez a texto plano en el scratchpad y los agentes leyeron de ahi. La extraccion via PyMuPDF pierde las ligaduras `fi`/`ti` ("unican" por unifican, "denir" por definir): se verifico que ninguna llegara al wiki.
+
+**Ambiguedades de enunciado detectadas** (marcadas `⚠️ Verificar` en el texto):
+- FNN (Ej. 11) y FNP (Ej. 12) de LPO dependen de equivalencias NO intuicionistas; el enunciado no aclara si se permiten principios clasicos y sin ellos el teorema es falso.
+- Varios enunciados de LPO no parentizan el alcance de cuantificadores y negaciones (Ej. 4, 15.i, 16.xvi): con "alcance maximo" cambian de respuesta o se vacian de contenido. Se resolvio con la lectura estandar, documentando la alternativa.
+- Ej. 24 de lambda: la guia define listas por comprension sin anotacion de tipo; sin ella se rompe preservacion. Se agrego la anotacion, con la alternativa (macro sobre `foldr`) documentada.
+
+## 2026-08-18 mantenimiento | frontmatter, tipos_ejercicio y deuda de ingesta
+
+- **Frontmatter**: agregado a las 12 paginas que no lo tenian (11 `transcripciones/` + `sintesis/patrones_detectados.md`). plp queda al 100%, igual que tda y sistemas_digitales. Rutas `fuente:` verificadas contra el filesystem; campos sin dato determinable se omitieron en vez de inventarse.
+- **4 paginas `tipos_ejercicio/` nuevas** (591 lineas): `lambda_habitantes`, `lambda_sintaxis_arbol`, `lpo_unificacion`, `lpo_semantica_modelos`. Las 4 banderas que decian `tipos_ejercicio pendiente:` ahora son links reales. Agregadas al `index.md`.
+- **Enunciados truncados completados** en `logica_de_primer_orden_guia` (Ej. 2 +6 items, Ej. 8 +6 items; las resoluciones existentes ya cubrian los items faltantes, no hubo que extenderlas) y en `sistemas_deductivos_y_deduccion_natural_guia` (Ej. 11 +13 secuentes, Ej. 12 +10, Ej. 13 +8 — los 34 quedaron resueltos con derivacion completa).
+- **2 transcripciones erroneas corregidas contra el PDF**: `programacion_logica_guia` Ej. 16 (heladeria — la base real tiene 7 hechos, no 2; resolucion reescrita, arbol SLD con 4 soluciones, item II cubre las 6 ubicaciones del `!`) y `calculo_lambda_guia` Ej. 16.VIII (el PDF dice `x`, no `fix`; resolucion principal corregida, la lectura con `fix` queda como nota).
+- `⚠️ Verificar` en plp: 20 → 19 (uno se resolvio con la fuente real).
+
+### Deuda de ingesta pendiente (Fase 1, NO resuelta)
+
+19 ejercicios figuran en el indice de su guia con link de anclaje pero **no tienen seccion en el archivo** — nunca se ingestaron:
+- `logica_de_primer_orden_guia`: Ej. 3, 4, 6, 7, 10, 11, 12, 13, 15, 16 (10 de 16)
+- `calculo_lambda_guia`: Ej. 17, 18, 19, 23, 24, 25, 26 (7 de 27)
+- `unificacion_e_inferencia_guia`: Ej. 6, 7 (2 de 10)
+
+Los links de anclaje del indice de esas paginas no llevan a ningun lado. tda y sistemas_digitales no tienen este problema.
+
+## 2026-08-18 resolver | 9 guias (Fase 2 completa)
+
+- Resueltos los 216 marcadores `[PENDIENTE — sesion de resolucion]` en las 9 guias pendientes, via 9 sesiones paralelas (una por guia). Total: ~144 ejercicios.
+- `resolucion_guia` 26 ej · `programacion_funcional_guia` 22 · `calculo_lambda_guia` 20 · `programacion_logica_guia` 18 · `demostracion_de_propiedades_guia` 14 · `sistemas_deductivos_y_deduccion_natural_guia` 9 · `programacion_orientada_objetos_guia` 9 · `unificacion_e_inferencia_guia` 8 · `logica_de_primer_orden_guia` 6.
+- 20 ejercicios marcados `⚠️ Verificar` (ambiguedades reales del enunciado, no errores de resolucion).
+- **Incidente corregido:** una colision de archivos temporales entre sesiones inyecto contenido de Smalltalk en los Ej. 3 y 4 de `sistemas_deductivos_y_deduccion_natural_guia` (guia de logica proposicional). Ambos fueron reescritos con la resolucion correcta. Barrido posterior sobre las 9 guias: sin otra contaminacion.
+- **Deuda de ingesta detectada** (Fase 1, no resuelta aca): enunciados truncados o mal transcriptos en `logica_de_primer_orden_guia` (2 ejercicios "ver PDF para lista completa"), `sistemas_deductivos_..._guia` Ej. 11-13 (14/11/9 secuentes reducidos a uno de muestra), `programacion_logica_guia` Ej. 16 (hechos tales que `leGusta/1` falla siempre), `calculo_lambda_guia` Ej. 16.VIII (`fix` donde el PDF dice `x`).
+
+## 2026-08-18 mantenimiento | reparacion de links
+
+- 53 referencias rotas a `tipos_ejercicio/` corregidas; 4 sin pagina destino (`lambda_sintaxis_arbol`, `lambda_habitantes`, `lpo_unificacion`, `lpo_semantica_modelos`) quedan como marcador `tipos_ejercicio pendiente:` en vez de link fantasma.
+- `index.md`: 14 encabezados de tema dejaron de ser wikilinks a paginas inexistentes (ahora texto en negrita, estilo tda).
+- `resolucion_teoria.md`: `paginas_relacionadas` apuntaba a `clausulas_de_horn_teoria` (inexistente) → `resolucion_sld_y_prolog_teoria`.
+- CLAUDE.md: tabla de comandos completa (15).
+- Pendiente real: 216 marcadores `[PENDIENTE — sesion de resolucion]` en 9 guias — falta correr `/resolver`.
+
 ## 2026-04-23 scan | /tipos_ejercicio_scan
 - Escaneados 11 parciales analizados.
 - Identificados 9 patrones recurrentes (3 de 1P, 5 de 2P, 1 cross-parcial).

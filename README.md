@@ -10,7 +10,8 @@ El LLM ingesta PDFs academicos (clases LaTeX, guias de ejercicios, parciales) y 
 
 ```
 llm-academic-wiki/
-├── .agents/workflows/          ← slash commands de Antigravity
+├── .claude/commands/           ← slash commands (compartidos)
+├── .agents/workflows/          ← symlink a .claude/commands/
 ├── tda/                                ← materia piloto (Tecnicas de Diseno de Algoritmos)
 │   ├── CLAUDE.md              ← esquema de la materia
 │   ├── index.md               ← catalogo del wiki
@@ -24,7 +25,7 @@ Cada materia tiene su propio `CLAUDE.md`, `index.md`, `log.md`, `raw/` y `wiki/`
 
 ## Uso
 
-Inicializar Antigravity desde la carpeta de la materia a estudiar:
+Inicializar Claude Code desde la carpeta de la materia a estudiar:
 
 ```bash
 cd llm-academic-wiki/tda/
@@ -33,7 +34,7 @@ claude
 
 ## Herramientas
 
-- **Antigravity** — LLM agent + vision para PDFs imagen
+- **Claude Code** — LLM agent + vision para PDFs imagen
 - **Obsidian** — IDE para navegar el wiki
 - **pdftotext (poppler)** — extraccion de texto de PDFs LaTeX
 - **Git** — control de versiones
