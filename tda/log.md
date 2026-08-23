@@ -292,3 +292,48 @@ Comandos: /ingestar reescrito con deteccion de modo por ruta (raw/cursada_* → 
 DECISION EXPLICITA — el principio no cambia: los parciales historicos siguen siendo la base de que ejercicios y temas son importantes. Las banderas 🔴/⚪ se calculan contra parciales_analizados/ y tipos_ejercicio/ como siempre. Se evaluo y se DESCARTO una "bandera dual" que agregara la señal de la catedra actual (⋆ de guias) como sistema paralelo. Los contenidos son los mismos entre cuatrimestres — solo cambio el reparto — asi que lo que tomaron historicamente sigue siendo indicador valido. Los ejercicios nuevos de guias reciben bandera cruzando contra los PATRONES de tipos_ejercicio/, no contra enunciados exactos.
 
 Sin ingestar todavia: raw/cursada_2C_2026/ esta vacia, esperando el material.
+
+## [2026-08-23] reconciliacion | teo_clase1_demostraciones.pdf
+Primer merge en modo RECONCILIACION. Fuente: `raw/cursada_2C_2026/teo/teo_clase1_demostraciones.pdf` — 160 paginas de build Beamer consolidadas en **36 slides logicas** (el pie imprime `N / 36`; agrupar por ese numero y quedarse con el build mas largo de cada grupo). Titulo: "Repaso de demostraciones — Induccion, correctitud y complejidad asintotica", DC-FCEyN-UBA, 2C 2026.
+Diff aprobado por el usuario en `.ingestas_pendientes/teo_clase1_demostraciones.diff.md`. Escritura autorizada.
+
+**Pagina mergeada: `temas/definiciones_y_demostraciones_teoria.md`** (unica pagina de contenido tocada en esta corrida — decision del usuario: una pagina por corrida).
+Reorganizada segun el eje de la clase vigente: que es una demostracion → receta de 6 pasos → induccion → correctitud de recursivos → otras herramientas. Secciones resultantes: Concepto y definicion · Como se demuestra: la receta de 6 pasos · Induccion · Correctitud de algoritmos recursivos · Otras herramientas (contrarreciproco, contradiccion, palomar, minimo elemento) · Errores comunes · Ejemplo resuelto poda por optimalidad · Tips · Sobre como aprender esto · Cuando se aplica · Bibliografia · Ver tambien.
+
+**23 bloques nuevos integrados** (no como apendice — repartidos en el cuerpo segun el eje):
+- *Concepto*: que es una demostracion y a quien convence (S3-S4, con el contraejemplo $4!+1=25=5^2$), doble proposito (S5), formalidad vs rigor (S6), niveles de formalismo con $2^n$ subconjuntos (S7), antipatron del alumno con $T(n)=2T(n-4)$ (S8).
+- *Receta*: los 6 pasos (S9) — columna vertebral pedagogica, no habia equivalente; formalizar la consigna con las bacterias (S10-S11), Alicia/Beto para cuantificadores (S12), los ejemplos no demuestran / Goldbach (S13).
+- *Induccion*: como se escribe una induccion (S19), suma geometrica (S20), **induccion fuerte enunciada formalmente (S22)**, **regla de cuantos casos base: $k$ usos hacia atras → $k$ casos base, $P(\lfloor n/2\rfloor)$ → uno solo (S23)**, $T(n)=2T(n-4)$ con rigor (S24), **induccion en tuplas / orden bien fundado, por medida vs lexicografico (S25)**.
+- *Correctitud de recursivos*: metodo general tamano/P(n)/induccion fuerte (S26), exponenciacion rapida con pseudocodigo (S27-S28), demostracion→codigo→tests con el oraculo en C++ (S29).
+- *Otras herramientas*: advertencia de contradiccion (S31), **principio del palomar con su demostracion (S32)**, **buen orden de $\mathbb{N}$ / "el primer elemento que cumple" con el divisor primo (S33)**.
+- *Cierre*: tips de la clase (S34, fusionados con los historicos sin contradecirlos), como aprender esto (S35), bibliografia (S36).
+Los que cierran un agujero real: el wiki ya APLICABA induccion fuerte, palomar y buen orden en resoluciones (grafos_guia, fuerza_bruta_backtracking_guia) pero nunca los ENUNCIABA en teoria.
+
+**4 divergencias registradas con bloque 🔄** (contenido vigente en el cuerpo, el viejo dentro del bloque):
+1. *Que es una demostracion* — `enfoque de demostracion`. En `## Concepto y definicion`. Ahora: argumento formal que puede convencer a cualquier par de la comunidad cientifica; el criterio es la audiencia, y Lean es ejemplo de formalismo ilegible para un humano. Antes: "es un **algoritmo**" y Lean como ejemplo positivo.
+2. *Caso base por defecto* — `notacion`. En `### El principio de induccion`. Ahora $P(0)$ (podria ser otro); antes $P(1)$ o $P(a)$. Coherente con todo el deck, donde $\mathbb{N}$ incluye al 0.
+3. *Organizacion del tema* — `alcance`. Al inicio de `## Otras herramientas`. Ahora el eje es induccion + correctitud recursiva y el resto se agrupa como "otras herramientas"; antes eran 8 estrategias en paralelo con igual peso.
+4. *Ejemplo de contradiccion* — `enfoque de demostracion`. En `### Contradiccion (absurdo)`. Ahora "$n^2$ par ⇒ $n$ par" se usa solo para contrarreciproco, y contradiccion se ilustra con palomar y divisor primo. Antes servia para las dos. Se deja registrado por que: la version "por contradiccion" del wiki era un **contrarreciproco disfrazado** — asumia $n^2$ par y nunca usaba esa hipotesis.
+
+**8 bloques conservados INTACTOS con marca 📎** ("sin contrastar con la cursada 2C-2026"). **No se degradaron a `solo_historico`**: este PDF es la clase 1 de la cursada, no un reemplazo del tema. Son: terminologia Definicion/Axioma/Teorema · demostracion directa · por casos · por construccion · contraejemplos · doble implicacion · errores comunes en demostraciones · ejemplo resuelto poda por optimalidad.
+
+**Verificacion por bloque** (decision del usuario): `estado_verificacion: verificado_parcial_2C_2026` + badge 🟡 reemplazando el ⚠️ anterior. Cuando una ingesta posterior cubra un bloque 📎 se le saca la marca; sin 📎 restantes la pagina pasa a `verificado_2C_2026`.
+
+**4 demostraciones marcadas `⚠️ Verificar`** — el PDF da el PLAN, no la prueba ("→ Demostracion completa en el pizarron"): suma geometrica $\sum_{i=0}^n 3^i$ (S20), $n! > 2^n$ para $n\geq 4$ (S21), $T(n)=2T(n-4)$ con rigor (S24), correctitud de $\mathrm{Exp}(a,n)$ (S28). Se transcribio el plan tal cual; **no se inventaron las demostraciones completas** — reconstruirlas seria material propio, no de catedra.
+
+**Cross-links agregados:**
+- Palomar (S32) → `grafos_practica` Ej.1 (Misma cantidad de amigos), `grafos_guia` Ej.6 (ModeladoBasico) y Ej.2 (DobleGrado). El enunciado formal y su demostracion viven en la pagina de teoria; los ejercicios lo aplican.
+- Exponenciacion rapida (S27-S28) ↔ `divide_y_conquista_guia` Ej.5 (PotenciaLogaritmica): mismo algoritmo, **rol distinto** (alla diseno D&C y complejidad, aca correctitud por induccion fuerte). Link cruzado, no se movio nada.
+- Regla de casos base (S23) ↔ los dos errores comunes de induccion de la pagina, que son instancias suyas; y con los ej. 7-8 de `demostraciones_induccion_guia`.
+- Frontmatter: `[[complejidad_computacional_teoria]]` y `[[demostraciones_induccion_guia]]` sumados a `paginas_relacionadas`.
+
+**LaTeX:** el text layer del PDF aplana superindices. Reconstruido y re-chequeado formula por formula — `4! + 1 = 25 = 52` → $4!+1=25=5^2$; `3n2 + 10n` → $3n^2+10n$ (slide de complejidad, no mergeada); `2n subconjuntos` → $2^n$; `2 n−1 4 T(1) = (2 1 4 )n 2−1 4` → $2^{(n-1)/4}T(1)=(2^{1/4})^n 2^{-1/4}$; `331 no entra en un int` → $3^{31}$. Verificado a mano: $0!=1=2^0$, $1!=1<2$, $2!=2<4$, $3!=6<8$, $4!=24>16$ — el caso base corrido en 4 de $n!>2^n$ es correcto.
+
+Actualizado: `index.md` (resumen de contenidos reescrito, marca 🟡, y las **dos** fuentes citadas — la vigente y la historica).
+
+**PENDIENTE — slides 14-17 (repaso de complejidad asintotica) NO se mergearon en esta corrida.** Van en una segunda pasada sobre `temas/complejidad_computacional_teoria.md`, que no se toco. Contenido que queda esperando:
+- **La divergencia de mayor impacto practico de todo el PDF** (`notacion`): ahora es `g(n) ∈ O(f(n))` — **pertenencia**, con dominio $f,g : \mathbb{N} \to \mathbb{R}_{\geq 0}$ y negacion `g(n) ∉ O(f(n))`; antes era `f(n) = O(g(n))` — igualdad, con dominio $\mathbb{N} \to \mathbb{R}$. Las resoluciones ya escritas (16 ejercicios de `divide_y_conquista_guia`, analisis de complejidad de PD, etc.) usan la notacion vieja: **no hay que reescribirlas**, alcanza con el bloque 🔄 y la equivalencia visible en un solo lugar.
+- Nuevo para esa pagina: como demostrar **pertenencia** (exhibir $c$ y $n_0$; $3n^2+10n \in O(n^2)$ con $c=13$, $n_0=1$), como demostrar **no pertenencia** (negar el $\exists$; $n^2 \notin O(n)$ con $n=\max(n_0, \lceil c \rceil + 1)$), y las propiedades utiles (transitividad, suma, simetria $g \in O(f) \iff f \in \Omega(g)$).
+- No degradar de esa pagina al mergear: modelo RAM, costos por operacion, $|I|$ en bits, $f_A(n)$, tabla de clasificacion.
+
+NO se modifico: `raw/`, `wiki/parciales_analizados/`, `wiki/transcripciones/`, `wiki/tipos_ejercicio/`, ninguna otra pagina de `wiki/temas/`, ni `.claude/commands/`.

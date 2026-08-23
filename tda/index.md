@@ -10,7 +10,7 @@ Ultima actualizacion: 2026-08-22 — **reagrupado segun el [[programa]] vigente 
 ## Transversales (entran en ambos parciales)
 
 - [[complejidad_computacional_teoria]] — Modelo RAM, notacion asintotica (O, Omega, Theta), clasificacion de algoritmos · `raw/clases/teo/0.teo_1P_repaso.pdf`
-- [[definiciones_y_demostraciones_teoria]] — Estrategias de demo (directa, casos, contradiccion, contrarreciproco, construccion, induccion, contraejemplo), errores comunes, ejemplo resuelto poda optimalidad · `raw/clases/teo/5.teo_1P_definicion_demo.pdf`
+- [[definiciones_y_demostraciones_teoria]] 🟡 — Que es una demostracion (a quien convence, formalidad vs rigor), receta de 6 pasos (formalizar, Alicia/Beto, los ejemplos no demuestran), induccion (esqueleto, casos base corridos, **induccion fuerte**, **cuantos casos base**, **tuplas y orden bien fundado**), **correctitud de algoritmos recursivos** (exponenciacion rapida, demo→codigo→tests), otras herramientas (contrarreciproco, contradiccion, **palomar**, **buen orden**), errores comunes, ejemplo resuelto poda optimalidad, bibliografia · `raw/cursada_2C_2026/teo/teo_clase1_demostraciones.pdf` + `raw/clases/teo/5.teo_1P_definicion_demo.pdf`
 - [[demostraciones_induccion_guia]] — 8 ejercicios de guia: induccion matematica (identidades, sumatoria general, Fibonacci/Binet, errores en demos) · `raw/guias_practicas/0.guia_1P_repaso.pdf`
 
 ---
