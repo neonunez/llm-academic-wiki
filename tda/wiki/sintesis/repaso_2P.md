@@ -1,6 +1,7 @@
 ---
 nombre: Repaso para el Segundo Parcial
-parcial: 2P
+parcial: historico_2P
+programa: historico_hasta_1C_2026
 tipo: sintesis
 tema: repaso_2P
 fuente: raw/clases/prac/14.prac_2P_repaso_para_segundo_parcial.pdf
@@ -16,6 +17,10 @@ paginas_relacionadas:
   - "[[flujo_en_redes_practica]]"
   - "[[flujo_en_redes_practica_pt2]]"
 ---
+
+> ⚠️ **Material del programa viejo.** Esta clase de consulta preparaba el 2P cuando ese parcial cubria Grafos, Arboles, AGM, Caminos Minimos y Flujo.
+> Con el programa vigente (2C-2026), el bloque de grafos, arboles y recorridos ya **no** entra en tu 2P (paso al 1P).
+> El contenido de los ejercicios sigue siendo valido; lo que ya no vale es usarla como guia de que entra en tu parcial. Ver [[programa]].
 
 > Clase de consultas para el 2do recuperatorio (3 de diciembre de 2025). Contenido fragmentado — notas de clase con contraejemplos y justificaciones de multiple choice, sin enunciados completos. Cubre grafos (ciclos, isomorfismo con complemento) y flujo (max-flow min-cut, complejidad).
 

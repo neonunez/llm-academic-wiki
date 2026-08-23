@@ -1,6 +1,7 @@
 ---
 nombre: CM — Caminos minimos con estado expandido
 parcial: 2P
+programa: 2C_2026
 tema: caminos_minimos
 apariciones_en_parciales:
   - raw/parciales/2P/2.parcial_1C_2024_resolucion(1).pdf

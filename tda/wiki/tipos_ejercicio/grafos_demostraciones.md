@@ -1,6 +1,7 @@
 ---
 nombre: Grafos — Demostrar propiedades de grafos
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tema: grafos
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf
@@ -81,6 +82,13 @@ Las demos por absurdo en grafos explotan propiedades topologicas: finitud de ver
 - Confundir condiciones para arboles: conexo + $n-1$ aristas + sin ciclos (cualquier 2 de 3 implica la tercera).
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Grafos era **2P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **1P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 - **1P_1C_2024 Ej 5-7:** orientaciones aciclicas, propiedades de grafos, contraejemplos
 - **2P_2C_2025 Ej 2:** ciclo simple por dos vertices — demo constructiva con componentes conexas

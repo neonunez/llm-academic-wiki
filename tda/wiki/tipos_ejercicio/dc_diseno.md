@@ -1,6 +1,7 @@
 ---
 nombre: D&C — Diseño de algoritmos Divide & Conquer
 parcial: 1P
+programa: 2C_2026
 tema: divide_y_conquista
 apariciones_en_parciales:
   - wiki/parciales_analizados/1P_1C_2024.md

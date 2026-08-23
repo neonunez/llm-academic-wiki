@@ -1,6 +1,7 @@
 ---
 nombre: Repaso para el Primer Parcial
-parcial: 1P
+parcial: historico_1P
+programa: historico_hasta_1C_2026
 tipo: sintesis
 tema: repaso_1P
 fuente: raw/clases/prac/6.prac_1P_repaso_para_primer_parcial.pdf
@@ -16,6 +17,10 @@ paginas_relacionadas:
   - "[[greedy_practica]]"
   - "[[definiciones_y_demostraciones_teoria]]"
 ---
+
+> ⚠️ **Material del programa viejo.** Esta clase de consulta preparaba el 1P cuando ese parcial cubria Divide & Conquer, Backtracking, PD, Greedy y Definiciones/Demos.
+> Con el programa vigente (2C-2026), PD y Greedy ya **no** entran en tu 1P (pasaron al 2P), y le falta todo el bloque de grafos que si entra.
+> El contenido de los ejercicios sigue siendo valido; lo que ya no vale es usarla como guia de que entra en tu parcial. Ver [[programa]].
 
 > Clase de consultas previa al primer parcial (2do cuatrimestre 2025). Cubre los 5 temas del 1P con ejercicios representativos y preguntas de multiple choice conceptuales.
 

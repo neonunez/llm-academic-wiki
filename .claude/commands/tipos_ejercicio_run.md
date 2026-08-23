@@ -1,5 +1,13 @@
 Paso 9 del pipeline: crear paginas tipos_ejercicio/ y actualizar banderas. Requiere haber corrido /tipos_ejercicio_scan primero. Argumento: $ARGUMENTS (parcial: 1P o 2P)
 
+## Regla previa — `programa.md` es la fuente de verdad del mapeo tema→parcial
+
+Leer `programa.md` del working directory antes de asignar cualquier `parcial:`.
+**Nunca** inferir el parcial desde el nombre del archivo en `raw/` ni desde el rotulo del
+examen historico en que aparecio un ejercicio: esos rotulos reflejan el programa del
+cuatrimestre en que se dicto/tomo el material, que puede diferir del vigente.
+Todo frontmatter generado lleva `parcial:` (derivado) + `programa:` (version que refleja).
+
 ## Contexto
 
 Lee `wiki/sintesis/patrones_detectados.md` como fuente de verdad (generado por /tipos_ejercicio_scan). Crea las paginas `tipos_ejercicio/` y actualiza banderas solo para el parcial indicado en $ARGUMENTS. Los patrones cross-parcial (ambos) se incluyen en ambas corridas.
@@ -20,7 +28,8 @@ Para cada patron filtrado, crear `wiki/tipos_ejercicio/[nombre_patron].md` si no
 ---
 nombre: [descripcion del patron]
 tema: [tema]
-parcial: [1P | 2P | ambos]
+parcial: [1P | 2P | ambos]   # del tema segun programa.md
+programa: [vigencia]
 apariciones_en_parciales:
   - parciales_analizados/[id]  # ej N
 ---
@@ -55,7 +64,12 @@ Si la pagina ya existe (porque se corrio para el otro parcial), skipear — no s
 ls wiki/temas/*_practica.md wiki/temas/*_guia.md 2>/dev/null
 ```
 
-Filtrar solo las paginas cuyo frontmatter tenga `parcial: $ARGUMENTS` o `parcial: ambos`.
+Filtrar solo las paginas cuyo frontmatter tenga `parcial: $ARGUMENTS` o `parcial: ambos`
+(ese campo ya viene derivado de `programa.md`).
+
+Si el patron esta marcado `reubicado: true`, insertar el aviso de reubicacion justo debajo
+del encabezado `## Apariciones en parciales`, explicando que los rotulos de la lista son del
+programa viejo y en que parcial entra hoy.
 
 ## Paso 4 — Actualizar banderas
 

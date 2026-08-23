@@ -1,6 +1,7 @@
 ---
 nombre: AGM — Propiedades y algoritmos
 parcial: 2P
+programa: 2C_2026
 tema: arboles_generadores_minimos
 apariciones_en_parciales:
   - raw/parciales/2P/2.parcial_1C_2024_resolucion(1).pdf

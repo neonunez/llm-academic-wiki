@@ -1,6 +1,7 @@
 ---
 nombre: D&C — Aplicar/verificar Teorema Maestro
 parcial: 1P
+programa: 2C_2026
 tema: divide_y_conquista
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf

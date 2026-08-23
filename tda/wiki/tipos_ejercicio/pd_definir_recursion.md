@@ -1,6 +1,7 @@
 ---
 nombre: PD — Definir recursion y analizar complejidad
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tema: programacion_dinamica
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf
@@ -59,6 +60,13 @@ Estado $(n, s)$ con $K$ constante. Recursion: $comb(n, s) = \sum_{i=1}^K comb(n-
 Estado $(N, K)$. Tabla $N \times K$, cada celda $O(1)$ → $\Theta(N \cdot K)$.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Programacion Dinamica era **1P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **2P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 - **1P_1C_2024 Problema A:** Alfajores de Alfredo — 3 decisiones, acotamiento de dimension
 - **1P_2C_2025 Ej 4:** Combinaciones con $K$ constante — complejidad $O(n \cdot s)$

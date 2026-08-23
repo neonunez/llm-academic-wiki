@@ -1,5 +1,13 @@
 Paso previo al run: leer todos los parciales_analizados/ e identificar patrones recurrentes cross-parcial. Guarda el resultado en wiki/sintesis/patrones_detectados.md. No modifica ningun archivo del wiki. Ejecutar desde la carpeta de la materia.
 
+## Regla previa — `programa.md` es la fuente de verdad del mapeo tema→parcial
+
+Leer `programa.md` del working directory antes de asignar cualquier `parcial:`.
+**Nunca** inferir el parcial desde el nombre del archivo en `raw/` ni desde el rotulo del
+examen historico en que aparecio un ejercicio: esos rotulos reflejan el programa del
+cuatrimestre en que se dicto/tomo el material, que puede diferir del vigente.
+Todo frontmatter generado lleva `parcial:` (derivado) + `programa:` (version que refleja).
+
 ## Contexto
 
 Este comando es liviano — solo lee, no escribe en el wiki. Su objetivo es generar un archivo intermedio con todos los patrones identificados en parciales, incluyendo patrones cross-parcial (que aparecen en 1P y 2P). Este archivo es la fuente de verdad que usa /tipos_ejercicio_run.
@@ -8,7 +16,11 @@ Correr ANTES de /tipos_ejercicio_run.
 
 ## Paso 1 — Leer CLAUDE.md
 
-Leer `CLAUDE.md` en el working directory para conocer temas por parcial y convenciones de nomenclatura.
+Leer `programa.md` para el mapa tema→parcial **vigente**, y `CLAUDE.md` para convenciones de nomenclatura.
+
+El campo `parcial:` de cada patron se deriva del **tema** segun `programa.md`, NO del rotulo del
+examen donde aparecio. Marcar `reubicado: true` cuando el parcial vigente del tema difiera del
+rotulo mayoritario de sus apariciones historicas.
 
 ## Paso 2 — Leer todos los parciales_analizados/
 
@@ -29,7 +41,8 @@ Agrupar ejercicios por tipo. Para cada tipo construir:
 ```
 nombre_patron: snake_case descriptivo
 descripcion: una linea
-parcial: 1P | 2P | ambos
+parcial: 1P | 2P | ambos   # del tema segun programa.md
+reubicado: true | false    # true si difiere del rotulo historico de sus apariciones
 tema: tema principal
 apariciones:
   - parcial: [id]  ejercicio: N  descripcion: [breve]

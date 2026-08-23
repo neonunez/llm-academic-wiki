@@ -245,3 +245,31 @@ Ejercicios resueltos: 11/11. Ej 27 (SumaSelectiva — top-k por intercambio dire
 
 ## [2026-04-12] resolver | programacion_dinamica_guia.md
 Ejercicios resueltos: 18/18. Ej 9 (KingArmy — Fibonacci O(N), O(1) espacio). Ej 10 (Vacations — estado (dia,act), O(N)). Ej 11 (SumaDinamica — BT→PD, top-down O(nk), bottom-up in-place O(k), correctitud induccion). Ej 12 (OptiPago — mochila multi-criterio lex, O(n·sum_b)). Ej 13 (AstroTrade — mgn(j,c), O(n²), rolling O(n)). Ej 14 (Fire — ordenar por deadline, f(i,T) O(ND + N log N)). Ej 15 (CortesEconomicos — intervalo DP, f(i,j) O(k³)). Ej 16 (TravesiaVital — PD hacia atras, h(i,j) O(mn), rolling O(min(m,n))). Ej 17 (PilaCauta — f(i) O(N²), f(i,l) pseudopolinomial O(NW)). Ej 18 (OperacionesSeq — f(i,v) conjunto de valores alcanzables, complejidad variable). Ej 19 (DadosSuma — distinguibles f(n,s) O(nks), indistinguibles g(n,s,minv) no-decreciente). Ej 20 (CaesarsLegions — 3 versiones, O(PD·MP·MD) → O(PD·max) → O(PD) con tablas aditivas TP/TD). Ej 21 (Farmer — f(i,j,r) mod K+1, O(NMK)). Ej 22 (ProblemasAnteriores — rolling array para Ej9/10/13/monedas/C(n,k)/LCS/Ej19/21). Ej 23 (ABBOptimoBU — bottom-up por longitud O(n³), Knuth O(n²)). Ej 24 (Lagunas — b=O(sqrt N), f(i,b) O(N sqrt N) con tabla aditiva). Ej 25 (MiBsAs — LIS ponderada f(i)=Wi+max anterior, O(N²) naive, O(N log N) con Fenwick). Ej 26 (Guirnaldas — f(i,p) O(N²) tiempo O(N) espacio con rolling).
+
+## [2026-08-22] programa | 2C_2026 — reorganizacion del reparto de temas por parcial
+La catedra cambio que contenidos entran en cada parcial (mismos contenidos, distinto reparto).
+Nuevo 1P: Teoria de Grafos, Arboles, Algoritmos sobre grafos (solo recorridos BFS/DFS), Divide & Conquer, Backtracking.
+Nuevo 2P (complemento): Programacion Dinamica, Greedy, AGM, Caminos Minimos, Flujo en Redes.
+Transversales (ambos): complejidad_computacional, definiciones_y_demostraciones.
+
+Movimientos: grafos 2P→1P, arboles 2P→1P, recorrido_en_grafos 2P→1P, programacion_dinamica 1P→2P, greedy 1P→2P. D&C, BT, AGM, CM y Flujo sin cambio.
+
+Decision de diseno: se separo el doble uso del campo `parcial:`. Ahora hay una unica fuente de verdad (`programa.md`) para "para que parcial estudiar esto", y los rotulos 1P/2P historicos (parciales_analizados/, transcripciones/, apariciones_en_parciales, nombres de raw/) quedaron intactos como registro de hechos.
+
+Creado: programa.md (tabla vigente + mapa YAML + historial de programas + como leer el material historico), .claude/commands/programa.md (propagacion automatica + modo --check).
+Actualizado: 23 paginas cambiaron de `parcial:` (17 en temas/, 6 en tipos_ejercicio/); las 50 paginas de temas/ y tipos_ejercicio/ llevan ahora `programa: 2C_2026`. Avisos de reubicacion en 6 tipos_ejercicio (grafos_demostraciones, bfs_dfs_propiedades, pd_definir_estado, pd_definir_recursion, pd_superposicion_subproblemas, greedy_demo_intercambio). 15 lineas de prosa desactualizada reescritas en 5 guias. index.md reagrupado por el programa nuevo. CLAUDE.md de la materia con la tabla de dos significados de 1P/2P. Banner de "programa viejo" en los 6 parciales_analizados y en sintesis/repaso_1P y repaso_2P. Normalizado `tema: backtracking` → `fuerza_bruta_backtracking` en tipos_ejercicio/backtracking_tsp.
+Comandos actualizados para leer programa.md: parcial (reescrito — cruza por tema, no por rotulo), estado, lint, resumen, simular, ingestar, tipos_ejercicio_scan, tipos_ejercicio_run.
+NO se modifico: raw/, el contenido de parciales_analizados/ ni transcripciones/, ni ningun `apariciones_en_parciales`.
+
+## [2026-08-22] programa | 2C_2026 — verificacion contra el listado oficial completo
+El usuario aporto el listado explicito del 2P (antes se habia derivado por descarte). Verificado contra la wiki: los 4 bullets del 2P calzan con las paginas existentes.
+- "PD: Top-Down, Bottom-Up y Reconstruccion" → Reconstruccion SI esta cubierta (programacion_dinamica_teoria seccion propia + ~6 ejercicios de guia: Vacations, Fire, TravesiaVital, Farmer, y programacion_dinamica_top_down_practica_pt1), pero sin pagina propia. Documentado donde encontrarla.
+- "Camino minimo: Dijkstra/Bellman-Ford/Floyd y Dantzig/DAGs" → calza exacto: caminos_minimos_teoria (los 4 algoritmos, Dantzig incluido) + caminos_minimos_todos_a_todos_y_dags_practica (DAGs).
+- "Greedy" y "Flujo maximo" → calzan sin observaciones.
+
+Hallazgo: **AGM no figura en el listado oficial de ninguno de los dos parciales.** Se planteo la hipotesis de que cayera dentro de "Algoritmos sobre grafos" del 1P (el 2P esta desglosado con mucho detalle y no lo menciona). Decision del usuario: se queda en el 2P. Documentado en programa.md con aviso de "no volver a corregir sin confirmacion". Sin cambios en el mapeo — la propagacion previa ya lo tenia en 2P.
+
+Segundo hallazgo: el bullet dice "Flujo maximo", no flujo de costo minimo; los ejercicios 22-24 de flujo_en_redes_guia son MCMF. Decision del usuario: entran igual como extension. Sin cambios.
+
+Actualizado: programa.md (transcripcion textual de ambos listados, nota AGM, notas de alcance de Reconstruccion y MCMF, aclaracion de que complejidad y demostraciones no figuran como bloque propio), CLAUDE.md de la materia (tabla 2P con la redaccion oficial + aviso AGM), index.md (titulos del 2P con la redaccion oficial y en el orden del programa; notas en Teoria de Grafos, Algoritmos sobre grafos y AGM).
+Sin cambios en el mapa tema→parcial: las 47 paginas siguen coherentes.

@@ -1,5 +1,13 @@
 Resumen de un tema para arrancar a resolver ejercicios. Argumento: $ARGUMENTS (nombre del tema, ej: divide_y_conquista)
 
+## Regla previa — `programa.md` es la fuente de verdad del mapeo tema→parcial
+
+Leer `programa.md` del working directory antes de asignar cualquier `parcial:`.
+**Nunca** inferir el parcial desde el nombre del archivo en `raw/` ni desde el rotulo del
+examen historico en que aparecio un ejercicio: esos rotulos reflejan el programa del
+cuatrimestre en que se dicto/tomo el material, que puede diferir del vigente.
+Todo frontmatter generado lleva `parcial:` (derivado) + `programa:` (version que refleja).
+
 ## Workflow
 
 1. **Leer index.md** e identificar todas las páginas del tema
@@ -22,7 +30,8 @@ nombre: [Tema] — Resumen
 tipo: sintesis
 subtipo: resumen
 tema: [tema]
-parcial: [1P|2P|ambos]
+parcial: [1P|2P|ambos]   # derivado de programa.md
+programa: [vigencia]     # ej: 2C_2026
 fecha_creacion: [fecha]
 paginas_fuente:
   - "[[tema_teoria]]"

@@ -1,6 +1,7 @@
 ---
 nombre: BT — Analizar complejidad de backtracking
 parcial: 1P
+programa: 2C_2026
 tema: fuerza_bruta_backtracking
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf

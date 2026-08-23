@@ -1,24 +1,58 @@
 # Indice — Algoritmos y Estructuras de Datos III
 
-Ultima actualizacion: 2026-04-11 (sesion 11 — banderas y tipos_ejercicio COMPLETADOS)
+Ultima actualizacion: 2026-08-22 — **reagrupado segun el [[programa]] vigente (2C-2026)**.
 
-## Fundamentos
+> ⚠️ **La catedra cambio que temas entran en cada parcial este cuatrimestre.**
+> Este indice ya refleja el reparto nuevo. La fuente de verdad es [[programa]].
+> Los `parciales_analizados/` y las paginas de repaso siguen rotulados con el programa
+> **viejo** — estan agrupados aparte, al final.
+
+## Transversales (entran en ambos parciales)
 
 - [[complejidad_computacional_teoria]] — Modelo RAM, notacion asintotica (O, Omega, Theta), clasificacion de algoritmos · `raw/clases/teo/0.teo_1P_repaso.pdf`
+- [[definiciones_y_demostraciones_teoria]] — Estrategias de demo (directa, casos, contradiccion, contrarreciproco, construccion, induccion, contraejemplo), errores comunes, ejemplo resuelto poda optimalidad · `raw/clases/teo/5.teo_1P_definicion_demo.pdf`
+- [[demostraciones_induccion_guia]] — 8 ejercicios de guia: induccion matematica (identidades, sumatoria general, Fibonacci/Binet, errores en demos) · `raw/guias_practicas/0.guia_1P_repaso.pdf`
 
-## Temas — 1P
+---
+
+## Primer Parcial (1P) — programa vigente
+
+### Teoria de Grafos
+> Absorbe las **demostraciones sobre grafos**, que en el programa viejo eran el tema aparte
+> "Definiciones y Demostraciones" del 1P.
+
+- [[grafos_teoria]] — Definiciones (grafo, digrafo, multigrafo), grado, Handshaking Lemma, recorridos/caminos/ciclos, distancia, subgrafos, conexidad, bipartitos, isomorfismo, representacion (matriz adyacencia, listas) · `raw/clases/teo/6.teo_2P_grafos.pdf`
+- [[grafos_practica]] — Representacion (matriz adyacencia vs lista adyacencia, complejidades, alternativas, grafos implicitos), Demostraciones (principio del palomar, CicloCompartido, vertices no-articulacion por induccion, Handshaking por induccion, caminata impar→ciclo impar, error clasico induccion constructiva) · `raw/clases/prac/7.prac_2P_demostracion_sobre_grafos.pdf` + `7.prac_2P_representacion_de_grafos.pdf`
+- [[grafos_guia]] — 22 ejercicios de guia: teoria algoritmica de grafos, demostraciones y propiedades de grafos/digrafos · `raw/guias_practicas/3.guia_1P_teoria_algoritmica_de_grafos.pdf`
+
+### Arboles
+- [[arboles_teoria]] — Definicion (conexo sin circuitos), lemas (hojas, m=n-1), teoremas de equivalencia, arboles enraizados (m-ario, balanceado), arboles generadores, BFS y DFS (algoritmo, timestamps, clasificacion arcos), aplicaciones (ciclos, topologico, fuertemente conexas) · `raw/clases/teo/7.teo_2P_arboles.pdf`
+
+### Algoritmos sobre grafos — Recorridos (BFS/DFS)
+> Alcance confirmado: **solo recorridos**. No incluye AGM, caminos minimos ni flujo.
+
+- [[recorrido_en_grafos_practica]] — DFS y BFS (repaso), conectividad, componentes conexas, contar caminos minimos (BFS+PD), bipartito (BFS+paridad), aristas puente (DFS+cubren, demo ↔ ciclo, algoritmo lineal), luces (grafo implicito+BFS), orden topologico (DFS+stack) · `raw/clases/prac/8.prac_2P_recorrido_en_grafos.pdf`
+- [[recorrido_en_grafos_guia]] — 10 ejercicios de guia (ej 1-10): DFS y BFS, componentes conexas, bipartitez, caminos (guia 4, seccion recorridos) · `raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf`
 
 ### Divide & Conquer
 - [[divide_y_conquista_teoria]] — Forma general D&C, analisis de recurrencias, Teorema Maestro, Karatsuba · `raw/clases/teo/1.teo_1P_divide_&_conquer.pdf`
 - [[divide_y_conquista_practica]] — MergeSort, BusquedaBinaria, MaximoMontana, MaximaSubsecuencia, DiferenciaMinima (busqueda ternaria) · `raw/clases/prac/1.prac_1P_divide_&_conquer.pdf`
 - [[divide_y_conquista_guia]] — 16 ejercicios de guia: recurrencias (MergeSort, BusquedaBinaria, MaximoMontana, 12 recurrencias DyC), diseno (MaximaSubsecuencia, DiferenciaMinima) · `raw/guias_practicas/1.guia_1P_divide_&_conquer.pdf`
 
-### Fuerza Bruta & Backtracking
+### Backtracking
 - [[fuerza_bruta_backtracking_teoria]] — Optimizacion combinatoria, fuerza bruta, backtracking, branch & bound, mochila, n-damas · `raw/clases/teo/2.teo_1P_fuerza_bruta_backtracking.pdf`
 - [[fuerza_bruta_backtracking_practica]] — Separar cadena en palabras, ABB optimo, Dobra (palabras buenas con comodines), Cadenas de adicion · `raw/clases/prac/2.prac_1P_backtracking_handout.pdf`
 - [[fuerza_bruta_backtracking_guia]] — 8 ejercicios de guia (ej 1-8): SumaSubconjuntos, RutaMinima, PalabrasEnCadena, ABBOptimos, Dobra (guia 2, seccion BT) · `raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf`
 
-### Programacion Dinamica
+---
+
+## Segundo Parcial (2P) — programa vigente
+
+### Programacion Dinamica: Top-Down, Bottom-Up y Reconstruccion
+> **Reconstruccion** es subtema explicito del programa. En la wiki esta en
+> `programacion_dinamica_teoria` (seccion "Reconstruccion de la solucion") y aplicada en los
+> ejercicios Vacations, Fire, TravesiaVital y Farmer de la guia. No tiene pagina propia.
+
 - [[programacion_dinamica_teoria]] — Top-down vs bottom-up, coeficientes binomiales, cambio de monedas (con demo), mochila (con demo por induccion), SCML · `raw/clases/teo/3.teo_1P_programacion_dinamica.pdf` + `3.teo_1P_demo_mochila.pdf` + `3.teo_1P_demo_monedas.pdf`
 - [[programacion_dinamica_top_down_practica_pt1]] — El retorno del rey (Fibonacci), AstroTrade, Tobi el granjero (grid mod K+1) — 2025 · `raw/clases/prac/3.prac_1P_programacion_dinamica_top_down_parte1.pdf`
 - [[programacion_dinamica_top_down_practica_pt2]] — Receta 6 pasos PD top-down, Vacations, Caesar's Legions, Fire (Codeforces) — 2023 · `raw/clases/prac/3.prac_1P_programacion_dinamica_top_down_parte2.pdf`
@@ -30,59 +64,56 @@ Ultima actualizacion: 2026-04-11 (sesion 11 — banderas y tipos_ejercicio COMPL
 - [[greedy_practica]] — Planificacion de tareas con deadlines (GSA), Viaje a Mar del Plata (eleccion greedy + subestructura optima), Minimizacion del producto escalar (argumento de intercambio) · `raw/clases/prac/5.prac_1P_greedy.pdf`
 - [[greedy_guia]] — 11 ejercicios de guia (ej 27-37): Deadlines, RutaEficiente, ProductoEscalar, SeleccionDeActividades, mochila fraccionaria (guia 2, seccion Greedy) · `raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf`
 
-### Definiciones y Demostraciones
-- [[definiciones_y_demostraciones_teoria]] — Estrategias de demo (directa, casos, contradiccion, contrarreciproco, construccion, induccion, contraejemplo), errores comunes, ejemplo resuelto poda optimalidad · `raw/clases/teo/5.teo_1P_definicion_demo.pdf`
-- [[demostraciones_induccion_guia]] — 8 ejercicios de guia: induccion matematica (identidades, sumatoria general, Fibonacci/Binet, errores en demos) · `raw/guias_practicas/0.guia_1P_repaso.pdf`
-
-## Temas — 2P
-
-### Grafos
-- [[grafos_teoria]] — Definiciones (grafo, digrafo, multigrafo), grado, Handshaking Lemma, recorridos/caminos/ciclos, distancia, subgrafos, conexidad, bipartitos, isomorfismo, representacion (matriz adyacencia, listas) · `raw/clases/teo/6.teo_2P_grafos.pdf`
-- [[grafos_practica]] — Representacion (matriz adyacencia vs lista adyacencia, complejidades, alternativas, grafos implicitos), Demostraciones (principio del palomar, CicloCompartido, vertices no-articulacion por induccion, Handshaking por induccion, caminata impar→ciclo impar, error clasico induccion constructiva) · `raw/clases/prac/7.prac_2P_demostracion_sobre_grafos.pdf` + `7.prac_2P_representacion_de_grafos.pdf`
-- [[grafos_guia]] — 22 ejercicios de guia: teoria algoritmica de grafos, demostraciones y propiedades de grafos/digrafos (parcial: ambos) · `raw/guias_practicas/3.guia_1P_teoria_algoritmica_de_grafos.pdf`
-- [[recorrido_en_grafos_practica]] — DFS y BFS (repaso), conectividad, componentes conexas, contar caminos minimos (BFS+PD), bipartito (BFS+paridad), aristas puente (DFS+cubren, demo ↔ ciclo, algoritmo lineal), luces (grafo implicito+BFS), orden topologico (DFS+stack) · `raw/clases/prac/8.prac_2P_recorrido_en_grafos.pdf`
-- [[recorrido_en_grafos_guia]] — 10 ejercicios de guia (ej 1-10): DFS y BFS, componentes conexas, bipartitez, caminos (guia 4, seccion recorridos) · `raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf`
-
-### Arboles
-- [[arboles_teoria]] — Definicion (conexo sin circuitos), lemas (hojas, m=n-1), teoremas de equivalencia, arboles enraizados (m-ario, balanceado), arboles generadores, BFS y DFS (algoritmo, timestamps, clasificacion arcos), aplicaciones (ciclos, topologico, fuertemente conexas) · `raw/clases/teo/7.teo_2P_arboles.pdf`
-
-### Arboles Generadores Minimos
-- [[arboles_generadores_minimos_teoria]] — Definicion AGM, Algoritmo de Prim (pseudocodigo, proposicion, teorema, prueba por induccion, complejidades), Algoritmo de Kruskal (pseudocodigo, proposicion, teorema, prueba por induccion, Union-Find, complejidades) · `raw/clases/teo/8.teo_2P_arboles_generadores_minimos.pdf`
-- [[arboles_generadores_minimos_practica]] — Repaso (AG, AGM, MaxiMin/MiniMax, vinculo MiniMax↔AGM con demo), Viaje en peligro (Prim parcial $k$ aristas, $O(n^2)$), Conjuntos deseables (demo + algoritmo Kruskal+DSU $O(nm)$), Audifonos defectuosos (MiniMax via AGM), Alimentando hormigas (nodo fantasma Tubo), Rutas y aeropuertos (comparar 2 AGMs), DSU (union by rank + path compression) · `raw/clases/prac/9.prac_2P_arbol_generador_minimo.pdf`
-- [[arboles_generadores_minimos_guia]] — 10 ejercicios de guia (ej 11-20): AGM, Prim/Kruskal, MiniMax, integradores recorridos+AGM (guia 4, seccion AGM) · `raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf`
-
-### Caminos Minimos
+### Camino minimo: Dijkstra / Bellman-Ford / Floyd y Dantzig / DAGs
 - [[caminos_minimos_teoria]] — Definiciones (longitud, distancia, subestructura optima), variantes (1-1, 1-n, n-n), pesos negativos, Dijkstra (pesos>=0, pseudocodigo, lema+teorema+prueba, complejidades), Bellman-Ford/Ford (permite negativos, detecta ciclos negativos, lemas, corolarios, pruebas), Floyd (PD todos pares, O(n³), deteccion ciclos negativos), Dantzig (todos pares, crece matriz k×k) · `raw/clases/teo/9.teo_2P_caminos_minimos_en_grafos1.pdf` + `10.teo_2P_caminos_minimos_en_grafos2.pdf`
 - [[caminos_minimos_practica]] — Policias (BFS multi-source con nodo fantasma, $O(n+m)$), Martin y los Mares (Dijkstra doble ida/vuelta + aristas tortuga, con demo), Manuel y los Monstruos (Bellman-Ford, ciclos negativos alcanzables con demo, DAG de caminos minimos + BFS) · `raw/clases/prac/10.prac_2P_recorrido_minimo_uno_a_todos.pdf` + `10.prac_2P_recorrido_uno_a_todos_soluciones.pdf`
 - [[caminos_minimos_todos_a_todos_y_dags_practica]] — DAGs (orden topologico, Kahn, CM en DAG por PD $O(n+m)$), Sasha peajes (expansion temporal → DAG, $O(nt+mt)$), Rayuela rectangular (DAG camino maximo, $O(pqk)$), Optimizando canciones (Floyd $O(k^3)$ + desigualdad triangular), Mas trenes (Dantzig incremental vs Dijkstra on-demand), String problem (Floyd sobre alfabeto), Manic Moving (Floyd + PD ruta entregas) · `raw/clases/prac/11.prac_2P_recorrido_minimo_todos_a_todos_DAGs.pdf`
 - [[caminos_minimos_guia]] — 27 ejercicios de guia: Dijkstra, Bellman-Ford, SRDs, Floyd-Warshall, DAGs, grafos implicitos · `raw/guias_practicas/5.guia_2P_recorrido_minimo.pdf`
 
-### Flujo en Redes
+### Flujo maximo
 - [[flujo_en_redes_teoria]] — Definicion del problema (red, capacidad, conservacion), corte y capacidad, max-flow=min-cut, red residual, camino de aumento, Ford-Fulkerson (pseudocodigo, O(nmU), flujo entero), Edmonds-Karp (BFS, O(nm²)), matching maximo en bipartitos (reduccion a flujo) · `raw/clases/teo/11.teo_2P_flujo_en_redes.pdf`
 - [[flujo_en_redes_practica]] — Mini-repaso, tecnicas (split de vertice, sumidero ficticio), ¡Popular! (caminos disjuntos en aristas $O(nm)$ + corte minimo en vertices $O(n(n+m))$), Hotel lleno (min-cut), Matching bipartito Tareas ($O(|P||T| \cdot \min(|P|,|T|))$), Enchufados (adaptadores, $O(k^5)$), Furbo (sports elimination, modelo partido+equipo) · `raw/clases/prac/12.prac_2P_flujo_slides.pdf` + `12.prac_2P_flujos_handout.pdf`
 - [[flujo_en_redes_practica_pt2]] — Hospital (scheduling medicos con capa periodo-por-medico, $O(MD^2)$), Down Went the Titanic (grilla con hielo/iceberg/madera, split de hielo, interpretacion secuencial, $O(C^2)$), Satelite (enunciado — modelado pendiente) · `raw/clases/prac/13.prac_2P_flujo_parte2.pdf`
 - [[flujo_en_redes_guia]] — 27 ejercicios de guia: propiedades de flujos, caminos disjuntos, asignacion, transporte, corte minimo, flujo de costo minimo, adicionales (Elecciones Rumestania 2P-C2-2023, Torneos de Futbol) · `raw/guias_practicas/6.guia_2P_flujo_en_redes.pdf`
 
+### Arboles Generadores Minimos ⚠️
+> No figura en el listado oficial de ningun parcial. Se mantiene en el 2P por decision tomada
+> el 2026-08-22 — ver [[programa]]. Peso historico alto: 8 ejercicios en parciales 2P.
+
+- [[arboles_generadores_minimos_teoria]] — Definicion AGM, Algoritmo de Prim (pseudocodigo, proposicion, teorema, prueba por induccion, complejidades), Algoritmo de Kruskal (pseudocodigo, proposicion, teorema, prueba por induccion, Union-Find, complejidades) · `raw/clases/teo/8.teo_2P_arboles_generadores_minimos.pdf`
+- [[arboles_generadores_minimos_practica]] — Repaso (AG, AGM, MaxiMin/MiniMax, vinculo MiniMax↔AGM con demo), Viaje en peligro (Prim parcial $k$ aristas, $O(n^2)$), Conjuntos deseables (demo + algoritmo Kruskal+DSU $O(nm)$), Audifonos defectuosos (MiniMax via AGM), Alimentando hormigas (nodo fantasma Tubo), Rutas y aeropuertos (comparar 2 AGMs), DSU (union by rank + path compression) · `raw/clases/prac/9.prac_2P_arbol_generador_minimo.pdf`
+- [[arboles_generadores_minimos_guia]] — 10 ejercicios de guia (ej 11-20): AGM, Prim/Kruskal, MiniMax, integradores recorridos+AGM (guia 4, seccion AGM) · `raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf`
+
+---
+
 ## Tipos de ejercicio
 
-### 1P
+> Los cuatrimestres listados en cada linea son **apariciones historicas** (rotuladas con el
+> programa viejo). El agrupamiento 1P/2P de abajo es el del **programa vigente**.
+
+### Van en tu 1P
+- [[tipos_ejercicio/grafos_demostraciones]] — Grafos: demostrar propiedades de grafos · 1P_1C_2024, 2P_2C_2025, 2P_1C_2025
+- [[tipos_ejercicio/bfs_dfs_propiedades]] — BFS/DFS: propiedades y aplicaciones · 1P_1C_2024, 2P_1C_2024, 2P_2C_2025, 2P_1C_2025
 - [[tipos_ejercicio/dc_diseno]] — D&C: diseño de algoritmos Divide & Conquer · 1P_1C_2024, 1P_1C_2025
 - [[tipos_ejercicio/dc_teorema_maestro]] — D&C: aplicar/verificar Teorema Maestro · 1P_1C_2024, 1P_2C_2025, 2P_1C_2025
 - [[tipos_ejercicio/bt_complejidad_backtracking]] — BT: analizar complejidad de backtracking · 1P_1C_2024, 1P_2C_2025
 - [[tipos_ejercicio/backtracking_tsp]] — BT: TSP y problemas de permutacion con poda · 1P_1C_2025
+
+### Van en tu 2P
 - [[tipos_ejercicio/pd_definir_estado]] — PD: definir el estado (elegir dimensiones) · 1P_1C_2024, 1P_1C_2025
 - [[tipos_ejercicio/pd_definir_recursion]] — PD: definir recursion y analizar complejidad · 1P_1C_2024, 1P_2C_2025, 1P_1C_2025
 - [[tipos_ejercicio/pd_superposicion_subproblemas]] — PD: demostrar superposicion de subproblemas · 1P_2C_2025
 - [[tipos_ejercicio/greedy_demo_intercambio]] — Greedy: demostrar correctitud por argumento de intercambio · 1P_2C_2025, 2P_1C_2025
-
-### 2P
-- [[tipos_ejercicio/grafos_demostraciones]] — Grafos: demostrar propiedades de grafos · 1P_1C_2024, 2P_2C_2025, 2P_1C_2025
-- [[tipos_ejercicio/bfs_dfs_propiedades]] — BFS/DFS: propiedades y aplicaciones · 1P_1C_2024, 2P_1C_2024, 2P_2C_2025, 2P_1C_2025
 - [[tipos_ejercicio/agm_propiedades]] — AGM: propiedades y algoritmos · 2P_1C_2024, 2P_1C_2025
 - [[tipos_ejercicio/cm_estado_expandido]] — CM: caminos minimos con estado expandido · 2P_1C_2024, 2P_2C_2025, 2P_1C_2025
 - [[tipos_ejercicio/flujo_modelado]] — Flujo: modelar problemas como redes de flujo · 2P_1C_2024, 2P_2C_2025, 2P_1C_2025
 
-## Parciales analizados
+---
+
+## Parciales analizados — programa viejo
+
+> Tomados cuando el 1P cubria D&C/BT/PD/Greedy/Demos y el 2P cubria Grafos/Arboles/AGM/CM/Flujo.
+> **No son simulacros validos de tu parcial.** Usalos como banco de ejercicios filtrando por tema.
 
 - [[parciales_analizados/1P_1C_2024]] — D&C, Backtracking, PD, Grafos, BFS/DFS · digital · 15 pags
 - [[parciales_analizados/2P_1C_2024]] — AGM, Caminos Minimos, Grafos, Flujo · digital · 4 pags
@@ -90,6 +121,8 @@ Ultima actualizacion: 2026-04-11 (sesion 11 — banderas y tipos_ejercicio COMPL
 - [[parciales_analizados/1P_2C_2025]] — D&C, PD, Greedy, Backtracking, Fuerza Bruta · fotografiado · formato desarrollo
 - [[parciales_analizados/2P_1C_2025]] — AGM, Caminos Minimos, Grafos, Flujo, D&C, Greedy, Coloreo · mixto · 2 examenes (regular 68/100 + recuperatorio)
 - [[parciales_analizados/2P_2C_2025]] — Grafos, AGM, Caminos Minimos, Flujo, BFS/DFS · fotografiado · 17/Nov/2025
+
+---
 
 ## Sintesis
 

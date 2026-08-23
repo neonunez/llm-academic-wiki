@@ -1,6 +1,7 @@
 ---
 nombre: BFS/DFS — Propiedades y aplicaciones
-parcial: ambos
+parcial: 1P
+programa: 2C_2026
 tema: recorrido_en_grafos
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf
@@ -83,6 +84,13 @@ BFS procesa vertices en orden no decreciente de distancia desde la raiz. En graf
 - Confundir paridad con magnitud: $i > 2$ no garantiza que $(i,j)$ este mas lejos que $(2,3)$.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Recorridos era **2P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **1P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 - **1P_1C_2024 Ej 8-9:** propiedades BFS, complejidad DFS
 - **2P_1C_2024 Ej 7:** camino par minimo (grafo con paridad)

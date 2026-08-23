@@ -1,6 +1,7 @@
 ---
 nombre: Greedy — Demostrar correctitud por argumento de intercambio
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tema: greedy
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_2C_2025_resolucion(1).pdf
@@ -50,6 +51,13 @@ Si cualquier solucion optima puede transformarse en la solucion greedy via inter
 - Para SPT: $d_i = \sum_{j=1}^{i} t_j$ (la tarea $j$ contribuye a la demora de todas las tareas posteriores). Cada $t_j$ se cuenta $n - j + 1$ veces en la suma total.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Greedy era **1P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **2P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 - **1P_2C_2025 Ej 3:** Minimizar demora total de $n$ tareas — SPT, exchange argument incompleto en la resolucion
 

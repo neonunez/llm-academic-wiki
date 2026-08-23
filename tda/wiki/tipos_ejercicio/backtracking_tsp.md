@@ -1,7 +1,8 @@
 ---
 nombre: Backtracking — TSP y problemas de permutacion con poda
 parcial: 1P
-tema: backtracking
+programa: 2C_2026
+tema: fuerza_bruta_backtracking
 apariciones_en_parciales:
   - wiki/parciales_analizados/1P_1C_2025.md
 ---

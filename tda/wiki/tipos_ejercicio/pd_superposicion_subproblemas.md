@@ -1,6 +1,7 @@
 ---
 nombre: PD — Demostrar superposicion de subproblemas
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tema: programacion_dinamica
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_2C_2025_resolucion(1).pdf
@@ -45,6 +46,13 @@ Backtracking explora el arbol de recursion completo. PD "colapsa" todos los suba
 - Confundir "subproblemas se repiten" con "el problema tiene subestructura optima" — son conceptos distintos.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Programacion Dinamica era **1P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **2P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 - **1P_2C_2025 Ej 4b:** Combinaciones con suma $s$ — comparar $O(K^n)$ llamados vs $O(n \cdot s)$ estados
 

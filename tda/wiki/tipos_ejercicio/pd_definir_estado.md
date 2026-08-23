@@ -1,6 +1,7 @@
 ---
 nombre: PD — Definir el estado (elegir dimensiones)
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tema: programacion_dinamica
 apariciones_en_parciales:
   - wiki/parciales_analizados/1P_1C_2024.md
@@ -45,6 +46,13 @@ Para cada dimension, determinar su rango. El tamaño de la tabla de memoizacion 
 La tabla de memoizacion almacena exactamente un valor por estado. Si el estado es suficiente (paso 3), cada valor se computa una unica vez y se reutiliza. Si el estado tiene dimensiones de mas, la tabla sera mas grande de lo necesario pero la solucion seguira siendo correcta. Si tiene dimensiones de menos, habra subproblemas indistinguibles que en realidad son distintos, y la solucion sera incorrecta.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C-2026).** Programacion Dinamica era **1P** en el programa viejo, asi que los
+> rotulos `1P`/`2P` de la lista de abajo corresponden a **como se tomaba antes**.
+> Con el programa vigente este patron es material de tu **2P**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
+
 
 ### 1P bottom-up — Pila Cauta (dos formulaciones del estado)
 

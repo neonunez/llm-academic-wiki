@@ -1,6 +1,7 @@
 ---
 nombre: Resumen General — Comunidad (Damy)
 parcial: ambos
+programa: 2C_2026
 tipo: sintesis
 tema: todos
 fuente: raw/contenido_comunidad/1.comunidad_resumen_general.pdf
