@@ -1,13 +1,22 @@
 ---
 nombre: Greedy — Clase Practica
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: greedy
-fuente: raw/clases/prac/5.prac_1P_greedy.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/5.prac_1P_greedy.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[greedy_teoria]]"
   - "[[greedy_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/greedy_demo_intercambio]]

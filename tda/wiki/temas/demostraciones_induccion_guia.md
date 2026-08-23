@@ -1,12 +1,21 @@
 ---
 nombre: Definiciones y Demostraciones — Guia de Ejercicios (Repaso Induccion)
-parcial: 1P
+parcial: ambos
+programa: 2C_2026
 tipo: guia
 tema: definiciones_y_demostraciones
-fuente: raw/guias_practicas/0.guia_1P_repaso.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/0.guia_1P_repaso.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[definiciones_y_demostraciones_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Definiciones y Demostraciones — Guia de Ejercicios (Repaso Induccion)
 
@@ -351,7 +360,7 @@ Para que el argumento funcione, se necesitaria que los dos subconjuntos de taman
 
 > Error: falla en $n=2$. Los subconjuntos $\{x_1\}$ y $\{x_2\}$ son **disjuntos** → no hay elemento puente para transferir igualdad. El paso es valido solo para $n \geq 3$.
 
-**¿Aparece en parciales?** 🔴 Si — analisis de demos incorrectas aparece en parciales de 1P (ej. [[definiciones_y_demostraciones_teoria]])
+**¿Aparece en parciales?** 🔴 Si — analisis de demos incorrectas aparece en parciales historicos rotulados 1P (ej. [[definiciones_y_demostraciones_teoria]]); tema transversal a ambos parciales con el programa vigente
 
 ---
 
@@ -386,7 +395,7 @@ Adicionalmente, la formula requiere $n \geq 2$ para que $a^{n-2}$ sea una potenc
 
 > Error: el paso usa $a^{n-2}$ (implica $P(n-2)$ no establecida). Para $n=1$: $a^{-1}$ esta fuera del dominio de HI. HI deberia ser fuerte ($P(n-1)$ y $P(n-2)$) con base $n=1$, pero $P(1)$ es falsa.
 
-**¿Aparece en parciales?** 🔴 Si — analisis de demos incorrectas es tema evaluado en 1P
+**¿Aparece en parciales?** 🔴 Si — analisis de demos incorrectas aparece en parciales historicos rotulados 1P; tema transversal a ambos parciales con el programa vigente
 
 ## Ver tambien
 

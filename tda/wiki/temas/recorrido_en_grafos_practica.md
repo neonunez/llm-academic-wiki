@@ -1,14 +1,23 @@
 ---
 nombre: Recorridos en Grafos — Clase Practica
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: recorrido_en_grafos
-fuente: raw/clases/prac/8.prac_2P_recorrido_en_grafos.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/8.prac_2P_recorrido_en_grafos.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[arboles_teoria]]"
   - "[[grafos_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/bfs_dfs_propiedades]] · [[tipos_ejercicio/cm_estado_expandido]]

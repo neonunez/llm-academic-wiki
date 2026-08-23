@@ -1,17 +1,25 @@
 ---
 nombre: Programacion Dinamica — Teoria
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: teoria
 tema: programacion_dinamica
-fuente:
-  - raw/clases/teo/3.teo_1P_programacion_dinamica.pdf
-  - raw/clases/teo/3.teo_1P_demo_mochila.pdf
-  - raw/clases/teo/3.teo_1P_demo_monedas.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/3.teo_1P_programacion_dinamica.pdf
+    - raw/clases/teo/3.teo_1P_demo_mochila.pdf
+    - raw/clases/teo/3.teo_1P_demo_monedas.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[divide_y_conquista_teoria]]"
   - "[[fuerza_bruta_backtracking_teoria]]"
   - "[[greedy_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Programacion Dinamica — Teoria
 

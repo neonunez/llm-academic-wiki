@@ -1,13 +1,22 @@
 ---
 nombre: Divide & Conquer — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: divide_y_conquista
-fuente: raw/clases/teo/1.teo_1P_divide_&_conquer.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/1.teo_1P_divide_&_conquer.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[complejidad_computacional_teoria]]"
   - "[[fuerza_bruta_backtracking_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Divide & Conquer — Teoria
 

@@ -1,14 +1,23 @@
 ---
 nombre: Fuerza Bruta & Backtracking — Clase Practica
 parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: fuerza_bruta_backtracking
-fuente: raw/clases/prac/2.prac_1P_backtracking_handout.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/2.prac_1P_backtracking_handout.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[fuerza_bruta_backtracking_teoria]]"
   - "[[definiciones_y_demostraciones_teoria]]"
   - "[[fuerza_bruta_backtracking_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Fuerza Bruta & Backtracking — Clase Practica
 

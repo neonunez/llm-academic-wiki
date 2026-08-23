@@ -1,14 +1,24 @@
 ---
 nombre: Flujo en Redes — Clase Practica
 parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: flujo_en_redes
-fuente: raw/clases/prac/12.prac_2P_flujo_slides.pdf + raw/clases/prac/12.prac_2P_flujos_handout.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/12.prac_2P_flujo_slides.pdf
+    - raw/clases/prac/12.prac_2P_flujos_handout.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[flujo_en_redes_teoria]]"
   - "[[flujo_en_redes_practica_pt2]]"
   - "[[flujo_en_redes_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 > Clase practica de Flujo en Redes (2do cuatrimestre 2025). Slides de Oriana Biasi, Dafne Yudcovsky y Luciana Skakovsky. Handout de 2C 2024 TM. Cubre: repaso de flujo, caminos disjuntos, corte minimo, matching bipartito, adaptadores (Enchufados), y sports elimination (Furbo).
 

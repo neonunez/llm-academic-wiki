@@ -1,14 +1,23 @@
 ---
 nombre: Flujo en Redes — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: flujo_en_redes
-fuente: raw/guias_practicas/6.guia_2P_flujo_en_redes.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/6.guia_2P_flujo_en_redes.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[flujo_en_redes_teoria]]"
   - "[[flujo_en_redes_practica]]"
   - "[[flujo_en_redes_practica_pt2]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Flujo en Redes — Guia de Ejercicios
 

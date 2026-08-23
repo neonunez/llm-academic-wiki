@@ -1,14 +1,24 @@
 ---
 nombre: Caminos Minimos — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: caminos_minimos
-fuente: raw/guias_practicas/5.guia_2P_recorrido_minimo.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/5.guia_2P_recorrido_minimo.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[caminos_minimos_teoria]]"
   - "[[caminos_minimos_practica]]"
   - "[[caminos_minimos_todos_a_todos_y_dags_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
+
 # Caminos Minimos — Guia de Ejercicios
 
 Practica 5: Recorrido minimo. 2do cuatrimestre 2025. Compilado: 4 nov. 2025.

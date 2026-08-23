@@ -16,7 +16,9 @@ llm-academic-wiki/
 │   ├── CLAUDE.md              ← esquema de la materia
 │   ├── index.md               ← catalogo del wiki
 │   ├── log.md                 ← registro de operaciones
+│   ├── programa.md            ← temas por parcial + cursada vigente
 │   ├── raw/                   ← PDFs originales (inmutables)
+│   │   └── cursada_2C_2026/   ← material del cuatrimestre en curso (autoridad)
 │   └── wiki/                  ← contenido generado por el LLM
 └── [otras materias]/          ← misma estructura, independientes
 ```

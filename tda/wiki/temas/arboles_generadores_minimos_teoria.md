@@ -1,14 +1,23 @@
 ---
 nombre: Arboles Generadores Minimos — Teoria
 parcial: 2P
+programa: 2C_2026
 tipo: teoria
 tema: arboles_generadores_minimos
-fuente: raw/clases/teo/8.teo_2P_arboles_generadores_minimos.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/8.teo_2P_arboles_generadores_minimos.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[arboles_teoria]]"
   - "[[grafos_teoria]]"
   - "[[greedy_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Concepto y definicion
 

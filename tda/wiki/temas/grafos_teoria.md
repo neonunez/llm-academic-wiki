@@ -1,15 +1,24 @@
 ---
 nombre: Grafos — Teoria
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: grafos
-fuente: raw/clases/teo/6.teo_2P_grafos.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/6.teo_2P_grafos.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[arboles_teoria]]"
   - "[[arboles_generadores_minimos_teoria]]"
   - "[[caminos_minimos_teoria]]"
   - "[[flujo_en_redes_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Grafos — Teoria
 

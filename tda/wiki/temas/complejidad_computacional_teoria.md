@@ -1,13 +1,22 @@
 ---
 nombre: Complejidad Computacional — Repaso
-parcial: 1P
+parcial: ambos
+programa: 2C_2026
 tipo: teoria
 tema: complejidad_computacional
-fuente: raw/clases/teo/0.teo_1P_repaso.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/0.teo_1P_repaso.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[divide_y_conquista_teoria]]"
   - "[[fuerza_bruta_backtracking_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Complejidad Computacional — Repaso
 

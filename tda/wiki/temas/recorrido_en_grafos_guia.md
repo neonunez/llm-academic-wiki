@@ -1,15 +1,24 @@
 ---
 nombre: Recorrido en Grafos — Guia de Ejercicios
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: recorrido_en_grafos
-fuente: raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[arboles_teoria]]"
   - "[[grafos_teoria]]"
   - "[[recorrido_en_grafos_practica]]"
   - "[[arboles_generadores_minimos_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Recorrido en Grafos — Guia de Ejercicios
 
@@ -94,7 +103,7 @@ Iterar sobre todos los vertices; por cada vertice no visitado iniciar una nueva 
 > 4. Si sin conflicto: bipartito con biparticion $(\{\text{color}=0\}, \{\text{color}=1\})$.
 > 5. $O(n+m)$.
 
-**¿Aparece en parciales?** 🔴 Si — bipartito via BFS es ejercicio evaluado en 2P
+**¿Aparece en parciales?** 🔴 Si — bipartito via BFS aparece en parciales historicos rotulados 2P; con el programa vigente entra en tu **1P**
 
 ---
 
@@ -338,7 +347,7 @@ Luego $T$ es v-geodesico y no es arbol BFS. $\square$
 >
 > **Contraejemplo:** $G = \{v, a, b, c, d\}$ con $v$ adyacente a $a$ y $b$; $c$ y $d$ adyacentes a $a$ y $b$. El arbol $T = \{v\text{-}a, v\text{-}b, a\text{-}c, b\text{-}d\}$ es v-geodesico pero BFS nunca puede "partir" $c$ y $d$ entre $a$ y $b$.
 
-**¿Aparece en parciales?** 🔴 Si — BFS y distancias minimas es tema central de 2P
+**¿Aparece en parciales?** 🔴 Si — BFS y distancias minimas es tema central en parciales historicos rotulados 2P; con el programa vigente entra en tu **1P**
 
 ---
 
@@ -636,7 +645,7 @@ retornar "imposible"
 > 4. BFS desde $(1, \{1\})$ hasta $(hab\_final, \{hab\_final\})$.
 > 5. $O(n \cdot 2^n)$.
 
-**¿Aparece en parciales?** 🔴 Si — grafo implicito con estado + BFS es patron evaluado en 2P
+**¿Aparece en parciales?** 🔴 Si — grafo implicito con estado + BFS aparece en parciales historicos rotulados 2P; con el programa vigente entra en tu **1P**
 
 ## Ver tambien
 

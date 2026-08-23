@@ -92,6 +92,56 @@ alternativa era que cayera dentro de "Algoritmos sobre grafos" del 1P — descar
 
 ---
 
+## Cursada vigente y procedencia del material
+
+**Cursada vigente:** `2C_2026` — mismo valor que `vigencia` en el frontmatter de este archivo.
+**Carpeta de material:** `raw/cursada_2C_2026/` (`teo/`, `prac/`, `guias/`).
+
+El material de la cursada vigente es la **fuente de autoridad**. El de cuatrimestres pasados
+(`raw/clases/`, `raw/guias_practicas/`) sigue siendo valido — son los mismos contenidos — pero
+cede ante el nuevo en cualquier conflicto de notacion, alcance o enfoque.
+
+### Estados de verificacion
+
+Cada pagina de `wiki/temas/` declara en su frontmatter de donde viene su contenido:
+
+```yaml
+fuentes:
+  vigente:   [raw/cursada_2C_2026/teo/...]     # material de la cursada actual
+  historico: [raw/clases/teo/...]              # cuatrimestres pasados
+estado_verificacion: verificado_2C_2026 | pendiente_verificacion | solo_historico
+```
+
+| Estado | Significa |
+|---|---|
+| `verificado_2C_2026` | El material de la cursada actual paso por aca. Refleja lo que se dicta hoy |
+| `pendiente_verificacion` | Solo tiene material de cuatrimestres pasados. **Sin contrastar** |
+| `solo_historico` | Contenido que ya no se dicta. Se conserva, no se estudia |
+
+Es esperable que durante buena parte del cuatrimestre la mayoria de las paginas esten en
+`pendiente_verificacion`. Eso es informacion honesta, no una falla. `/lint` y `/estado` dan el avance.
+
+### Lo que NO cambia: la base de que es importante
+
+Los parciales historicos (`raw/parciales/`, ya ingestados) **siguen siendo la base** para decidir
+que ejercicios y temas vale la pena estudiar. Las banderas `🔴 Si → [[tipos_ejercicio/X]]` / `⚪ No`
+se calculan contra `parciales_analizados/` y `tipos_ejercicio/` exactamente como siempre.
+
+Los contenidos son los mismos entre cuatrimestres — solo cambio el reparto por parcial (ver arriba).
+Por eso lo que tomaron historicamente sigue siendo un indicador valido de importancia.
+**No hay un sistema de señal paralelo**: los ⋆ de las guias se extraen como contenido, nada mas.
+
+### Orden de ingesta de la cursada
+
+1. **Teoricas** — definen notacion y alcance
+2. **Practicas**
+3. **Guias** — matching de ejercicios por enunciado
+4. **Re-correr `/tipos_ejercicio`** — los ejercicios nuevos de las guias necesitan su bandera
+
+Las teoricas van primero porque si cambio la notacion, saberlo antes evita rehacer el matching.
+Si en algun momento la catedra reparte parciales, enunciados modelo o listas de ejercicios
+obligatorios, **eso entra antes que todo lo demas** — el principio de "parciales primero" sigue vigente.
+
 ## Mapa tema → parcial (formato para maquinas)
 
 ```yaml
@@ -190,3 +240,11 @@ Este es el reparto bajo el cual fueron tomados **todos** los parciales de
    `wiki/temas/` y `wiki/tipos_ejercicio/`, y regenera el agrupamiento de `index.md`.
 4. **No tocar** `raw/`, `parciales_analizados/`, `transcripciones/` ni
    `apariciones_en_parciales`.
+
+## Procedimiento cuando arranca una cursada nueva
+
+1. Crear `raw/cursada_<vigencia>/{teo,prac,guias}/` y soltar el material ahi.
+2. Actualizar `vigencia` en el frontmatter y la seccion **Cursada vigente** de este archivo.
+3. Re-marcar las paginas a `pendiente_verificacion` con la vigencia nueva (el material verificado
+   contra la cursada anterior deja de estar verificado contra la actual).
+4. Ingestar en el orden de arriba con `/ingestar raw/cursada_<vigencia>/...` (modo reconciliacion).

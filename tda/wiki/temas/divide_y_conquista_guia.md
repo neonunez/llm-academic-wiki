@@ -1,13 +1,22 @@
 ---
 nombre: Divide & Conquer — Guia de Ejercicios
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: divide_y_conquista
-fuente: raw/guias_practicas/1.guia_1P_divide_&_conquer.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/1.guia_1P_divide_&_conquer.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[divide_y_conquista_teoria]]"
   - "[[divide_y_conquista_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Divide & Conquer — Guia de Ejercicios
 

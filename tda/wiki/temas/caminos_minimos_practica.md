@@ -1,17 +1,25 @@
 ---
 nombre: Caminos Minimos Uno a Todos — Clase Practica
 parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: caminos_minimos
-fuente:
-  - raw/clases/prac/10.prac_2P_recorrido_minimo_uno_a_todos.pdf
-  - raw/clases/prac/10.prac_2P_recorrido_uno_a_todos_soluciones.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/10.prac_2P_recorrido_minimo_uno_a_todos.pdf
+    - raw/clases/prac/10.prac_2P_recorrido_uno_a_todos_soluciones.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[caminos_minimos_teoria]]"
   - "[[arboles_generadores_minimos_practica]]"
   - "[[caminos_minimos_todos_a_todos_y_dags_practica]]"
   - "[[caminos_minimos_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/cm_estado_expandido]]

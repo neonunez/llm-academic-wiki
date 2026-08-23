@@ -6,3 +6,6 @@
 
 # Binarios de plugins de Obsidian (se reinstalan solos desde community-plugins.json)
 .obsidian/plugins/
+
+# working state de ingestas esperando aprobacion (transitorio)
+*/.ingestas_pendientes/

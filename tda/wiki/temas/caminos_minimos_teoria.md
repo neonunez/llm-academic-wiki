@@ -1,14 +1,24 @@
 ---
 nombre: Caminos Minimos en Grafos — Teoria
 parcial: 2P
+programa: 2C_2026
 tipo: teoria
 tema: caminos_minimos
-fuente: raw/clases/teo/9.teo_2P_caminos_minimos_en_grafos1.pdf + raw/clases/teo/10.teo_2P_caminos_minimos_en_grafos2.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/9.teo_2P_caminos_minimos_en_grafos1.pdf
+    - raw/clases/teo/10.teo_2P_caminos_minimos_en_grafos2.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[arboles_teoria]]"
   - "[[programacion_dinamica_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Concepto y definicion
 

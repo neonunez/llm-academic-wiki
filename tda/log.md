@@ -273,3 +273,22 @@ Segundo hallazgo: el bullet dice "Flujo maximo", no flujo de costo minimo; los e
 
 Actualizado: programa.md (transcripcion textual de ambos listados, nota AGM, notas de alcance de Reconstruccion y MCMF, aclaracion de que complejidad y demostraciones no figuran como bloque propio), CLAUDE.md de la materia (tabla 2P con la redaccion oficial + aviso AGM), index.md (titulos del 2P con la redaccion oficial y en el orden del programa; notas en Teoria de Grafos, Algoritmos sobre grafos y AGM).
 Sin cambios en el mapa tema→parcial: las 47 paginas siguen coherentes.
+
+## [2026-08-23] procedencia | cursada_2C_2026 — material de la cursada vigente como fuente de autoridad
+Segunda aplicacion del mismo principio que con el programa: separar dos cosas que el wiki confundia. Antes fue "en que parcial se tomo" vs "para que parcial estudiar"; ahora es "de donde salio el contenido" vs "que autoridad tiene".
+
+Creado: raw/cursada_2C_2026/{teo,prac,guias}/ + README de la carpeta. Es la fuente de autoridad: ante conflicto de notacion, alcance, orden o enfoque de demostracion con raw/clases/ o raw/guias_practicas/, manda lo vigente.
+
+Frontmatter: las 34 paginas de wiki/temas/ migraron de `fuente:` (3 formatos distintos: escalar, escalar con " + ", y lista) a `fuentes: {vigente, historico}` normalizado + `estado_verificacion`. Backfill completo a `pendiente_verificacion` con badge ⚠️ despues del frontmatter — sin el backfill el campo no significaria nada (una pagina sin marca seria ambigua entre "no verificada" y "todavia no implementado"). Las 13 paginas de tipos_ejercicio/ NO llevan estado_verificacion: derivan de parciales, que son historicos por naturaleza y no se re-verifican.
+
+Estados: verificado_2C_2026 | pendiente_verificacion | solo_historico. Es esperable que la mayoria este en pendiente_verificacion durante buena parte del cuatrimestre — es informacion honesta, no una falla, y asi lo reportan /lint y /estado.
+
+programa.md: nueva seccion "Cursada vigente y procedencia del material" (estados, orden de ingesta, y la aclaracion de que la base de que es importante NO cambia) + procedimiento para cuando arranque una cursada nueva.
+
+CLAUDE.md de la materia: nueva subseccion "Procedencia y autoridad del material" (tabla de autoridad por carpeta, estados con su badge, bloque 🔄 de divergencias, y el apartado "Lo que NO cambia"). Templates 3.1/3.2/3.3 con el frontmatter nuevo. Workflow de ingest con los dos modos y los dos ordenes. Workflow de query con regla de precedencia explicita (gana lo vigente Y hay que decirlo en la respuesta, no resolver en silencio). 4 restricciones nuevas.
+
+Comandos: /ingestar reescrito con deteccion de modo por ruta (raw/cursada_* → RECONCILIACION, resto → CREAR sin cambios). Modo reconciliacion en 8 pasos con gate de aprobacion obligatorio antes de escribir, diff clasificado en identico/nuevo/divergente/ausente, tabla de correspondencia para guias (4 casos, matching por enunciado no por numero, numeracion nueva canonica, se guarda en el _guia.md). /ingestar_batch con los dos ordenes y tamano de sesion reducido en reconciliacion (2 teo-prac, 1 guia). /lint con chequeo 5 de cobertura de verificacion + 7 inconsistencias detectables. /estado con tabla de cobertura por tema priorizando el parcial mas proximo.
+
+DECISION EXPLICITA — el principio no cambia: los parciales historicos siguen siendo la base de que ejercicios y temas son importantes. Las banderas 🔴/⚪ se calculan contra parciales_analizados/ y tipos_ejercicio/ como siempre. Se evaluo y se DESCARTO una "bandera dual" que agregara la señal de la catedra actual (⋆ de guias) como sistema paralelo. Los contenidos son los mismos entre cuatrimestres — solo cambio el reparto — asi que lo que tomaron historicamente sigue siendo indicador valido. Los ejercicios nuevos de guias reciben bandera cruzando contra los PATRONES de tipos_ejercicio/, no contra enunciados exactos.
+
+Sin ingestar todavia: raw/cursada_2C_2026/ esta vacia, esperando el material.

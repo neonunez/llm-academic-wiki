@@ -1,13 +1,22 @@
 ---
 nombre: Fuerza Bruta & Backtracking — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: fuerza_bruta_backtracking
-fuente: raw/clases/teo/2.teo_1P_fuerza_bruta_backtracking.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/2.teo_1P_fuerza_bruta_backtracking.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[complejidad_computacional_teoria]]"
   - "[[divide_y_conquista_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Fuerza Bruta & Backtracking — Teoria
 

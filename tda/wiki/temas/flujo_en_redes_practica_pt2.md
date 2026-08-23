@@ -1,13 +1,22 @@
 ---
 nombre: Flujo en Redes — Clase Practica Parte 2
 parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: flujo_en_redes
-fuente: raw/clases/prac/13.prac_2P_flujo_parte2.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/13.prac_2P_flujo_parte2.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[flujo_en_redes_teoria]]"
   - "[[flujo_en_redes_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 > Clase practica de Flujo en Redes — Parte 2 (2do cuatrimestre 2025). Basado en diapositivas de Oriana Biasi y Dafne Yudcovsky. Cubre tres ejercicios complejos: Hospital (scheduling multi-restriccion), Down Went the Titanic (grilla con movimiento de personas) y Satelite (maximizar transferencia de datos).
 

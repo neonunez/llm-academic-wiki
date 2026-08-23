@@ -1,15 +1,23 @@
 ---
 nombre: Greedy — Teoria
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: teoria
 tema: greedy
-fuente:
-  - raw/clases/teo/4.teo_1P_greedy.pdf
-  - raw/clases/teo/4.teo_1P_demo_seleccion_de_actividades.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/4.teo_1P_greedy.pdf
+    - raw/clases/teo/4.teo_1P_demo_seleccion_de_actividades.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[programacion_dinamica_teoria]]"
   - "[[fuerza_bruta_backtracking_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Greedy — Teoria
 

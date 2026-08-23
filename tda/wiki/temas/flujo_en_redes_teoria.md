@@ -1,14 +1,23 @@
 ---
 nombre: Flujo en Redes — Teoria
 parcial: 2P
+programa: 2C_2026
 tipo: teoria
 tema: flujo_en_redes
-fuente: raw/clases/teo/11.teo_2P_flujo_en_redes.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/11.teo_2P_flujo_en_redes.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[arboles_teoria]]"
   - "[[caminos_minimos_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Concepto y definicion
 

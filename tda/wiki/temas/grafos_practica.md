@@ -1,16 +1,24 @@
 ---
 nombre: Grafos — Clase Practica
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: grafos
-fuente:
-  - raw/clases/prac/7.prac_2P_demostracion_sobre_grafos.pdf
-  - raw/clases/prac/7.prac_2P_representacion_de_grafos.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/7.prac_2P_demostracion_sobre_grafos.pdf
+    - raw/clases/prac/7.prac_2P_representacion_de_grafos.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[arboles_teoria]]"
   - "[[recorrido_en_grafos_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/grafos_demostraciones]]

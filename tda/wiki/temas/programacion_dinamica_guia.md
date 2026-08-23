@@ -1,15 +1,24 @@
 ---
 nombre: Programacion Dinamica — Guia de Ejercicios
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: programacion_dinamica
-fuente: raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[programacion_dinamica_teoria]]"
   - "[[programacion_dinamica_top_down_practica_pt1]]"
   - "[[programacion_dinamica_top_down_practica_pt2]]"
   - "[[programacion_dinamica_bottom_up_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Programacion Dinamica — Guia de Ejercicios
 
@@ -226,7 +235,7 @@ $P(i)$ dado $P(i-1)$: Si incluimos $C[i]$, necesitamos que $M[i-1][j-C[i]]$ sea 
 **Chuleta**
 > $ss'(i,j)$: incluir o no $C[i]$. $O(nk)$ estados. Top-down: memo $(n+1)\times(k+1)$. Bottom-up: doble loop, recorrer $j$ de derecha a izquierda para $O(k)$ espacio. PD mejor cuando $nk \ll 2^n$.
 
-**¿Aparece en parciales?** 🔴 Si — suma de subconjuntos / mochila es patron canon de PD en 1P
+**¿Aparece en parciales?** 🔴 Si — suma de subconjuntos / mochila es el patron canonico de PD en parciales historicos rotulados 1P; con el programa vigente entra en tu **2P**
 
 ---
 
@@ -607,7 +616,7 @@ donde `peso_encima(j, longitud)` es el peso total de `longitud - 1` cajas encima
 **Chuleta**
 > Estado $f(i)$: max pila terminando en caja $i$. Transicion: buscar $j < i$ donde $i$ cabe encima de la pila de $j$. $O(N^2)$. Pseudopolinomial: $f(i, l)$ con $l$ = peso encima, $O(NW)$.
 
-**¿Aparece en parciales?** 🔴 Si — PilaCauta es ejercicio del repaso 1P (PD pseudopolinomial + polinomial)
+**¿Aparece en parciales?** 🔴 Si — PilaCauta es ejercicio del repaso historico de 1P (PD pseudopolinomial + polinomial); con el programa vigente PD entra en tu **2P**
 
 ---
 
@@ -1048,7 +1057,7 @@ Comprimir las alturas a $\{1, \ldots, N\}$ (coordinate compression). Usar un Fen
 **Chuleta**
 > $f(i) = W_i + \max_{j < i, H_j < H_i} f(j)$. LIS ponderada por ancho. $O(N^2)$ naive, $O(N \log N)$ con Fenwick tree sobre alturas comprimidas.
 
-**¿Aparece en parciales?** 🔴 Si — LIS y variantes son patrones evaluados en 1P
+**¿Aparece en parciales?** 🔴 Si — LIS y variantes aparecen en parciales historicos rotulados 1P; con el programa vigente PD entra en tu **2P**
 
 ---
 

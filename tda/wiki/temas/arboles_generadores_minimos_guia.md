@@ -1,14 +1,23 @@
 ---
 nombre: Arboles Generadores Minimos — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: arboles_generadores_minimos
-fuente: raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/4.guia_2P_recorridos_&_arboles.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[arboles_generadores_minimos_teoria]]"
   - "[[arboles_generadores_minimos_practica]]"
   - "[[recorrido_en_grafos_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Arboles Generadores Minimos — Guia de Ejercicios
 

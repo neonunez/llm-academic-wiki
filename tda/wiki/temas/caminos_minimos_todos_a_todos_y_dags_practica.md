@@ -1,13 +1,22 @@
 ---
 nombre: Caminos Minimos Todos a Todos y DAGs — Clase Practica
 parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: caminos_minimos
-fuente: raw/clases/prac/11.prac_2P_recorrido_minimo_todos_a_todos_DAGs.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/11.prac_2P_recorrido_minimo_todos_a_todos_DAGs.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[caminos_minimos_teoria]]"
   - "[[caminos_minimos_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/cm_estado_expandido]] · [[tipos_ejercicio/cm_estado_expandido]]

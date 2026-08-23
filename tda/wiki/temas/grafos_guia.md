@@ -1,20 +1,29 @@
 ---
 nombre: Grafos — Guia de Ejercicios (Teoria Algoritmica)
-parcial: ambos
+parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: grafos
-fuente: raw/guias_practicas/3.guia_1P_teoria_algoritmica_de_grafos.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/3.guia_1P_teoria_algoritmica_de_grafos.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[grafos_practica]]"
   - "[[definiciones_y_demostraciones_teoria]]"
 ---
 
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
+
 # Grafos — Guia de Ejercicios (Teoria Algoritmica)
 
 Practica 3: Introduccion a la teoria algoritmica de grafos. 1er cuatrimestre 2024. Compilado: 1 oct. 2025.
 
-**Nota:** esta guia esta numerada como "1P" en el nombre de archivo pero cubre contenido de grafos (tema 2P) y demostraciones (tema 1P). `parcial: ambos`. Los ejercicios con ⋆ son el subconjunto minimo recomendado para cubrir el temario evaluado en parciales.
+**Nota:** esta guia esta numerada como "1P" en el nombre de archivo por el orden de dictado original. Con el programa vigente (2C-2026) grafos entra en el **1P** — ver [[programa]]. Los ejercicios con ⋆ son el subconjunto minimo recomendado para cubrir el temario evaluado en parciales.
 
 ## Indice de ejercicios
 
@@ -456,7 +465,7 @@ Por HI aplicada a la caminata de longitud impar menor: existe un ciclo simple im
 **Chuleta**
 > Inducción en $l$. Base: $l=3$, ciclo simple. Paso: si $W$ repite vértice $v_i = v_j$, partir en dos caminatas cerradas de longitudes $l_1 = j-i$ y $l_2 = l-l_1$. Como $l_1+l_2=l$ impar, una es impar. Aplicar HI a la más corta.
 
-**¿Aparece en parciales?** 🔴 Si — aparece en [[grafos_practica]] y es tema 2P
+**¿Aparece en parciales?** 🔴 Si — aparece en [[grafos_practica]]; historicamente evaluado en parciales 2P, con el programa vigente entra en tu **1P**
 
 ---
 
@@ -500,7 +509,7 @@ En ambos subcasos existe $v$ tal que $G-v$ no es bipartito → contrarrecíproco
 > ($\Leftarrow$): bipartito → subgrafos bipartitos; ciclo impar → quitando vértice queda camino (bipartito).
 > ($\Rightarrow$) Contrarrecíproco: $G$ no bipartito y no ciclo impar → tiene ciclo impar $C$ más algo extra (vértice fuera de $C$ o cuerda). En ambos casos, quitar el "algo extra" deja un ciclo impar en $G-v$.
 
-**¿Aparece en parciales?** 🔴 Si — bipartito y ciclo impar son temas evaluados en 2P
+**¿Aparece en parciales?** 🔴 Si — bipartito y ciclo impar aparecen en parciales historicos rotulados 2P; con el programa vigente entran en tu **1P**
 
 ---
 
@@ -592,7 +601,7 @@ Tabla completa de complejidades por operación y representación:
 **Chuleta**
 > Lista: espacio $O(n+m)$, adyacencia $O(d(v))$, recorrer $O(d(v))$. Matriz: espacio $O(n^2)$, adyacencia $O(1)$, recorrer $O(n)$. Hash: espacio $O(n+m)$, operaciones $O(1)$ amort., no mantiene orden. Lista+inv: remoción $O(1)$.
 
-**¿Aparece en parciales?** 🔴 Si — representacion de grafos es tema evaluado en 2P
+**¿Aparece en parciales?** 🔴 Si — representacion de grafos aparece en parciales historicos rotulados 2P; con el programa vigente entra en tu **1P**
 
 ---
 
@@ -757,7 +766,7 @@ Equivale a Kahn (BFS topológico): mantener cola de vértices con $d_{in}=0$, pr
 **Chuleta**
 > Existe ciclo ↔ DFS encuentra back-edge (arco a vértice GRIS). DFS 3-estados: BLANCO/GRIS/NEGRO. $O(n+m)$. Acíclico ↔ existe $v$ con $d_{out}=0$ (eliminarlo preserva aciclicidad) → orden topológico por Kahn (BFS con $d_{in}$).
 
-**¿Aparece en parciales?** 🔴 Si — deteccion de ciclos y orden topologico son temas de 2P
+**¿Aparece en parciales?** 🔴 Si — deteccion de ciclos y orden topologico aparecen en parciales historicos rotulados 2P; con el programa vigente entran en tu **1P**
 
 ---
 
@@ -997,4 +1006,4 @@ Si existe geodésico $v_0, v_1, v_2, v_3$ (longitud 3), entonces por la estructu
 - [[grafos_teoria]] — Definiciones, Handshaking, recorridos, representacion
 - [[grafos_practica]] — Ejercicios de clase: representacion, demos sobre grafos
 - [[definiciones_y_demostraciones_teoria]] — Tecnicas de demostracion para grafos
-- [[recorrido_en_grafos_guia]] — Guia de DFS/BFS (grafos 2P)
+- [[recorrido_en_grafos_guia]] — Guia de DFS/BFS (grafos, 1P vigente)

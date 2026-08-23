@@ -1,14 +1,23 @@
 ---
 nombre: Programacion Dinamica Bottom-Up — Clase Practica
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: programacion_dinamica
-fuente: raw/clases/prac/4.prac_1P_programacion_dinamica_bottom_up.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/4.prac_1P_programacion_dinamica_bottom_up.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[programacion_dinamica_teoria]]"
   - "[[programacion_dinamica_top_down_practica_pt1]]"
   - "[[programacion_dinamica_top_down_practica_pt2]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/pd_definir_recursion]] · [[tipos_ejercicio/pd_superposicion_subproblemas]]

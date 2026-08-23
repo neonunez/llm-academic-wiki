@@ -1,13 +1,22 @@
 ---
 nombre: Greedy — Guia de Ejercicios
-parcial: 1P
+parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: greedy
-fuente: raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[greedy_teoria]]"
   - "[[greedy_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Greedy — Guia de Ejercicios
 
@@ -286,7 +295,7 @@ El pseudocódigo de la parte a) es $O(n)$: el índice $j$ solo avanza, nunca ret
 > 3. Lema 2: el subproblema restante tiene la misma estructura.
 > 4. $O(n)$: puntero que solo avanza.
 
-**¿Aparece en parciales?** 🔴 Si — Viaje a Mar del Plata es ejercicio de clase practica y repaso 1P
+**¿Aparece en parciales?** 🔴 Si — Viaje a Mar del Plata es ejercicio de clase practica y del repaso historico de 1P; con el programa vigente greedy entra en tu **2P**
 
 ---
 

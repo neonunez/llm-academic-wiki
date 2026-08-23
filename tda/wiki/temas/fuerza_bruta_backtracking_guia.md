@@ -1,13 +1,22 @@
 ---
 nombre: Fuerza Bruta & Backtracking — Guia de Ejercicios
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: fuerza_bruta_backtracking
-fuente: raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/guias_practicas/2.guia_1P_tecnicas_algoritmicas.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[fuerza_bruta_backtracking_teoria]]"
   - "[[fuerza_bruta_backtracking_practica]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Fuerza Bruta & Backtracking — Guia de Ejercicios
 

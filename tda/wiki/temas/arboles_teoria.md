@@ -1,13 +1,22 @@
 ---
 nombre: Arboles — Teoria
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: arboles
-fuente: raw/clases/teo/7.teo_2P_arboles.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/teo/7.teo_2P_arboles.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[grafos_teoria]]"
   - "[[arboles_generadores_minimos_teoria]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Concepto y definicion
 

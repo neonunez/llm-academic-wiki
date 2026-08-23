@@ -1,15 +1,24 @@
 ---
 nombre: Arboles Generadores Minimos — Clase Practica
 parcial: 2P
+programa: 2C_2026
 tipo: practica
 tema: arboles_generadores_minimos
-fuente: raw/clases/prac/9.prac_2P_arbol_generador_minimo.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/9.prac_2P_arbol_generador_minimo.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[arboles_generadores_minimos_teoria]]"
   - "[[grafos_practica]]"
   - "[[caminos_minimos_practica]]"
   - "[[arboles_generadores_minimos_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 ## Patrones de este tema en parciales
 > [[tipos_ejercicio/agm_propiedades]]

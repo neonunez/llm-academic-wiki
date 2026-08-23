@@ -1,13 +1,22 @@
 ---
 nombre: Divide & Conquer — Clase Practica
 parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: divide_y_conquista
-fuente: raw/clases/prac/1.prac_1P_divide_&_conquer.pdf
+fuentes:
+  vigente: []
+  historico:
+    - raw/clases/prac/1.prac_1P_divide_&_conquer.pdf
+estado_verificacion: pendiente_verificacion
 paginas_relacionadas:
   - "[[divide_y_conquista_teoria]]"
   - "[[divide_y_conquista_guia]]"
 ---
+
+> ⚠️ **Sin verificar contra la cursada actual.** El contenido de esta pagina viene de
+> cuatrimestres pasados. Los contenidos son los mismos, pero puede haber diferencias de
+> notacion, alcance u orden. Ver [[programa]].
 
 # Divide & Conquer — Clase Practica
 
