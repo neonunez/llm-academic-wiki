@@ -1,9 +1,10 @@
 ---
 nombre: Programación Lógica - Práctica 1
-parcial: 2
+parcial: 2P
+programa: 2C_2026
 tipo: clase_practica
-tema: Programación Lógica
-fuente: ["plp/raw/clases/prac/8.prac_P2_programacion_logica_(1).pdf", "plp/raw/clases/prac/9.prac_P2_programacion_logica_(2).pdf"]
+tema: programacion_logica
+fuente: ["raw/clases/prac/8.prac_P2_programacion_logica_(1).pdf", "raw/clases/prac/9.prac_P2_programacion_logica_(2).pdf"]
 paginas_relacionadas: ["[[resolucion_teoria]]", "[[resolucion_sld_y_prolog_teoria]]", "[[resolucion_sld_y_prolog_teoria#Negación por Falla]]"]
 ---
 

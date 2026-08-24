@@ -1,6 +1,7 @@
 ---
 nombre: Cálculo Lambda (Tipado y Semántica) — Guia de Ejercicios
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: calculo_lambda_tipado
 fuente: raw/guias_practicas/3.guia_1P_calculo_lamda_tipado_semantica_operacional.pdf

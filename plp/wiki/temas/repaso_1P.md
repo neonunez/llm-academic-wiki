@@ -1,6 +1,7 @@
 ---
 nombre: Clase de Repaso — Primer Parcial
 parcial: 1P
+programa: 2C_2026
 tipo: repaso
 fuente: raw/clases/prac/6.prac_P1_repaso_para_primer_parcial.pdf
 ---

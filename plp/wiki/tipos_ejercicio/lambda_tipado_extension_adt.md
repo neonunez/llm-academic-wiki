@@ -1,7 +1,9 @@
 ---
 nombre: Cálculo Lambda — reglas de tipado para extensión ADT
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: calculo_lambda_tipado
 ---
 
 # Cálculo Lambda — reglas de tipado para extensión ADT

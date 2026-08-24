@@ -1,9 +1,10 @@
 ---
 nombre: Teoría de Lógica de Primer Orden
 parcial: 2P
+programa: 2C_2026
 tipo: Clase teórica
-tema: Lógica de Primer Orden
-fuente: plp/raw/clases/teo/9.teo_logica_de_primer_orden.pdf
+tema: logica_de_primer_orden
+fuente: raw/clases/teo/9.teo_logica_de_primer_orden.pdf
 paginas_relacionadas: [[sistemas_deductivos_y_deduccion_natural_teoria]], [[unificacion_e_inferencia_de_tipos_teoria]]
 ---
 

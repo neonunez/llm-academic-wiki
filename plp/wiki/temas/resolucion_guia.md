@@ -1,6 +1,7 @@
 ---
 nombre: Resolución en Lógica — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: resolucion
 fuente: raw/guias_practicas/6.guia_2P_resolucion_en_logica.pdf

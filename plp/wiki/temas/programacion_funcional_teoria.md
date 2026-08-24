@@ -1,8 +1,9 @@
 ---
 nombre: Teoría de Programación Funcional
 parcial: 1P
+programa: 2C_2026
 tipo: Clase teórica
-tema: Programación Funcional
+tema: programacion_funcional
 fuente: 
   - raw/clases/teo/0.teo_1P_repaso.pdf
   - raw/clases/teo/1.teo_1P_programacion_funcional.pdf

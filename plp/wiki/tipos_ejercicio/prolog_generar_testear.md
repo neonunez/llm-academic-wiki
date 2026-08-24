@@ -1,7 +1,9 @@
 ---
 nombre: Prolog — generate & test con generadores infinitos
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_logica
 ---
 
 # Prolog — generate & test con generadores infinitos

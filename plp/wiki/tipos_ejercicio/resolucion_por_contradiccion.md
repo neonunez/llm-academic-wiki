@@ -1,7 +1,9 @@
 ---
 nombre: Resolución — refutación por contradicción (negar la meta)
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: resolucion
 ---
 
 # Resolución — refutación por contradicción

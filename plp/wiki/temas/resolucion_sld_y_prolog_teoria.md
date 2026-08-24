@@ -1,8 +1,9 @@
 ---
 nombre: Resolución SLD y Semántica de Prolog — Teoría
 parcial: 2P
+programa: 2C_2026
 tipo: teoria
-tema: resolucion_sld_prolog
+tema: resolucion
 fuente: raw/clases/teo/11.teo_2P_resolucion_SLD_prolog.pdf
 paginas_relacionadas:
   - "[[resolucion_teoria]]"

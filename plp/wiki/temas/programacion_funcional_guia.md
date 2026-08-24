@@ -1,9 +1,10 @@
 ---
 nombre: Práctica 1 - Programación Funcional
 parcial: 1P
+programa: 2C_2026
 tipo: Guía de Ejercicios
-tema: Programación Funcional
-fuente: plp/raw/guias_practicas/0.guia_1P_programacion_funcional.pdf
+tema: programacion_funcional
+fuente: raw/guias_practicas/0.guia_1P_programacion_funcional.pdf
 paginas_relacionadas: ["[[programacion_funcional_teoria]]", "[[programacion_funcional_practica]]"]
 ---
 

@@ -1,6 +1,8 @@
 ---
+parcial: 2P
+programa: 2C_2026
 tipo: teoria
-tema: Correspondencia Curry-Howard, Recursión
+tema: correspondencia_curry_howard
 fuente: raw/clases/teo/6.teo_2P_correspondencia_curry-howard_operador-de-punto-fijo_recursion.pdf
 paginas_relacionadas: ["Cálculo Lambda Tipado", "Deducción Natural"]
 ---

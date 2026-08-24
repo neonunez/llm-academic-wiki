@@ -1,8 +1,9 @@
 ---
 nombre: Inferencia de Tipos — Clase Practica
 parcial: 2P
+programa: 2C_2026
 tipo: practica
-tema: unificacion_e_inferencia_de_tipos
+tema: unificacion_e_inferencia
 fuente: raw/clases/prac/7.prac_P2_infefencia_de_tipos.pdf
 paginas_relacionadas:
   - "[[unificacion_e_inferencia_de_tipos_teoria]]"

@@ -1,7 +1,9 @@
 ---
 nombre: Prolog — máximo/mínimo con doble negación (not)
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_logica
 ---
 
 # Prolog — máximo/mínimo con doble negación (`not`)

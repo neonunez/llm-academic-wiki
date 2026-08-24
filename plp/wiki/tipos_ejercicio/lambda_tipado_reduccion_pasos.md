@@ -1,7 +1,9 @@
 ---
 nombre: Cálculo Lambda — reducción paso a paso
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: calculo_lambda_tipado
 ---
 
 # Cálculo Lambda — reducción paso a paso

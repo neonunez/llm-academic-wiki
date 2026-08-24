@@ -1,6 +1,7 @@
 ---
 nombre: Programación Lógica — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: programacion_logica
 fuente: raw/guias_practicas/7.guia_2P_programacion_logica.pdf

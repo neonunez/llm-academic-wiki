@@ -1,7 +1,9 @@
 ---
 nombre: Deducción natural — prueba intuicionista
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: sistemas_deductivos_y_deduccion_natural
 ---
 
 # Deducción natural — prueba intuicionista

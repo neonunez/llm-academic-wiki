@@ -1,7 +1,9 @@
 ---
 nombre: Inferencia de tipos — algoritmo W/I paso a paso
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: unificacion_e_inferencia
 ---
 
 # Inferencia de tipos — algoritmo W/I paso a paso

@@ -1,8 +1,9 @@
 ---
 nombre: Programación Funcional en Haskell (Práctica)
-parcial: 1
+parcial: 1P
+programa: 2C_2026
 tipo: Clase práctica
-tema: Programación Funcional
+tema: programacion_funcional
 fuente: raw/clases/prac/0.prac_1P_programacion_funcional_haskell.pdf
 paginas_relacionadas: [[programacion_funcional_teoria]]
 ---

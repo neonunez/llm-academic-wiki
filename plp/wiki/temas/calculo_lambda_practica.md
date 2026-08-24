@@ -1,6 +1,7 @@
 ---
 nombre: Cálculo Lambda — Clase Practica
 parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: calculo_lambda_tipado
 fuente: 

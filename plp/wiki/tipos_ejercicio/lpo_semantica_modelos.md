@@ -1,7 +1,9 @@
 ---
 nombre: LPO — Semántica, interpretaciones y contramodelos
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: logica_de_primer_orden
 ---
 
 # LPO — Semántica, interpretaciones y contramodelos

@@ -1,9 +1,10 @@
 ---
 nombre: Resolución en Lógica de Primer Orden - Práctica
-parcial: 2
+parcial: 2P
+programa: 2C_2026
 tipo: clase_practica
-tema: Resolución
-fuente: plp/raw/clases/prac/10.prac_P2_resolucion_logica_primer_orden.pdf
+tema: resolucion
+fuente: raw/clases/prac/10.prac_P2_resolucion_logica_primer_orden.pdf
 paginas_relacionadas: ["[[resolucion_teoria]]", "[[resolucion_sld_y_prolog_teoria]]", "[[logica_de_primer_orden_teoria]]"]
 ---
 

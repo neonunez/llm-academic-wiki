@@ -1,7 +1,9 @@
 ---
 nombre: Prolog — análisis de reversibilidad
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_logica
 ---
 
 # Prolog — análisis de reversibilidad

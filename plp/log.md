@@ -244,3 +244,34 @@ Los links de anclaje del indice de esas paginas no llevan a ningun lado. tda y s
 ## 2026-04-23 ingest | 10.prac_P2_resolucion_logica_primer_orden.pdf
 - Creado `wiki/temas/resolucion_practica.md`
 - Temas: Cláusulas de Horn, Resolución General, Resolución SLD, Unificación (MGU), Prolog
+
+## 2026-08-24 programa | 2C_2026
+Cambio de reparto: **ninguno**. El listado oficial de la catedra para 2C 2026 coincide con el
+reparto bajo el que se tomaron los 11 parciales de `wiki/parciales_analizados/` (1C 2024 a 2C 2025).
+Esta corrida no movio ningun tema entre parciales: salda la **deuda tecnica de frontmatter**
+documentada en `programa.md` y propaga `programa: 2C_2026`.
+
+Paginas actualizadas: 28 en temas/, 23 en tipos_ejercicio/ (51 en total).
+- `tema:` normalizado a slug snake_case del mapa: 20 paginas de temas/
+- `tema:` agregado (no existia): 23 paginas de tipos_ejercicio/
+- `parcial:` normalizado de `1`/`2` a `1P`/`2P`: 5 paginas
+- `parcial:` agregado donde faltaba: 4 teoricas
+- `fuente:` sin prefijo `plp/`: 8 paginas (los 33 PDFs referenciados existen en raw/)
+- `programa: 2C_2026` agregado debajo de `parcial:`: las 51 paginas
+
+Avisos de reubicacion: **ninguno**. Ningun `parcial:` cambio de valor, asi que no corresponde
+ningun aviso. Dos patrones tienen `parcial:` distinto del rotulo mayoritario de sus apariciones
+(`lambda_habitantes`, `lambda_sintaxis_arbol`: tema 1P, apariciones en examenes 2P) pero eso es
+reaparicion de una tecnica de 1P como sub-habilidad de un ejercicio de 2P, **no** un cambio de
+programa. Documentado como nota en `index.md`, sin escribir aviso en las paginas.
+
+Prosa desactualizada: ninguna. No hay en `wiki/temas/` ninguna afirmacion del tipo "es tema 2P"
+que contradiga el programa vigente.
+
+`index.md` reagrupado por parcial vigente (Transversales → 1P → 2P → Tipos de ejercicio → Parciales
+analizados → Repaso → Sintesis). Se corrigio la ubicacion de `lambda_habitantes` y
+`lambda_sintaxis_arbol`, que figuraban bajo 2P contra su propio `parcial: 1P`.
+`repaso_1P` NO se marco como historico: el programa no cambio, el material sigue vigente.
+`CLAUDE.md` actualizado: la tabla de temas por parcial ahora apunta a `programa.md`.
+No se modifico raw/, parciales_analizados/, transcripciones/, `apariciones_en_parciales:`,
+las banderas 🔴/⚪ ni el cuerpo de ninguna pagina.

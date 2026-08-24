@@ -1,6 +1,8 @@
 ---
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
-tema: Deducción Natural, Lógica Proposicional
+tema: sistemas_deductivos_y_deduccion_natural
 fuente: raw/clases/teo/4.teo_1P_sistemas_deductivos_&_deduccion_natural.pdf
 paginas_relacionadas: ["Deducción Natural", "Lógica Proposicional"]
 ---

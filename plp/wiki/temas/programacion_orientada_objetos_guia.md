@@ -1,6 +1,7 @@
 ---
 nombre: Programación Orientada a Objetos — Guía de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: programacion_orientada_objetos
 fuente: raw/guias_practicas/8.guia_2P_programacion_orientada_a_objetos.pdf

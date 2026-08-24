@@ -1,7 +1,9 @@
 ---
 nombre: Smalltalk — tabla de ejecución (method lookup y self/super)
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_orientada_objetos
 ---
 
 # Smalltalk — tabla de ejecución (method lookup y `self`/`super`)

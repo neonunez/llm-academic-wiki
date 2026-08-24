@@ -1,8 +1,9 @@
 ---
 nombre: Demostración de Propiedades (Práctica)
-parcial: 1
+parcial: 1P
+programa: 2C_2026
 tipo: Clase práctica
-tema: Demostración de Propiedades
+tema: demostracion_de_propiedades
 fuente: raw/clases/prac/2.prac_1P_programacion_funcional_(3).pdf
 paginas_relacionadas: [[demostracion_de_propiedades_teoria]], [[programacion_funcional_practica]]
 ---

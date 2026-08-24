@@ -1,7 +1,9 @@
 ---
 nombre: Resolución — ¿fue SLD? Justificación
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: resolucion
 ---
 
 # Resolución — ¿fue SLD? Justificación

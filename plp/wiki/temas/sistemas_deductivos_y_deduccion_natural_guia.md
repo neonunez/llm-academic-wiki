@@ -1,9 +1,10 @@
 ---
 nombre: Práctica 3 - Demostración en Lógica Proposicional
 parcial: 1P
+programa: 2C_2026
 tipo: Guía de Ejercicios
-tema: Lógica Proposicional y Deducción Natural
-fuente: plp/raw/guias_practicas/2.guia_1P_demostracion_en_logica_proposicional.pdf
+tema: sistemas_deductivos_y_deduccion_natural
+fuente: raw/guias_practicas/2.guia_1P_demostracion_en_logica_proposicional.pdf
 paginas_relacionadas: ["[[sistemas_deductivos_y_deduccion_natural_teoria]]", "[[sistemas_deductivos_y_deduccion_natural_practica]]"]
 ---
 

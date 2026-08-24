@@ -1,8 +1,9 @@
 ---
 nombre: Programación Orientada a Objetos (Smalltalk) — Teoría
 parcial: 2P
+programa: 2C_2026
 tipo: teoria
-tema: poo_smalltalk
+tema: programacion_orientada_objetos
 fuente: raw/clases/teo/12.teo_2P_programacion_orientada_objetos.pdf
 paginas_relacionadas:
   - "[[interpretacion_teoria]]"

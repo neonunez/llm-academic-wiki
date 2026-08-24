@@ -1,9 +1,10 @@
 ---
 nombre: Teoría de Interpretación
 parcial: 2P
+programa: 2C_2026
 tipo: Clase teórica
-tema: Interpretación
-fuente: plp/raw/clases/teo/8.teo_2P_interpretacion.pdf
+tema: interpretacion
+fuente: raw/clases/teo/8.teo_2P_interpretacion.pdf
 paginas_relacionadas: [[calculo_lambda_tipado_teoria]], [[programacion_funcional_teoria]]
 ---
 

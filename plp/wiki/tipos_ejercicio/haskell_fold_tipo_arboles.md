@@ -1,7 +1,9 @@
 ---
 nombre: Haskell — fold/rec para tipo algebraico nuevo
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_funcional
 ---
 
 # Haskell — fold/rec para tipo algebraico nuevo

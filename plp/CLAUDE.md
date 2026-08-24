@@ -4,16 +4,54 @@
 
 **Materia:** Paradigmas de Programación (plp)
 **Universidad:** UBA — Ciencias de la Computacion
-**Sistema de evaluacion:** dos parciales (1P y 2P), de forma similar a Algoritmos y Estructuras de Datos III. Se identifica en el nombre de los archivos si pertenecen al 1P o al 2P.
+**Sistema de evaluacion:** dos parciales (1P y 2P), de forma similar a Algoritmos y Estructuras de Datos III.
+El rotulo `1P`/`2P` en el nombre de los archivos de `raw/` es el **rotulo original del dictado**, no la
+fuente de verdad: para saber en que parcial entra un tema se lee siempre **[[programa]]** (`programa.md`).
 **Estrategia de estudio:** teoria en rasgos generales → practica de guias (priorizando ejercicios que aparecen en parciales) → practica intensiva con parciales pasados cerca del examen (misma estrategia que Algoritmos III).
 **Objetivo:** herramienta de consulta basada 100% en la base de conocimiento ingresada. El LLM escribe y mantiene la wiki; el usuario la consulta y navega en Obsidian.
 
-**Temas por parcial:**
+**Temas por parcial:** definidos en **[[programa]]** (`programa.md`) — unica fuente de verdad.
+**Nunca hardcodear el mapeo tema→parcial en este archivo ni en los comandos: leer siempre `programa.md`.**
 
-| Parcial | Temas |
-|---------|-------|
-| 1P | Programación Funcional (Haskell), Esquemas de Recursión & Tipos de Datos Inductivos, Razonamiento Ecuacional & Inducción Estructural, Sistemas Deductivos & Deducción Natural, Cálculo Lambda (Tipado, Semántica Operacional) |
-| 2P | Correspondencia Curry-Howard, Operador de Punto Fijo, Recursión, Unificación e Inferencia de Tipos, Interpretación, Lógica de Primer Orden, Resolución Lógica y SLD (Prolog), Programación Lógica, Programación Orientada a Objetos |
+Resumen vigente (2C 2026) — transcripcion del listado oficial de la catedra:
+
+| Parcial | Bloques oficiales | Temas internos (slug) |
+|---------|-------------------|-----------------------|
+| 1P | Programación funcional (en Haskell) · Razonamiento ecuacional e inducción estructural · Deducción natural para lógica **proposicional** · Sistemas de tipos y reducción | `programacion_funcional`, `demostracion_de_propiedades`, `sistemas_deductivos_y_deduccion_natural`, `calculo_lambda_tipado` |
+| 2P | Inferencia y compilación · Lógica de primer orden · Resolución lógica · Programación lógica (en Prolog) · Programación orientada a objetos (en SmallTalk) | `unificacion_e_inferencia`, `interpretacion`, `logica_de_primer_orden`, `resolucion`, `programacion_logica`, `programacion_orientada_objetos`, `correspondencia_curry_howard` |
+| ambos | — | Ninguno |
+
+`correspondencia_curry_howard` no figura en el listado oficial de ningun parcial; se deja en `2P`
+por el rotulo del dictado (`6.teo_2P_...`). Ver `programa.md`.
+
+### Reubicaciones: ninguna
+
+**En PLP el reparto NO cambio.** El listado oficial de 2C 2026 coincide con el reparto bajo el que
+se tomaron los 11 parciales de `wiki/parciales_analizados/` (1C 2024 a 2C 2025). Consecuencias:
+
+- ✅ Los parciales pasados **si** sirven como simulacro completo de examen.
+- ✅ No hay ningun tema `reubicado: true` ni ningun aviso de reubicacion en `tipos_ejercicio/`.
+- La unica variacion observada es de **enfasis dentro del mismo programa**: el Ej 3a del 2P paso de
+  Smalltalk a Inferencia de Tipos a partir de 2C 2024. Los dos bloques siguen en el listado oficial.
+
+### Deducción Natural cruza los dos parciales, pero por bloques distintos
+
+| Donde | Que DN | Bloque oficial | Tema interno |
+|---|---|---|---|
+| 1P, Ej 2b | Proposicional / intuicionista | Deducción natural para lógica proposicional | `sistemas_deductivos_y_deduccion_natural` |
+| 2P, Ej 3b | Con cuantificadores ∀/∃ | Lógica de primer orden | `logica_de_primer_orden` |
+
+Por eso `tipos_ejercicio/deduccion_natural_lpo` declara `tema: logica_de_primer_orden`, **no**
+`sistemas_deductivos_y_deduccion_natural`. Ver `programa.md`.
+
+### Dos significados de `1P`/`2P` — no confundirlos
+
+| Dato | Significado | ¿Se actualiza con el programa? |
+|------|-------------|-------------------------------|
+| `parcial:` en `wiki/temas/`, `wiki/tipos_ejercicio/` | Para que parcial hay que **estudiarlo** | **Si** — derivado de `programa.md`, lleva `programa: <vigencia>` al lado |
+| `parcial:` en `wiki/parciales_analizados/`, `wiki/transcripciones/` | Este examen **fue** un 1P/2P de tal cuatrimestre | **No** — hecho historico |
+| `apariciones_en_parciales:` en `tipos_ejercicio/` | Este patron **aparecio** en estos examenes | **No** — hecho historico |
+| Rotulos `1P`/`2P` en nombres de `raw/` | Orden y rotulo **originales del dictado** | **No** — `raw/` es inmutable |
 
 ---
 
@@ -22,6 +60,7 @@
 ```
 plp/
 ├── CLAUDE.md                      ← este archivo
+├── programa.md                    ← temas por parcial del cuatrimestre vigente (FUENTE DE VERDAD)
 ├── index.md                       ← catalogo completo del wiki
 ├── log.md                         ← registro append-only de operaciones
 │
@@ -70,6 +109,7 @@ Extraccion fiel y estructurada del contenido teorico. NO simplificar ni parafras
 ---
 nombre: Divide & Conquer — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: divide_y_conquista
 fuente: raw/clases/teo/1.teo_1P_divide_&_conquer.pdf
@@ -96,6 +136,7 @@ Ejercicios resueltos en clase por el profesor. Contenido fiel al PDF.
 ---
 nombre: Divide & Conquer — Clase Practica
 parcial: 1P
+programa: 2C_2026
 tipo: practica
 tema: divide_y_conquista
 fuente: raw/clases/prac/1.prac_1P_divide_&_conquer.pdf
@@ -143,6 +184,7 @@ Ejercicios de la guia practica oficial. Workflow de dos fases:
 ---
 nombre: Divide & Conquer — Guia de Ejercicios
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: divide_y_conquista
 fuente: raw/guias_practicas/1.guia_1P_divide_&_conquer.pdf
@@ -187,6 +229,7 @@ Arma de examen. Nace del analisis de parciales. Orientado a memorizacion y recon
 ---
 nombre: D&C — Resolver recurrencia con Master Theorem
 parcial: 1P
+programa: 2C_2026
 tema: divide_y_conquista
 apariciones_en_parciales:
   - raw/parciales/1P/1.parcial_1C_2024_resolucion(1).pdf
@@ -262,7 +305,9 @@ A demanda. Paginas cross-tema generadas por consultas reutilizables.
 ## 4. Convenciones
 
 - **Idioma:** espanol en todo el wiki. Nombres tecnicos de algoritmos en ingles si asi aparecen en las clases
-- **Frontmatter:** obligatorio en todas las paginas
+- **Frontmatter:** obligatorio en todas las paginas. `tema:` es el **slug snake_case** del mapa de
+  `programa.md` (nunca texto libre en castellano); `parcial:` es `1P`/`2P` (nunca `1`/`2`) y siempre
+  lleva `programa: <vigencia>` inmediatamente debajo
 - **Links internos:** sintaxis Obsidian `[[nombre_pagina]]`
 - **Citas a fuentes:** path relativo desde raiz de materia (ej: `raw/clases/teo/1.teo_1P_divide_&_conquer.pdf`)
 - **Nomenclatura:** snake_case, sin espacios
@@ -371,6 +416,8 @@ Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cad
 | `/tipos_ejercicio_scan` | Detectar patrones recurrentes cruzando parciales analizados |
 | `/tipos_ejercicio_run` | Crear paginas `tipos_ejercicio/` y actualizar banderas |
 | `/tipos_ejercicio` | Paso 9 del pipeline: scan + run en una pasada |
+| `/programa` | Propagar `programa.md` cuando la catedra cambia que temas entran en cada parcial |
+| `/priorizar <ruta_pdf>` | Analizar un PDF de la cursada contra los parciales. **No ingesta** |
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 nombre: Cálculo Lambda — parentización y árbol sintáctico
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: calculo_lambda_tipado
 ---
 
 # Cálculo Lambda — parentización y árbol sintáctico

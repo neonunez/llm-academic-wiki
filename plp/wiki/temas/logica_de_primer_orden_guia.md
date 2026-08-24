@@ -1,6 +1,7 @@
 ---
 nombre: Lógica de Primer Orden — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: logica_de_primer_orden
 fuente: raw/guias_practicas/5.guia_2P_logica_de_primer_orden.pdf

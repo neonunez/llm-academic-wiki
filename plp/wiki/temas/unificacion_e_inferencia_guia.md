@@ -1,6 +1,7 @@
 ---
 nombre: Unificación e Inferencia de Tipos — Guia de Ejercicios
 parcial: 2P
+programa: 2C_2026
 tipo: guia
 tema: unificacion_e_inferencia
 fuente: raw/guias_practicas/4.guia_2P_inferencia_de_tipos.pdf

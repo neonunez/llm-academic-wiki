@@ -1,9 +1,10 @@
 ---
 nombre: Práctica 2 - Razonamiento Ecuacional e Inducción Estructural
 parcial: 1P
+programa: 2C_2026
 tipo: Guía de Ejercicios
-tema: Demostración de Propiedades
-fuente: plp/raw/guias_practicas/1.guia_1P_razonamiento_ecuacional_&_induccion_estructural.pdf
+tema: demostracion_de_propiedades
+fuente: raw/guias_practicas/1.guia_1P_razonamiento_ecuacional_&_induccion_estructural.pdf
 paginas_relacionadas: ["[[demostracion_de_propiedades_teoria]]", "[[demostracion_de_propiedades_practica]]"]
 ---
 

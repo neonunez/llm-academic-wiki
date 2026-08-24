@@ -1,7 +1,9 @@
 ---
 nombre: Demostración — inducción estructural en árboles
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: demostracion_de_propiedades
 ---
 
 # Demostración — inducción estructural en árboles

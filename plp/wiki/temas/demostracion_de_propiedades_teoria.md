@@ -1,8 +1,9 @@
 ---
 nombre: Demostración de Propiedades (Razonamiento Ecuacional e Inducción Estructural)
 parcial: 1P
+programa: 2C_2026
 tipo: Clase teórica
-tema: Demostración de Propiedades
+tema: demostracion_de_propiedades
 fuente: raw/clases/teo/3.teo_1P_razonamiento_ecuacional_&_induccion_estructural.pdf
 paginas_relacionadas: []
 ---

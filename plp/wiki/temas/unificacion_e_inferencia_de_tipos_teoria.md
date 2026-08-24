@@ -1,6 +1,8 @@
 ---
+parcial: 2P
+programa: 2C_2026
 tipo: teoria
-tema: Unificación, Inferencia de Tipos
+tema: unificacion_e_inferencia
 fuente: raw/clases/teo/7.teo_2P_unificacion_inferencia_de_tipos.pdf
 paginas_relacionadas: ["Cálculo Lambda Tipado", "Algoritmo W"]
 ---

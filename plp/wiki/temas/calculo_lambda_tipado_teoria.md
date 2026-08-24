@@ -1,6 +1,8 @@
 ---
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
-tema: Cálculo Lambda Tipado
+tema: calculo_lambda_tipado
 fuente: raw/clases/teo/5.teo_1P_caculo_lambda.pdf
 paginas_relacionadas: ["Cálculo Lambda Tipado"]
 ---

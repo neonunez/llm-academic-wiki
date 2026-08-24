@@ -1,9 +1,10 @@
 ---
 nombre: Teoría de Resolución
 parcial: 2P
+programa: 2C_2026
 tipo: Clase teórica
-tema: Resolución
-fuente: plp/raw/clases/teo/10.teo_2P_resolucion_logica.pdf
+tema: resolucion
+fuente: raw/clases/teo/10.teo_2P_resolucion_logica.pdf
 paginas_relacionadas: [[logica_de_primer_orden_teoria]], [[resolucion_sld_y_prolog_teoria]]
 ---
 

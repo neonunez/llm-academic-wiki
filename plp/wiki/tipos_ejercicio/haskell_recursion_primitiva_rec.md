@@ -1,7 +1,9 @@
 ---
 nombre: Haskell — recursión primitiva (rec) vs fold
 parcial: 1P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: programacion_funcional
 ---
 
 # Haskell — recursión primitiva (rec) vs fold

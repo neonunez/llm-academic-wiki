@@ -1,8 +1,9 @@
 ---
 nombre: Sistemas Deductivos y Deducción Natural (Práctica)
-parcial: 1
+parcial: 1P
+programa: 2C_2026
 tipo: Clase práctica
-tema: Deducción Natural
+tema: sistemas_deductivos_y_deduccion_natural
 fuente: raw/clases/prac/3.prac_P1_sistemas_deductivos.pdf
 paginas_relacionadas: [[sistemas_deductivos_y_deduccion_natural_teoria]]
 ---

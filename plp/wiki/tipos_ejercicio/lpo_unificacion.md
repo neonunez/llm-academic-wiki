@@ -1,7 +1,9 @@
 ---
 nombre: LPO — Unificación de términos y tabla de MGU
 parcial: 2P
+programa: 2C_2026
 tipo: tipo_ejercicio
+tema: logica_de_primer_orden
 ---
 
 # LPO — Unificación de términos y tabla de MGU
