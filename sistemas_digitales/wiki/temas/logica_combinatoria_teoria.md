@@ -1,6 +1,7 @@
 ---
 nombre: Logica Combinatoria — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: logica_combinatoria
 fuente: raw/clases_teoricas/2.teo_logica_combinatoria.pdf

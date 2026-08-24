@@ -1,6 +1,7 @@
 ---
 nombre: Microarquitectura — Teoria
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: microarquitectura
 fuente: raw/clases_teoricas/5.teo_microarquitectura.pdf

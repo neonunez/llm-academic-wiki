@@ -1,6 +1,7 @@
 ---
 nombre: Programacion RISC-V — Guia de Ejercicios
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: programacion_risc_v
 fuente: raw/guias_practicas/3.prac_arquitectura_cpu.pdf
@@ -412,7 +413,7 @@ Clave: `sltu rd, rs1, rs2` hace `rd = 1` si `rs1 < rs2` (comparacion sin signo).
 4. Sumar partes altas + carry: `add hi_res, hi0, hi1` + `add hi_res, hi_res, carry`
 5. Guardar resultado: `sw lo_res, 0(t2)` + `sw hi_res, 4(t2)`
 
-**¿Aparece en parciales?** ⚪ No — ejercicio de precision extendida, no visto en parciales de 2P
+**¿Aparece en parciales?** ⚪ No — ejercicio de precision extendida, no visto en los parciales historicos rotulados 2P (material que con el programa vigente entra en tu **parcial unico**)
 
 ---
 

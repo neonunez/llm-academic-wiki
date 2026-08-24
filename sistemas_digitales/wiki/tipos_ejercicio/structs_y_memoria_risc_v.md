@@ -1,6 +1,7 @@
 ---
 nombre: Structs y Acceso a Memoria en RISC-V
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tema: programacion_risc_v
 apariciones_en_parciales:
   - parciales_analizados/2P_2C_2024  # Ej3 (BalanceDeudor 5 bytes)
@@ -53,6 +54,14 @@ loop:
 La catedra usa structs compactos sin alineacion (diferente a C con padding). Los offsets son la suma acumulada de los campos anteriores. `lh` extiende el signo automaticamente al registro de 32 bits; `lbu` extiende con ceros. Usar la instruccion incorrecta (ej: `lb` para uint8) puede dar valores incorrectos para valores >= 128.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C_2026).** Programacion RISC-V era **2P** en el programa
+> viejo, asi que los rotulos `1P`/`2P` de la lista de abajo corresponden a **como se
+> tomaba antes**.
+> Con el programa vigente la materia tiene **un solo parcial** (rotulado `1P`), asi que
+> este patron es material de tu **parcial unico**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
 
 - [[parciales_analizados/2P_2C_2024]] — Ejercicio 3: `BalanceDeudor` (ID 1b + Consumos 2b + Pagos 2b = 5 bytes); arreglo centinela; `lbu` para ID, `lh` para Consumos y Pagos; avanzar de 5 en 5
 - [[parciales_analizados/2P_2C_2024_recuperatorio]] — Ejercicio 3: `BalanceDeudor` (ID 1b + Consumos 4b + Cant_pagos 2b + Pagos 2b = 9 bytes); `LB`, `LW`, `LH` por campo; avanzar de 9 en 9

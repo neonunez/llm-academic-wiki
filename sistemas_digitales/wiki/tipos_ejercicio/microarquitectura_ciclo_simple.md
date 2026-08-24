@@ -1,6 +1,7 @@
 ---
 nombre: Microarquitectura de Ciclo Simple — Datapath e Instrucciones
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tema: microarquitectura
 apariciones_en_parciales:
   - parciales_analizados/2P_2C_2024  # Ej4 (or tipo R)
@@ -55,6 +56,14 @@ Palabras clave: *microarquitectura*, *ciclo simple*, *datapath*, *senales de con
 El datapath de ciclo simple ejecuta cada instruccion en un unico ciclo de reloj. La unidad de control decodifica el opcode y genera las senales que configuran los MUX y habilitan los modulos. ResultSrc=1 selecciona datos de memoria (solo load); ResultSrc=0 selecciona la ALU (todo lo demas).
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C_2026).** Microarquitectura era **2P** en el programa
+> viejo, asi que los rotulos `1P`/`2P` de la lista de abajo corresponden a **como se
+> tomaba antes**.
+> Con el programa vigente la materia tiene **un solo parcial** (rotulado `1P`), asi que
+> este patron es material de tu **parcial unico**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
 
 - [[parciales_analizados/2P_2C_2024]] — Ejercicio 4: `or x4, x5, x6` (tipo R); AluSrc=0, ResultSrc=0, WE3=1, MemWrite=0
 - [[parciales_analizados/2P_2C_2024_recuperatorio]] — Ejercicio 4: ¿que pasa si ResultSrc=1 para `or`? (basura de memoria); bits 24-20 = 0 → rs2=x0 → `or` con cero = copia

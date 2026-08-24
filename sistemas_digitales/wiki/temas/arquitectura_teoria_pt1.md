@@ -1,6 +1,7 @@
 ---
 nombre: Arquitectura de Computadoras — Teoria (Parte 1)
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: arquitectura
 fuente: raw/clases_teoricas/4.teo_arquitectura_parte_1.pdf
@@ -45,7 +46,7 @@ Codigo binario ejecutable (.bin)
 
 ## Cuando se aplica
 
-- Programacion directa en RISC-V (parciales 2P)
+- Programacion directa en RISC-V (aparece en los parciales historicos rotulados 2P; con el programa vigente entra en tu **parcial unico**)
 - Analisis de codigo maquina (decodificacion de instrucciones)
 - Comprension del ciclo fetch-decode-execute
 - Implementacion de funciones con convencion de llamada

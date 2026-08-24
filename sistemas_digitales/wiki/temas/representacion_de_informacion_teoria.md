@@ -1,6 +1,7 @@
 ---
 nombre: Representacion de la Informacion — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: representacion_de_informacion
 fuente: raw/clases_teoricas/1.teo_representacion_de_informacion.pdf
@@ -361,4 +362,4 @@ $$\text{overflow} \iff (a_{n-1} = b_{n-1}) \wedge (a_{n-1} \neq c_{n-1})$$
 ## Ver tambien
 
 - [[representacion_de_informacion_guia]] — Ejercicios de la guia practica
-- [[logica_combinatoria_teoria]] — siguiente tema 1P
+- [[logica_combinatoria_teoria]] — siguiente tema del programa (parcial unico)

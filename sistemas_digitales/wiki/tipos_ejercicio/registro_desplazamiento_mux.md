@@ -1,6 +1,7 @@
 ---
 nombre: Registro de Desplazamiento con Multiplexor
 parcial: 1P
+programa: 2C_2026
 tema: logica_secuencial
 apariciones_en_parciales:
   - parciales_analizados/1P_2C_2024_recuperatorio  # Ej4

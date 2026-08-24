@@ -1,6 +1,7 @@
 ---
 nombre: Logica Secuencial — Guia de Ejercicios (Practica 2, Parte 1)
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: logica_secuencial
 fuente: "raw/guias_practicas/2.prac_logica_digital_parte_1.pdf, raw/guias_practicas/2.prac_logica_digital_parte_2.pdf"
@@ -382,7 +383,7 @@ El bus bidireccional requiere tristate para evitar conflicto electrico cuando la
 - Buffer tristate por salida: habilitado cuando $read = 1$, en Hi-Z cuando $read = 0$.
 - Cuando $load = 1$: los bufferes estan en Hi-Z, los valores externos entran directamente a los FF-D.
 
-Este patron es el ejercicio mas frecuente en 1P. Ver [[logica_secuencial_teoria]] (componentes tristate y bus de registros).
+Este patron es el ejercicio mas frecuente de los parciales historicos rotulados 1P; con el programa vigente entra en tu **parcial unico**. Ver [[logica_secuencial_teoria]] (componentes tristate y bus de registros).
 
 **Resolucion paso a paso**
 
@@ -523,7 +524,7 @@ i3 ──[MUX]──[FF-D]── Q3 ──[MUX(Q3,Q1;ext)]── │────
 3. Implementacion: MUX en las salidas de los bits "nuevos" — selecciona entre $Q_i$ almacenado (ext=0) y $Q_{signo}$ (ext=1).
 4. Los bits originales ($Q_0, Q_1$) se emiten siempre directamente, sin MUX extra.
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/microarquitectura_ciclo_simple]] (ImmSrc tipo B usa extensor de signo) | extension de signo es mecanismo clave en 2P, relacionado con SignExtn en guia de representacion (Ej 12 marcado 🔴 Si)
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/microarquitectura_ciclo_simple]] (ImmSrc tipo B usa extensor de signo) | extension de signo es mecanismo clave del material historico de 2P — hoy parte de tu **parcial unico**, relacionado con SignExtn en guia de representacion (Ej 12 marcado 🔴 Si)
 
 ---
 

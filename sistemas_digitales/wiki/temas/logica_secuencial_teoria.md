@@ -1,6 +1,7 @@
 ---
 nombre: Logica Secuencial — Teoria
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
 tema: logica_secuencial
 fuente: raw/clases_teoricas/3.teo_logica_secuencial.pdf

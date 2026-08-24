@@ -4,16 +4,35 @@
 
 **Materia:** Sistemas Digitales
 **Universidad:** UBA — Ciencias de la Computacion
-**Sistema de evaluacion:** dos parciales (1P y 2P)
+**Sistema de evaluacion:** **un parcial unico** que cubre las 10 unidades del temario (programa `2C_2026`). Por convencion se rotula `1P`; **no existe 2P**
 **Estrategia de estudio:** practica_parciales — parciales primero para identificar patrones, luego teoria, luego guias practicas
 **Objetivo:** herramienta de consulta basada 100% en la base de conocimiento ingresada. El LLM escribe y mantiene la wiki; el usuario la consulta y navega en Obsidian.
 
-**Temas por parcial:**
+**Temas por parcial** (resumen legible — la **fuente de verdad** es `programa.md`; el campo
+`parcial:` del frontmatter es derivado de ahi y se propaga con `/programa`):
 
 | Parcial | Temas |
 |---------|-------|
-| 1P | Representacion de la Informacion, Logica Combinatoria, Logica Secuencial |
-| 2P | Arquitectura de Computadoras (partes 1 y 2), Microarquitectura, Programacion RISC-V |
+| `1P` (parcial unico) | Representacion de la Informacion, Logica Combinatoria, Logica Secuencial, Diseño Modular, Arquitectura de Computadoras (partes 1 y 2), Programacion RISC-V, Microarquitectura |
+| `2P` | — no existe |
+
+**Diff de reubicaciones (programa `2C_2026`, propagado el 2026-08-24):**
+
+| Tema | Antes | Ahora |
+|---|---|---|
+| representacion_de_informacion | 1P | 1P (parcial unico) |
+| logica_combinatoria | 1P | 1P (parcial unico) |
+| logica_secuencial | 1P | 1P (parcial unico) |
+| arquitectura | 2P | **1P** ⬅️ reubicado |
+| programacion_risc_v | 2P | **1P** ⬅️ reubicado |
+| microarquitectura | 2P | **1P** ⬅️ reubicado |
+| diseno_modular | — | **1P** 🆕 sin pagina propia (unidades 6 y 7) |
+
+Consecuencias: los 6 parciales de `wiki/parciales_analizados/` fueron tomados bajo el esquema
+viejo de dos parciales — sus rotulos `1P`/`2P` son **hechos historicos** y **ninguno sirve como
+simulacro completo**. Los patrones de `tipos_ejercicio/` que venian de 2P llevan aviso de
+reubicacion. Huecos del temario vigente sin cobertura en la wiki: Diseño Modular (unidades 6 y
+7), punto fijo y flotante, restadores, comparadores — detalle en `programa.md`.
 
 ---
 
@@ -22,6 +41,7 @@
 ```
 sistemas_digitales/
 ├── CLAUDE.md                      ← este archivo
+├── programa.md                    ← FUENTE DE VERDAD del reparto de temas por parcial
 ├── index.md                       ← catalogo completo del wiki
 ├── log.md                         ← registro append-only de operaciones
 │
@@ -334,7 +354,7 @@ Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cad
 | `/lint` | Chequeo de salud del wiki |
 | `/estado` | Resumen ejecutivo del wiki |
 | `/chuleta <tema>` | Chuletas consolidadas de un tema |
-| `/parcial <1P\|2P>` | Vista orientada a examen |
+| `/parcial <1P\|2P>` | Vista orientada a examen (`1P` devuelve todo el programa; `2P` no devuelve nada — no existe) |
 | `/simular [tema]` | Generar ejercicio de practica |
 | `/sintesis <nombre>` | Guardar sintesis en wiki |
 | `/fuente_original [ruta]` | Acceder al PDF original |
@@ -342,6 +362,7 @@ Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cad
 | `/tipos_ejercicio_scan` | Detectar patrones recurrentes cruzando parciales analizados |
 | `/tipos_ejercicio_run` | Crear paginas `tipos_ejercicio/` y actualizar banderas |
 | `/tipos_ejercicio` | Paso 9 del pipeline: scan + run en una pasada |
+| `/programa` | Propagar `programa.md` cuando la catedra cambia que temas entran en cada parcial |
 
 ---
 

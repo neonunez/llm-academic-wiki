@@ -1,6 +1,7 @@
 ---
 nombre: Suma de Productos y Simplificacion Algebraica
 parcial: 1P
+programa: 2C_2026
 tema: logica_combinatoria
 apariciones_en_parciales:
   - parciales_analizados/1P_1C_2025  # Ej2

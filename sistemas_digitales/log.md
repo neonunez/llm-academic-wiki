@@ -1,6 +1,41 @@
 # Log — Sistemas Digitales
 
 
+## 2026-08-24 programa | 2C_2026
+
+Cambio de reparto: la materia pasa de **dos parciales a un parcial unico** que cubre las 10
+unidades del temario. Por convencion el parcial unico se rotula `1P`; no existe `2P`.
+
+- `arquitectura`: 2P → 1P
+- `programacion_risc_v`: 2P → 1P
+- `microarquitectura`: 2P → 1P
+- `representacion_de_informacion`, `logica_combinatoria`, `logica_secuencial`: 1P → 1P (sin movimiento)
+- `diseno_modular`: nuevo en el mapa → 1P (unidades 6 y 7, todavia **sin pagina propia** en `wiki/temas/`)
+
+Paginas actualizadas: 13 en `temas/` (6 cambiaron de parcial), 14 en `tipos_ejercicio/`
+(5 cambiaron de parcial). Las 27 llevan ahora `programa: 2C_2026` debajo de `parcial:`.
+
+Normalizacion de `tema:`:
+- `temas/arquitectura_cpu_guia.md`: `arquitectura_cpu` → `arquitectura` (alias documentado en `programa.md`)
+- `temas/arquitectura_teoria_pt2.md`: `arquitectura, programacion_risc_v` → `arquitectura` (secundario preservado como comentario YAML)
+- `temas/hdl_system_verilog.md`: `logica_combinatoria, logica_secuencial` → `logica_combinatoria` (idem)
+
+Avisos de reubicacion insertados (5): `convencion_llamada_risc_v`, `funcion_recursiva_risc_v`,
+`iteracion_arreglo_risc_v`, `structs_y_memoria_risc_v`, `microarquitectura_ciclo_simple`.
+
+Prosa reescrita: 15 menciones en 7 paginas de `temas/` que afirmaban un reparto 1P/2P vigente,
+separadas en rotulo historico vs. parcial unico vigente.
+
+`index.md` reagrupado bajo una unica seccion de parcial (sin seccion 2P), con aviso de cambio
+de esquema arriba de todo y nota de programa viejo sobre `parciales_analizados/`. `CLAUDE.md`
+actualizado (sistema de evaluacion, tabla de temas por parcial, diff de reubicaciones).
+
+`wiki/sintesis/` esta vacio → paso de repasos, no-op.
+
+No se modifico `raw/`, `parciales_analizados/`, `transcripciones/`, `apariciones_en_parciales:`
+ni las banderas 🔴/⚪.
+
+
 ## 2026-08-18 mantenimiento | index desactualizado
 
 - `index.md` marcaba 6 guias como "Fase 1 completa — PENDIENTE resolucion" cuando ya estaban resueltas (13/10/13/8/9/11 resoluciones respectivamente, 0 marcadores pendientes). Etiquetas corregidas a "resuelta".

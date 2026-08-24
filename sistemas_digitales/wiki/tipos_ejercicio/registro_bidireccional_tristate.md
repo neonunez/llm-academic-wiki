@@ -1,6 +1,7 @@
 ---
 nombre: Registro Bidireccional con Buffer Tristate
 parcial: 1P
+programa: 2C_2026
 tema: logica_secuencial
 apariciones_en_parciales:
   - parciales_analizados/1P_2C_2024  # Ej4

@@ -1,8 +1,9 @@
 ---
 nombre: Arquitectura CPU — Guia de Ejercicios
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: guia
-tema: arquitectura_cpu
+tema: arquitectura
 fuente: raw/guias_practicas/3.prac_arquitectura_cpu.pdf
 paginas_relacionadas:
   - "[[arquitectura_teoria_pt1]]"
@@ -290,7 +291,7 @@ Offsets de salto:
 > 3. Offset de salto = dir_destino - dir_instruccion_de_salto (resultado con signo).
 > 4. Los offsets son relativos → no dependen de la direccion de inicio del programa.
 
-**¿Aparece en parciales?** 🔴 Si → calculo de offsets y seguimiento de PC es parte del ciclo fetch-decode-execute en parciales de 2P
+**¿Aparece en parciales?** 🔴 Si → calculo de offsets y seguimiento de PC es parte del ciclo fetch-decode-execute; aparece en los parciales historicos rotulados 2P y, con el programa vigente, entra en tu **parcial unico**
 
 ---
 
@@ -367,7 +368,7 @@ addi t0, t0, -1657  # t0 = 0xABCDE987  (addi extiende -1657 con signo → 0xFFFF
 >    - Si bit 11 de la parte baja = 1: sumar 1 al inmediato de `lui` (compensar extension de signo negativa).
 > 3. `andi reg, imm_neg` con todos-1s → resultado = inmediato extendido en signo.
 
-**¿Aparece en parciales?** 🔴 Si → traduccion C→RISC-V es el nucleo de los ejercicios de programacion en 2P; `lui+addi` visto en teoria
+**¿Aparece en parciales?** 🔴 Si → traduccion C→RISC-V es el nucleo de los ejercicios de programacion de los parciales historicos rotulados 2P — hoy material de tu **parcial unico**; `lui+addi` visto en teoria
 
 ---
 
@@ -744,7 +745,7 @@ Para instrucciones de formato expandible: las instrucciones de 2 direcciones con
 > 2. Prefijos disponibles = 2^{bits_opcode_base} − instr_de_nivel_superior.
 > 3. Cada prefijo libre × 2^{bits_extensión} = instrucciones de nivel inferior.
 
-**¿Aparece en parciales?** 🔴 Si → diseño de formato de instruccion puede aparecer en 2P como ejercicio de arquitectura
+**¿Aparece en parciales?** 🔴 Si → diseño de formato de instruccion puede aparecer como ejercicio de arquitectura: bajo el esquema viejo caia en 2P, con el programa vigente entra en tu **parcial unico**
 
 ---
 

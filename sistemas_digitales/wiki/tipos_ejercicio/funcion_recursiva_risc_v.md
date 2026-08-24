@@ -1,6 +1,7 @@
 ---
 nombre: Funcion Recursiva en RISC-V
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tema: programacion_risc_v
 apariciones_en_parciales:
   - parciales_analizados/2P_2C_2024  # Ej1 (Pascal)
@@ -54,6 +55,14 @@ L_return:
 El stack frame preserva el contexto de cada nivel de recursion. Los registros `s*` son callee-saved: la funcion llamada debe preservarlos, por lo que el llamador puede confiar en que sobreviven a las llamadas recursivas. `ra` debe guardarse porque `jal` lo sobreescribe.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C_2026).** Programacion RISC-V era **2P** en el programa
+> viejo, asi que los rotulos `1P`/`2P` de la lista de abajo corresponden a **como se
+> tomaba antes**.
+> Con el programa vigente la materia tiene **un solo parcial** (rotulado `1P`), asi que
+> este patron es material de tu **parcial unico**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
 
 - [[parciales_analizados/2P_2C_2024]] — Ejercicio 1: pascal(fila, columna) con dos llamadas recursivas; `s1=fila`, `s2=columna`, `s3=resultado_primera_llamada`
 - [[parciales_analizados/2P_2C_2024_recuperatorio]] — Ejercicio 1: recursion mutua `es_primo` → `cantidad_divisores` → `cantidad_divisores_rec`; instruccion `REM`

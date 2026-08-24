@@ -1,6 +1,7 @@
 ---
 nombre: Representacion de la Informacion — Guia de Ejercicios
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: representacion_de_informacion
 fuente: raw/guias_practicas/1.prac_representacion_de_informacion.pdf

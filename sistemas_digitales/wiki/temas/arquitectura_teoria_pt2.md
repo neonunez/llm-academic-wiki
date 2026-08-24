@@ -1,8 +1,9 @@
 ---
 nombre: Arquitectura de Computadoras — Teoria (Parte 2)
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: teoria
-tema: arquitectura, programacion_risc_v
+tema: arquitectura   # secundario: programacion_risc_v
 fuente: raw/clases_teoricas/4.teo_arquitectura_parte_2.pdf
 paginas_relacionadas:
   - "[[arquitectura_teoria_pt1]]"
@@ -206,7 +207,7 @@ Instrucciones que el ensamblador traduce a instrucciones reales. No son instrucc
 - **Programacion RISC-V con funciones:** toda funcion que llame a otra o que use registros permanentes necesita push/pop de la pila.
 - **Funciones recursivas:** cada nivel de recursion crea un stack frame propio.
 - **Acceso a arreglos y structs:** patron `slli + add + lw/sw`.
-- **Parciales 2P:** ejercicios de traduccion C → RISC-V con funciones, recursion y estructuras.
+- **Parciales historicos rotulados 2P:** ejercicios de traduccion C → RISC-V con funciones, recursion y estructuras; con el programa vigente ese material entra en tu **parcial unico**.
 
 ---
 

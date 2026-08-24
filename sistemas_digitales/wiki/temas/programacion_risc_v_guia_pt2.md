@@ -1,6 +1,7 @@
 ---
 nombre: Programacion RISC-V — Guia de Ejercicios (Parte 2)
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: programacion_risc_v
 fuente: raw/guias_practicas/4.prac_programacion_RISC-V.pdf
@@ -396,7 +397,7 @@ div_done:
 > `li t_flag, 0; bge x, zero, skip; sub x, zero, x; xori t_flag, t_flag, 1`
 > Al final: `beq t_flag, zero, done; sub resultado, zero, resultado`
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/convencion_llamada_risc_v]] | patron recursion/iteracion en 2P: [[parciales_analizados/2P_2C_2024_recuperatorio]] Ej1 (es_primo recursivo), [[parciales_analizados/2P_2C_2024]] Ej1 (Pascal recursivo). Fibonacci iterativo es version simplificada del patron recursivo.
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/convencion_llamada_risc_v]] | patron recursion/iteracion en los parciales historicos rotulados 2P — hoy material de tu **parcial unico**: [[parciales_analizados/2P_2C_2024_recuperatorio]] Ej1 (es_primo recursivo), [[parciales_analizados/2P_2C_2024]] Ej1 (Pascal recursivo). Fibonacci iterativo es version simplificada del patron recursivo.
 
 ---
 
@@ -1234,7 +1235,7 @@ bis_ret:
 
 **¿Aparece en parciales?**
 - 8a: 🔴 Si → [[tipos_ejercicio/funcion_recursiva_risc_v]] | patron recursion en 2P: [[parciales_analizados/2P_2C_2024_recuperatorio]] Ej1 (es_primo + cantidad_divisores con recursion mutua), [[parciales_analizados/2P_2C_2024]] Ej1 (Pascal recursivo).
-- 8c: 🔴 Si → [[tipos_ejercicio/funcion_recursiva_risc_v]] | patron Fibonacci recursivo con multiples casos base aparece en forma generalizada en varios parciales de 2P.
+- 8c: 🔴 Si → [[tipos_ejercicio/funcion_recursiva_risc_v]] | patron Fibonacci recursivo con multiples casos base aparece en forma generalizada en varios parciales historicos rotulados 2P — hoy material de tu **parcial unico**.
 - 8b, 8d, 8e: ⚪ No — no vistos en parciales.
 
 ---
@@ -1443,7 +1444,7 @@ sl_ret:
 >
 > **Offsets del nodo:** valor en +0, siguiente en +4 (ambos word = 4 bytes)
 
-**¿Aparece en parciales?** ⚪ No — listas enlazadas no vistas en parciales de 2P.
+**¿Aparece en parciales?** ⚪ No — listas enlazadas no vistas en los parciales historicos rotulados 2P (material que con el programa vigente entra en tu **parcial unico**).
 
 ---
 
@@ -1604,7 +1605,7 @@ bsi_notfound:
 > `arr[mid] == buscado → retornar mid`
 > `left > right → retornar -1`
 
-**¿Aparece en parciales?** ⚪ No — busqueda binaria no vista en parciales de 2P.
+**¿Aparece en parciales?** ⚪ No — busqueda binaria no vista en los parciales historicos rotulados 2P (material que con el programa vigente entra en tu **parcial unico**).
 
 ---
 

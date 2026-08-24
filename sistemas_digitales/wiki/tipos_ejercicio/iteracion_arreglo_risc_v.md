@@ -1,6 +1,7 @@
 ---
 nombre: Iteracion sobre Arreglos en RISC-V
-parcial: 2P
+parcial: 1P
+programa: 2C_2026
 tema: programacion_risc_v
 apariciones_en_parciales:
   - parciales_analizados/2P_2C_2024  # Ej2 (invertirArreglo)
@@ -63,6 +64,14 @@ else_0:
 Los registros `s*` preservan el puntero y el contador a traves de llamadas a funciones auxiliares (que pueden modificar `a*` y `t*`). El avance del puntero en bytes depende del tipo: 4 para int (word), 2 para half, 1 para byte.
 
 ## Apariciones en parciales
+
+> ⚠️ **Reubicado por el programa vigente (2C_2026).** Programacion RISC-V era **2P** en el programa
+> viejo, asi que los rotulos `1P`/`2P` de la lista de abajo corresponden a **como se
+> tomaba antes**.
+> Con el programa vigente la materia tiene **un solo parcial** (rotulado `1P`), asi que
+> este patron es material de tu **parcial unico**.
+> Los ejercicios siguen siendo validos; lo unico que cambio es en que parcial te los toman.
+> Ver [[programa]].
 
 - [[parciales_analizados/2P_2C_2024]] — Ejercicio 2: `invertirArreglo` iterativo; `s1=arr`, `s2=largo`, `s3=indice`; llama a `inv` (xori+addi)
 - [[parciales_analizados/2P_2C_2024_recuperatorio]] — Ejercicio 2: `arreglo_par` recursivo post-order; truco `andi+xori` para paridad

@@ -1,6 +1,7 @@
 ---
 nombre: Carry y Overflow en Complemento a Dos
 parcial: 1P
+programa: 2C_2026
 tema: representacion_de_informacion
 apariciones_en_parciales:
   - parciales_analizados/1P_2C_2024  # Ej1

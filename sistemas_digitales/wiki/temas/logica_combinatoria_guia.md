@@ -1,6 +1,7 @@
 ---
 nombre: Logica Combinatoria — Guia de Ejercicios (Practica 2, Parte 1)
 parcial: 1P
+programa: 2C_2026
 tipo: guia
 tema: logica_combinatoria
 fuente: "raw/guias_practicas/2.prac_logica_digital_parte_1.pdf, raw/guias_practicas/2.prac_logica_digital_parte_2.pdf"
@@ -221,7 +222,7 @@ Con {NOT, AND, OR} expresables en NOR → NOR es universal.
 4. Por el Ej 2, {NOT, AND, OR} completo → cualquier extension tambien lo es.
 5. Corolario: NAND y NOR son intercambiables (se puede expresar cada uno con el otro).
 
-**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/operadores_universales_nand_nor]] | [[parciales_analizados/1P_2C_2024]] Ej2, [[parciales_analizados/1P_2C_2024_recuperatorio]] Ej2 — patron de alta frecuencia en 1P
+**¿Aparece en parciales?** 🔴 Si → [[tipos_ejercicio/operadores_universales_nand_nor]] | [[parciales_analizados/1P_2C_2024]] Ej2, [[parciales_analizados/1P_2C_2024_recuperatorio]] Ej2 — patron de alta frecuencia en los parciales historicos rotulados 1P; con el programa vigente entra en tu **parcial unico**
 
 ---
 
@@ -367,7 +368,7 @@ b) ¿Se pueden simplificar las expresiones usando propiedades del algebra boolea
 
 **Explicacion**
 
-Ejercicio canonico de SDP + simplificacion algebraica. Patron clave del 1P.
+Ejercicio canonico de SDP + simplificacion algebraica. Patron clave de los parciales historicos rotulados 1P; con el programa vigente entra en tu **parcial unico**.
 
 - Fase 1: identificar minterms (filas con F=1), escribir el AND de cada minterm, luego el OR de todos.
 - Fase 2: aplicar propiedades (idempotencia, absorcion, De Morgan) para reducir el numero de compuertas.

@@ -1,8 +1,9 @@
 ---
 nombre: HDL y System Verilog
 parcial: 1P
+programa: 2C_2026
 tipo: teoria
-tema: logica_combinatoria, logica_secuencial
+tema: logica_combinatoria   # secundario: logica_secuencial
 fuente: raw/contenido_comunidad/resumen_sistemas_digitales.pdf
 paginas_relacionadas:
   - "[[logica_combinatoria_teoria]]"
