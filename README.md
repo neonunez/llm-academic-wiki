@@ -19,11 +19,15 @@ llm-academic-wiki/
 │   ├── programa.md            ← temas por parcial + cursada vigente
 │   ├── raw/                   ← PDFs originales (inmutables)
 │   │   └── cursada_2C_2026/   ← material del cuatrimestre en curso (autoridad)
-│   └── wiki/                  ← contenido generado por el LLM
+│   ├── wiki/                  ← contenido generado por el LLM
+│   └── cursada_actual/        ← informes de /priorizar (analisis, no wiki)
 └── [otras materias]/          ← misma estructura, independientes
 ```
 
-Cada materia tiene su propio `CLAUDE.md`, `index.md`, `log.md`, `raw/` y `wiki/` — completamente independientes entre si.
+Cada materia tiene su propio `CLAUDE.md`, `programa.md`, `index.md`, `log.md`, `raw/` y `wiki/` — completamente independientes entre si.
+
+`cursada_actual/` es la excepcion deliberada: guarda los informes de `/priorizar`, que analizan material
+de la cursada **sin ingestarlo**. Es descartable y regenerable — no forma parte del wiki compilado.
 
 ## Uso
 

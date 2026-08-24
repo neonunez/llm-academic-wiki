@@ -17,7 +17,8 @@ llm-academic-wiki/
 │   ├── log.md
 │   ├── raw/                       ← PDFs originales, INMUTABLES
 │   │   └── cursada_<XC_AAAA>/     ← material de la cursada vigente (fuente de autoridad)
-│   └── wiki/                      ← contenido generado por el LLM
+│   ├── wiki/                      ← contenido generado por el LLM
+│   └── cursada_actual/            ← informes de /priorizar, NO es wiki compilado
 └── [Materia_N]/                   ← misma estructura
 ```
 
@@ -35,8 +36,8 @@ claude
 | Materia | Ruta | Estado |
 |---------|------|--------|
 | Tecnicas de Diseno de Algoritmos | `tda/` | Wiki completa · reparto de temas por parcial actualizado a 2C-2026 |
-| Paradigmas de Programación | `plp/` | Guias completas y resueltas — 36 ej. con `⚠️ Verificar` |
-| Sistemas Digitales | `sistemas_digitales/` | En construccion |
+| Paradigmas de Programación | `plp/` | Guias completas y resueltas — 33 ej. con `⚠️ Verificar` · `programa.md` oficial (2 parciales) · frontmatter normalizado 2026-08-24 |
+| Sistemas Digitales | `sistemas_digitales/` | ⚠️ **PARCIAL UNICO** (10 unidades) · reparto propagado 2026-08-24 · huecos sin cubrir: Diseño Modular (unidades 6-7), punto fijo/flotante, restadores, comparadores |
 
 ## Slash commands disponibles
 
@@ -47,6 +48,7 @@ Los comandos viven en `.claude/commands/` (`.agents/workflows/` es un symlink a 
 | `/ingestar <ruta>` | Ingestar un PDF al wiki. Bajo `raw/cursada_*/` entra en modo reconciliacion |
 | `/ingestar_batch <carpeta>` | Ingestar todos los PDFs de una carpeta |
 | `/resolver <ruta_pagina_guia>` | Resolver ejercicios pendientes de una guia |
+| `/priorizar <ruta_pdf>` | Analizar un PDF de la cursada contra los parciales y decir a que prestarle atencion. **No ingesta** |
 | `/corregir <ruta_pagina> "<obs>"` | Corregir una pagina con aprobacion previa |
 | `/lint` | Chequeo de salud del wiki |
 | `/estado` | Resumen ejecutivo del wiki |
