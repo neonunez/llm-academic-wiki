@@ -337,3 +337,61 @@ Actualizado: `index.md` (resumen de contenidos reescrito, marca 🟡, y las **do
 - No degradar de esa pagina al mergear: modelo RAM, costos por operacion, $|I|$ en bits, $f_A(n)$, tabla de clasificacion.
 
 NO se modifico: `raw/`, `wiki/parciales_analizados/`, `wiki/transcripciones/`, `wiki/tipos_ejercicio/`, ninguna otra pagina de `wiki/temas/`, ni `.claude/commands/`.
+
+## [2026-08-25] analisis | teo_clase2_algo_en_grafos.pdf
+Material de estudio: cursada_actual/teo_clase2_algo_en_grafos.md — 6 unidades explicadas (3 criticas, 3 probables) + 5 de contexto. REGENERADO con el formato nuevo de /priorizar: el cruce contra parciales paso de ser el contenido a ser el motor de seleccion (decide que se explica y cuanto); la evidencia quedo en apendice. 2 huecos de indice declarados (representacion de grafos, ordenamiento topologico). 1 divergencia 🔄 reportada. Sin ingesta.
+
+## [2026-08-25] ingest | teo_clase2_algo_en_grafos.pdf
+Pagina canonica buscada: `wiki/temas/recorrido_en_grafos_teoria.md` — **no existia**. Por Paso 2.3 de
+`/ingestar` (tema sin pagina → no hay nada que reconciliar) la corrida cayo a **modo CREAR** para el
+tema dominante, con autorizacion previa del usuario. El tema `recorrido_en_grafos` tenia `_practica` y
+`_guia`, pero nunca tuvo pagina de teoria.
+
+**Extraccion:** `pdftotext`/`pdfinfo` verificados presentes (`/usr/bin/`). `pdfinfo` → **128 paginas
+PDF**. Beamer con pie `N / 58` → consolidado a **58 diapositivas logicas** quedandose con el build mas
+largo de cada grupo. Sin consolidar el diff/la extraccion es basura.
+
+**Creado:** [[recorrido_en_grafos_teoria]] — diapositivas **S12–S58**, `parcial: 1P` (derivado de
+`programa.md`, no del nombre del PDF), `programa: 2C_2026`, `fuentes.vigente:
+[raw/cursada_2C_2026/teo/teo_clase2_algo_en_grafos.pdf]`, `fuentes.historico: []`,
+`estado_verificacion: verificado_2C_2026` + badge ✅ (la pagina nace 100% de material vigente, sin
+bloques 📎 pendientes).
+
+Secciones: aviso de colision de notacion `d[v]` (distancia en BFS / tiempo de descubrimiento en DFS /
+grado sin corchetes) · Concepto y definicion (esquema comun de recorrido: cola⇒BFS, pila⇒DFS) · Cuando
+se aplica · 1. Ordenamiento topologico · 2. BFS · 3. DFS · 4. Estructura de parentesis ·
+5. Clasificacion de aristas · 6. Deteccion de aristas de corte (puentes) · Formulas clave (23 filas) ·
+Notas de transcripcion · Ver tambien.
+
+**Divergencia registrada (1, tipo `notacion`)** — bloque 🔄 en la seccion de puentes. Resuelve la
+divergencia que el informe de `/priorizar` del 2026-08-25 habia dejado abierta:
+- **Ahora (2C-2026):** `low[u]` sobre **tiempos de descubrimiento** `d[]`; criterio `low[v] > d[pi[v]]`.
+- **Antes:** [[recorrido_en_grafos_guia]] Ej. 2 usa `low[v]` sobre **niveles** del arbol DFS, criterio
+  `low[v] > nivel[padre]`; [[recorrido_en_grafos_practica]] Ej. 5 usa el metodo **`cubren(v)`**,
+  criterio `cubren(v) = 0`.
+- Gana la vigente. Las otras dos **no se degradan ni se tocan**: ahi estan las demostraciones y los
+  ejercicios resueltos, y el bloque 🔄 es el puente para poder leerlos.
+
+**Reconstruido:** el lema del DAG (S12) se imprime en la propia filmina como `d^( v ) = 0` — el signo
+menos del superindice no se renderiza en el PDF, no es un fallo de extraccion. Se escribio
+`$d^-(v) = 0$` reconstruido desde S13 (*"Vertices con grado de entrada igual a cero"*, que si escribe
+`$d_D^-(u) = 0$` correctamente), y se dejo asentado en "Notas de transcripcion". **Ninguna formula
+quedo ilegible.**
+
+**Marcado `⚠️ Verificar`:** la demostracion del teorema `d[v] = delta(s,v)` (S26) — el PDF plantea el
+vertice minimal y salta a la complejidad sin cerrar el argumento. No se reconstruyo.
+
+**PENDIENTE — segunda corrida:** las diapositivas **S3–S11** (Representacion de grafos: listas vs
+matriz, espacio Theta(n+m) vs Theta(n^2), tabla de costos S10, costos de actualizacion S8,
+sum|Adj[v]| = m en digrafos y 2m en no dirigidos, pesos y la advertencia de no usar 0 como ausencia)
+pertenecen al tema `grafos` y pisan [[grafos_teoria]], que **ya tiene** seccion de representacion →
+requiere **modo RECONCILIACION con gate de aprobacion**, en una corrida aparte. Reconciliacion procesa
+una sola pagina canonica por corrida. Texto ya consolidado guardado en
+`.ingestas_pendientes/teo_clase2_algo_en_grafos.texto_consolidado.txt` para no releer el PDF.
+
+**Actualizado:** `index.md` (nueva linea bajo "Algoritmos sobre grafos — Recorridos (BFS/DFS)").
+
+NO se modifico: `raw/`, `wiki/parciales_analizados/`, `wiki/transcripciones/`, `wiki/tipos_ejercicio/`,
+`grafos_teoria.md`, `recorrido_en_grafos_practica.md`, `recorrido_en_grafos_guia.md`, ni ninguna otra
+pagina existente. **No se corrio `/tipos_ejercicio` ni se tocaron banderas** — por decision explicita
+del usuario, eso queda para cuando este la clase practica del tema.
