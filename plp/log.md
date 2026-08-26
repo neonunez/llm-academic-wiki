@@ -275,3 +275,18 @@ analizados → Repaso → Sintesis). Se corrigio la ubicacion de `lambda_habitan
 `CLAUDE.md` actualizado: la tabla de temas por parcial ahora apunta a `programa.md`.
 No se modifico raw/, parciales_analizados/, transcripciones/, `apariciones_en_parciales:`,
 las banderas 🔴/⚪ ni el cuerpo de ninguna pagina.
+
+## 2026-08-25 analisis | 20260825-170523-cf36ebcf-02-Funcional2-Folds.pdf
+Material de estudio: `cursada_actual/20260825_170523_cf36ebcf_02_funcional2_folds.md` — 12 unidades explicadas (4 criticas, 8 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-08-25 mantenimiento | estructura de salida de /priorizar
+Separados tres modos pedagogicos: teoria para comprension conceptual, practica para tecnicas mediante ejercicios modelo y guia para entrenamiento progresivo. En teoria se reemplazo la comprobacion de comprension por `Explicacion para nene de 5`; la evidencia y la aplicacion a ejercicios quedan fuera del desarrollo conceptual.
+
+## 2026-08-25 mantenimiento | /priorizar migrado a Agent Skill
+Implementacion canonica creada en `.agents/skills/priorizar/`, con referencias separadas para seleccion, teoria, practica, guia y guardado, mas extractor PDF. `.claude/commands/priorizar.md` y `.pi/prompts/priorizar.md` quedan como wrappers; la skill es la unica fuente de verdad.
+
+## 2026-08-25 analisis | 20260825-170523-cf36ebcf-02-Funcional2-Folds.pdf
+Material de estudio regenerado: `cursada_actual/20260825_170523_cf36ebcf_02_funcional2_folds.md` — 10 unidades explicadas (5 criticas, 5 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-08-25 mantenimiento | descubrimiento de /priorizar en Pi
+Agregada configuracion local `.pi/settings.json` en las tres materias activas para cargar el wrapper compartido de `/priorizar`. Verificado con el resource loader de Pi: skill y prompt se descubren sin diagnosticos desde `plp/`, `tda/` y `sistemas_digitales/`.
