@@ -65,6 +65,10 @@ plp/
 ├── log.md                         ← registro append-only de operaciones
 │
 ├── raw/                           ← PDFs originales, INMUTABLES
+│   ├── cursada_2C_2026/           ← ★ CURSADA VIGENTE — fuente de autoridad
+│   │   ├── teo/
+│   │   ├── prac/
+│   │   └── guias/
 │   ├── clases/
 │   │   ├── teo/                   ← 15 PDFs — LaTeX Beamer
 │   │   └── prac/                  ← 20 PDFs — LaTeX Beamer
@@ -74,6 +78,8 @@ plp/
 │   │   └── 2P/                    ← 4 PDFs — mix digital + fotografiado
 │   ├── contenido_comunidad/       ← 1 PDF — Word export
 │   └── assets/                    ← imagenes de Obsidian Web Clipper
+│
+├── cursada_actual/                ← material de estudio generado por /priorizar; no es wiki
 │
 └── wiki/                          ← todo generado por el LLM
     ├── temas/                     ← paginas _teoria, _practica, _guia por tema
@@ -417,7 +423,7 @@ Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cad
 | `/tipos_ejercicio_run` | Crear paginas `tipos_ejercicio/` y actualizar banderas |
 | `/tipos_ejercicio` | Paso 9 del pipeline: scan + run en una pasada |
 | `/programa` | Propagar `programa.md` cuando la catedra cambia que temas entran en cada parcial |
-| `/priorizar <ruta_pdf>` | Analizar un PDF de la cursada contra los parciales. **No ingesta** |
+| `/priorizar <teoria\|practica\|guia> <ruta_pdf>` | Agent Skill: teoría conceptual, práctica por técnicas o guía de entrenamiento, priorizadas contra parciales. **No ingesta** |
 
 ---
 

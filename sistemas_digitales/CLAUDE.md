@@ -46,6 +46,10 @@ sistemas_digitales/
 ├── log.md                         ← registro append-only de operaciones
 │
 ├── raw/                           ← PDFs originales, INMUTABLES
+│   ├── cursada_2C_2026/           ← ★ CURSADA VIGENTE — fuente de autoridad
+│   │   ├── teo/
+│   │   ├── prac/
+│   │   └── guias/
 │   ├── clases_teoricas/           ← 6 PDFs — slides Beamer fotografiadas (vision)
 │   │   ├── 1.teo_representacion_de_informacion.pdf   (64 pags)
 │   │   ├── 2.teo_logica_combinatoria.pdf             (93 pags)
@@ -72,6 +76,8 @@ sistemas_digitales/
 │   │       └── 2.parcial_2C_2024_resolucion_recuperatorio.pdf
 │   └── contenido_comunidad/       ← 1 PDF — resumen estudiantil (pdftotext)
 │       └── resumen_sistemas_digitales.pdf
+│
+├── cursada_actual/                ← material de estudio generado por /priorizar; no es wiki
 │
 └── wiki/                          ← todo generado por el LLM
     ├── temas/                     ← paginas _teoria, _practica, _guia por tema
@@ -363,6 +369,7 @@ Implementados como slash commands en `.claude/commands/` (la raiz del repo). Cad
 | `/tipos_ejercicio_run` | Crear paginas `tipos_ejercicio/` y actualizar banderas |
 | `/tipos_ejercicio` | Paso 9 del pipeline: scan + run en una pasada |
 | `/programa` | Propagar `programa.md` cuando la catedra cambia que temas entran en cada parcial |
+| `/priorizar <teoria\|practica\|guia> <ruta_pdf>` | Generar material de estudio de un PDF de la cursada usando los parciales como criterio. **No ingesta** |
 
 ---
 

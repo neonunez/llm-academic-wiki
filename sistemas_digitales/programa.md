@@ -99,19 +99,20 @@ esta incompleto respecto del temario vigente.
 ## Cursada vigente y procedencia del material
 
 **Cursada vigente:** `2C_2026`.
-**Carpeta de material:** `raw/cursada_2C_2026/` — **todavia no existe**.
+**Carpeta de material:** `raw/cursada_2C_2026/{teo,prac,guias}/` — preparada para recibir PDFs.
 
 Toda la wiki de Sistemas Digitales proviene hoy de material historico
 (`raw/clases_teoricas/`, `raw/guias_practicas/`, `raw/contenido_comunidad/`), tomado bajo el
 esquema de dos parciales. Todas las paginas estan de hecho en `pendiente_verificacion`.
 
 **Esta es la materia donde el material de la cursada vigente mas importa**, porque es la unica
-de las tres cuyo esquema de evaluacion cambio. Cuando arranque la cursada: crear
-`raw/cursada_2C_2026/{teo,prac,guias}/` e ingestar con `/ingestar` (modo reconciliacion),
-priorizando las unidades sin cobertura (6, 7 y punto flotante de la 5).
+de las tres cuyo esquema de evaluacion cambio. El material nuevo se deposita en la subcarpeta
+correspondiente y, si se ingesta con `/ingestar`, la ruta vigente activa el modo reconciliacion.
+Priorizar las unidades sin cobertura (6, 7 y punto flotante de la 5).
 
-Para material de la cursada que **no** se quiere ingestar y solo se quiere analizar contra los
-parciales, usar `/priorizar <ruta_pdf>` — escribe en `cursada_actual/`, no toca la wiki.
+Para material de la cursada que **no** se quiere ingestar y solo se quiere convertir en material
+de estudio priorizado contra los parciales, usar
+`/priorizar <teoria|practica|guia> <ruta_pdf>` — escribe en `cursada_actual/`, no toca la wiki.
 
 ## Mapa tema → parcial (formato para maquinas)
 

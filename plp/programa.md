@@ -121,18 +121,19 @@ Ninguno. Ver la nota de Deduccion Natural arriba: parece transversal y no lo es.
 ## Cursada vigente y procedencia del material
 
 **Cursada vigente:** `2C_2026`.
-**Carpeta de material:** `raw/cursada_2C_2026/` — **todavia no existe**.
+**Carpeta de material:** `raw/cursada_2C_2026/{teo,prac,guias}/` — preparada para recibir PDFs.
 
 Toda la wiki de PLP proviene hoy de material historico (`raw/clases/`, `raw/guias_practicas/`),
 por lo que todas las paginas estan de hecho en `pendiente_verificacion`, aunque el campo
 `estado_verificacion` aun no se haya escrito en su frontmatter.
 
-Cuando arranque la cursada: crear `raw/cursada_2C_2026/{teo,prac,guias}/`, soltar el material
-ahi e ingestarlo con `/ingestar` (modo reconciliacion). Ese material pasa a ser **fuente de
-autoridad** ante cualquier conflicto con el historico.
+El material nuevo se deposita en la subcarpeta correspondiente. Si se ingesta con `/ingestar`,
+la ruta vigente activa el modo reconciliacion y ese material pasa a ser **fuente de autoridad**
+ante cualquier conflicto con el historico.
 
-Para material de la cursada que **no** se quiere ingestar y solo se quiere analizar contra los
-parciales, usar `/priorizar <ruta_pdf>` — escribe en `cursada_actual/`, no toca la wiki.
+Para material de la cursada que **no** se quiere ingestar y solo se quiere convertir en material
+de estudio priorizado contra los parciales, usar
+`/priorizar <teoria|practica|guia> <ruta_pdf>` — escribe en `cursada_actual/`, no toca la wiki.
 
 ### Lo que NO cambia: la base de que es importante
 

@@ -18,7 +18,7 @@ llm-academic-wiki/
 │   ├── raw/                       ← PDFs originales, INMUTABLES
 │   │   └── cursada_<XC_AAAA>/     ← material de la cursada vigente (fuente de autoridad)
 │   ├── wiki/                      ← contenido generado por el LLM
-│   └── cursada_actual/            ← informes de /priorizar, NO es wiki compilado
+│   └── cursada_actual/            ← material de estudio de /priorizar, NO es wiki compilado
 └── [Materia_N]/                   ← misma estructura
 ```
 
@@ -41,14 +41,14 @@ claude
 
 ## Slash commands disponibles
 
-Los comandos viven en `.claude/commands/` (`.agents/workflows/` es un symlink a esa carpeta, para otros agentes) y son agnósticos a la materia — operan sobre el working directory:
+Los comandos viven en `.claude/commands/` (`.agents/workflows/` es un symlink a esa carpeta, para otros agentes) y son agnósticos a la materia — operan sobre el working directory. Excepción arquitectónica: `/priorizar` usa `.agents/skills/priorizar/` como implementación canónica; Claude y Pi conservan wrappers para ofrecer el mismo comando.
 
 | Comando | Descripcion |
 |---------|-------------|
 | `/ingestar <ruta>` | Ingestar un PDF al wiki. Bajo `raw/cursada_*/` entra en modo reconciliacion |
 | `/ingestar_batch <carpeta>` | Ingestar todos los PDFs de una carpeta |
 | `/resolver <ruta_pagina_guia>` | Resolver ejercicios pendientes de una guia |
-| `/priorizar <ruta_pdf>` | Analizar un PDF de la cursada contra los parciales y decir a que prestarle atencion. **No ingesta** |
+| `/priorizar <teoria\|practica\|guia> <ruta_pdf>` | Agent Skill de material de estudio: teoría conceptual, práctica por técnicas o guía de entrenamiento; los parciales regulan selección y profundidad. **No ingesta** |
 | `/corregir <ruta_pagina> "<obs>"` | Corregir una pagina con aprobacion previa |
 | `/lint` | Chequeo de salud del wiki |
 | `/estado` | Resumen ejecutivo del wiki |
