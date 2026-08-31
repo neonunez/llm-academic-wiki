@@ -402,3 +402,6 @@ ni las banderas 🔴/⚪.
 - Estructura de carpetas creada: raw/, wiki/{temas,tipos_ejercicio,parciales_analizados,transcripciones,sintesis}
 - CLAUDE.md, index.md, log.md generados
 - Nota: explore-raw previo omitio guias_practicas/ y parciales/1P/ — inventario corregido con datos reales del filesystem
+
+## 2026-08-30 analisis | teo-03-secuenciales.pdf
+Material de estudio: `cursada_actual/teo_03_secuenciales.md` — 6 unidades explicadas (0 criticas, 6 probables), 2 patrones no cubiertos. Sin ingesta.

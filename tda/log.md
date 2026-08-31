@@ -395,3 +395,6 @@ NO se modifico: `raw/`, `wiki/parciales_analizados/`, `wiki/transcripciones/`, `
 `grafos_teoria.md`, `recorrido_en_grafos_practica.md`, `recorrido_en_grafos_guia.md`, ni ninguna otra
 pagina existente. **No se corrio `/tipos_ejercicio` ni se tocaron banderas** — por decision explicita
 del usuario, eso queda para cuando este la clase practica del tema.
+
+## 2026-08-27 analisis | teo_clase2_algo_en_grafos.pdf
+Material de estudio: `cursada_actual/teo_clase2_algo_en_grafos.md` — 6 unidades explicadas (2 criticas, 4 probables), 1 patron no cubierto. Sin ingesta.

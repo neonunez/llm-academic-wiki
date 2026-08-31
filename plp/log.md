@@ -290,3 +290,12 @@ Material de estudio regenerado: `cursada_actual/20260825_170523_cf36ebcf_02_func
 
 ## 2026-08-25 mantenimiento | descubrimiento de /priorizar en Pi
 Agregada configuracion local `.pi/settings.json` en las tres materias activas para cargar el wrapper compartido de `/priorizar`. Verificado con el resource loader de Pi: skill y prompt se descubren sin diagnosticos desde `plp/`, `tda/` y `sistemas_digitales/`.
+
+## 2026-08-31 analisis | 03-Razonamiento_ecuacional.pdf
+Material de estudio: `cursada_actual/03_razonamiento_ecuacional.md` — 6 unidades explicadas (3 criticas, 3 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-08-31 analisis | guia1_funcional.pdf
+Material de estudio: `cursada_actual/guia1_funcional.md` — 22 unidades explicadas (11 criticas, 11 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-09-12 analisis | guia2_razonamiento-demostracion.pdf
+Material de estudio: `cursada_actual/guia2_razonamiento_demostracion.md` — 14 unidades explicadas (6 criticas, 8 probables), 0 patrones no cubiertos. Sin ingesta.
