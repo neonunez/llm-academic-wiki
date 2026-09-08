@@ -12,7 +12,7 @@ base_comparacion:
   tipos_ejercicio: 23
 ingestado: false
 ---
-
+********
 # Razonamiento ecuacional e inducción estructural — guía priorizada de entrenamiento
 
 **Fuente:** `raw/cursada_2C_2026/guias/guia2_razonamiento-demostracion.pdf` · **Tema:** `demostracion_de_propiedades` → **1P** (programa 2C_2026)

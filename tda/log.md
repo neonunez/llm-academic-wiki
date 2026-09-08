@@ -398,3 +398,9 @@ del usuario, eso queda para cuando este la clase practica del tema.
 
 ## 2026-08-27 analisis | teo_clase2_algo_en_grafos.pdf
 Material de estudio: `cursada_actual/teo_clase2_algo_en_grafos.md` — 6 unidades explicadas (2 criticas, 4 probables), 1 patron no cubierto. Sin ingesta.
+
+## 2026-09-01 analisis | guia_2_intro_grafos.pdf
+Material de estudio: `cursada_actual/guia_2_intro_grafos.md` — 18 unidades explicadas (2 criticas, 16 probables), 1 patron no cubierto. Sin ingesta.
+
+## 2026-09-01 analisis | guia_3_algoritmos_grafos.pdf
+Material de estudio: `cursada_actual/guia_3_algoritmos_grafos.md` — 18 unidades explicadas (8 criticas, 10 probables), 1 patron no cubierto. Sin ingesta.
