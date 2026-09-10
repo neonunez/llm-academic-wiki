@@ -1,5 +1,8 @@
 # Log — Sistemas Digitales
 
+## 2026-09-07 analisis | raw/cursada_2C_2026/teo/teo-03b-secuenciales-FSM.pdf
+Material de estudio: `cursada_actual/teo_03b_secuenciales_fsm.md` — 5 unidades explicadas (0 criticas, 4 probables), 3 patrones no cubiertos. Sin ingesta.
+
 
 ## 2026-08-24 programa | 2C_2026
 
