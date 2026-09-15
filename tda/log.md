@@ -404,3 +404,12 @@ Material de estudio: `cursada_actual/guia_2_intro_grafos.md` — 18 unidades exp
 
 ## 2026-09-01 analisis | guia_3_algoritmos_grafos.pdf
 Material de estudio: `cursada_actual/guia_3_algoritmos_grafos.md` — 18 unidades explicadas (8 criticas, 10 probables), 1 patron no cubierto. Sin ingesta.
+
+## 2026-09-03 analisis | guia_4_divide_and_conquer.pdf
+Material de estudio: `cursada_actual/guia_4_divide_and_conquer.md` — 16 unidades explicadas (16 criticas, 0 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-09-12 analisis | guia_5_backtracking.pdf
+Material de estudio: `cursada_actual/guia_5_backtracking.md` — 18 unidades explicadas (7 criticas, 8 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## [2026-09-12] revision | guia_4_divide_and_conquer.md
+Repriorizado `cursada_actual/guia_4_divide_and_conquer.md` contra parciales: 3 ejercicios 🔴 con aparición directa o equivalente (3, 4, 11), 7 🟡 por transferencia técnica (1, 2, 5, 8, 9, 13, 14), 5 ⚪ sin precedente puntual (6, 7, 10, 12, 16) y 1 🆕 vigente sin precedente (15). Corregida la sobreextensión del patrón amplio `dc_diseno`. Sin ingesta.

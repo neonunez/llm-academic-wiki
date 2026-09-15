@@ -299,3 +299,6 @@ Material de estudio: `cursada_actual/guia1_funcional.md` — 22 unidades explica
 
 ## 2026-09-12 analisis | guia2_razonamiento-demostracion.pdf
 Material de estudio: `cursada_actual/guia2_razonamiento_demostracion.md` — 14 unidades explicadas (6 criticas, 8 probables), 0 patrones no cubiertos. Sin ingesta.
+
+## 2026-09-14 analisis | raw/cursada_2C_2026/guias/guia_3_logica_proposicional.pdf
+Material de estudio: `cursada_actual/guia_3_logica_proposicional.md` — 7 unidades explicadas (1 critica, 6 probables), 0 patrones no cubiertos. Sin ingesta.
