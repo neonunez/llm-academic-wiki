@@ -1,5 +1,12 @@
 # Paradigmas de Programación — Wiki
 
+## Preferencias al iniciar cada sesión
+
+Antes de trabajar, leer `../user.md` (en la raíz del repositorio), si existe, y
+aplicar sus preferencias y reglas durante toda la sesión, tanto en las respuestas
+como en el material generado. Es un archivo personal y opcional: no versionarlo
+ni copiar su contenido a archivos compartidos.
+
 ## 1. Contexto del proyecto
 
 **Materia:** Paradigmas de Programación (plp)

@@ -1,5 +1,12 @@
 # llm-academic-wiki
 
+## Preferencias al iniciar cada sesión
+
+Antes de trabajar, leer `user.md` de la raíz del repositorio, si existe, y aplicar
+sus preferencias y reglas durante toda la sesión, tanto en las respuestas como
+en el material generado. Es un archivo personal y opcional: no versionarlo ni
+copiar su contenido a archivos compartidos.
+
 Sistema de wikis academicas personales basado en el patron LLM Wiki de Andrej Karpathy, adaptado para estudio universitario en la UBA (Ciencias de la Computacion).
 
 ## Estructura del repositorio
@@ -70,7 +77,8 @@ Los comandos viven en `.claude/commands/` (`.agents/workflows/` es un symlink a 
    va en `raw/cursada_<XC_AAAA>/{teo,prac,guias}/` — es la fuente de autoridad ante conflictos
 3. Inicializar Claude Code desde la carpeta de la materia: `cd llm-academic-wiki/[Nombre_Materia]/ && claude`
 4. Proveer contexto especifico: nombre oficial, sistema de evaluacion, organizacion tematica, tipo de material, particularidades, estrategia de estudio
-5. El LLM genera `CLAUDE.md`, `index.md` y `log.md` de la materia adaptados al contexto
+5. El LLM genera `CLAUDE.md`, `index.md` y `log.md` de la materia adaptados al contexto.
+   Incluir en el `CLAUDE.md` la instrucción de leer `../user.md`, si existe, al iniciar cada sesión
 6. Correr el pipeline de ingest: `/ingestar_batch` respetando el orden del `CLAUDE.md`
 7. Crear `programa.md` con el mapa tema→parcial vigente (fuente de verdad; el `parcial:` del
    frontmatter se deriva de ahi, nunca del nombre del PDF)
